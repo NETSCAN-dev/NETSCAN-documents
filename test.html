@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+<link type="text/css" href="jquery-ui-1.12.0/css/jquery-ui.min.css" rel="stylesheet" />
+
+<style type="text/css">
+	blockquote p { font-size:small; }
+</style>
+
+<script type="text/javascript" src="jquery-3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.12.0/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="marked/marked.js"></script>
+<script>
+	$(document).ready(function(){
+		marked.setOptions({
+			renderer: new marked.Renderer(),
+			gfm: true,
+			tables: true,
+			breaks: false,
+			pedantic: false,
+			sanitize: false,
+			smartLists: true,
+			smartypants: false
+		});
+
+		if ( location.hash.length != 1 ) {
+			var t = $('div#parsed-text');
+			var f = location.hash.substr(1);
+			$.ajax({
+				url: f,
+				success: function(data){
+					while ( data.match(/\[\[(.+)\|(.+)\]\]/) != null ) {
+						data = data.replace(/\[\[(.+)\|(.+)\]\]/,"["+RegExp.$1+"]("+RegExp.$2+".md)");
+					}
+					t.text(marked(data));
+				},
+				error: function(data){ t.text("failed to load "+f); } 
+			});
+		}
+	});
+</script>
+</head>
+<body>
+<div id="parsed-text"></div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>NETSCAN application manual for ver-2011-03-01</title>
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+<link type="text/css" href="jquery-ui-1.12.0/css/jquery-ui.min.css" rel="stylesheet" />
+
+<style type="text/css">
+	blockquote p { font-size:small; }
+	div#sidebar {
+		background-color: #fff;
+		height:100%;
+		width:250px;
+		top:0;
+		left:0;
+		margin:0;
+		padding:5px;
+		position:absolute;
+		overflow-y:auto;
+	}
+	div#header {
+		background-color: #fff;
+		height:40px;
+		width:calc(100% - 250px);
+		top:0;
+		left:250px;
+		margin:0;
+		padding:5px;
+		position:absolute;
+		overflow-y:auto;
+	}
+	div#book {
+		height:calc(100% - 40px);
+		width:calc(100% - 250px);
+		top:40px;
+		left:250px;
+		margin:0;
+		padding:5px;
+		position:absolute;
+		overflow-y:auto;
+	}
+</style>
+
+<script type="text/javascript" src="jquery-3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.12.0/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="marked/marked.js"></script>
+<script>
+	function load_and_parse_md(file_name,target_div,error_div) {
+		$.ajax({
+			url: file_name,
+			success: function(data){
+				while ( data.match(/\[\[(.+)\|(.+)\]\]/) != null ) {
+					data = data.replace(/\[\[(.+)\|(.+)\]\]/,"["+RegExp.$1+"]("+RegExp.$2+".md)");
+				}
+				target_div.html(marked(data));
+			},
+			error: function(data){ error_div.text("failed to load "+file_name); } 
+		});
+	}
+	
+	$(document).ready(function(){
+		marked.setOptions({
+			renderer: new marked.Renderer(),
+			gfm: true,
+			tables: true,
+			breaks: false,
+			pedantic: false,
+			sanitize: false,
+			smartLists: true,
+			smartypants: false
+		});
+
+		load_and_parse_md("_Sidebar.md",$("div#sidebar"),$("div#book"));
+
+		$(document).on('click',"a[href$='\\.md']",function(){
+			load_and_parse_md($(this).attr("href"),$("div#book"),$("div#book"));
+			return false;
+		});
+
+		$(document).on('click',"a[href*='\\.md\\#']",function(){
+			var f = $(this).attr('href').split("#");
+			load_and_parse_md(f[0],$("div#book"),$("div#book"));
+//			if ( f.length == 2 ) $("html,body").animate({scrollTop:$("h4#"+f[1]).offset().top});
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+<div id="sidebar"></div>
+<div id="header"><h4>NETSCAN application manual</h4></div>
+<div id="book"></div>
+</body>
+</html>
