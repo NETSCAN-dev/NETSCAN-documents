@@ -19,7 +19,7 @@
   30      not used
   31-32   ix,iy   two dimensional index of the view
   33-38   flags   ca ( compton align ) uses these fileds  
-                  dc first 3 colums as described below ( implemented from r1026 ) 
+                  dc first 3 colums as described below ( implemented from r1148 ) 
                     f[0] : shrink-peak-flat-top-width  
                     f[1] : distortion-x-peak-flat-top-width  
                     f[2] : distortion-y-peak-flat-top-width  
