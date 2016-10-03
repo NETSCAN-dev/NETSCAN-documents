@@ -51,6 +51,9 @@
 	function load_and_parse_md(file_name,target_div,error_div) {
 		$.ajax({
 			url: file_name,
+			headers: {
+				'pragma':'no-cache',
+				'Cache-Control':'no-cache' },
 			success: function(data){
 				while ( data.match(/\[\[(.+)\|(.+)\]\]/) != null ) {
 					data = data.replace(/\[\[(.+)\|(.+)\]\]/,"["+RegExp.$1+"]("+RegExp.$2+".md)");
