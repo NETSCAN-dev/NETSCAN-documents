@@ -12,6 +12,9 @@
 ---
 ##### change log ( 未リリース分のみ )
 ---
++ dc で使っている calc_bg のバグ修正 ( r1066, r1067 )
++ regulate_corrmap で角度補正の affine に回転以外の成分が含まれるバグ修正 ( r1068 )
++ linklet_window の更新 ( r1069 )
 + dc ( DistortionShrinkEvaluator ) で BG 評価できない場合、BG = -1 / significance を 0 に変更 ( r1070 )
 + linklet_window を t2l 変更に合わせて update ( r1071 )
 + dc ( DistorionShrinkEvaluator ) の MaxTracks のデフォルト値を 0 とし、間引きを無効にしておく ( r1072 )
@@ -37,3 +40,7 @@
 + RunCard constrctor でのエラー対策、ver-2016-09-01 での const 付加を merge ( r1145 )
 + dc の出力ファイルでのピーク幅情報の変更 ( r1148, r1150 )
 + ali 系で --search-mode 未指定ならエラー終了 ( r1149, r1151 )
++ mkmf_p3 の出力ファイルサイズ削減 ( r1152, r1153 )
++ regulate_corrmap 引数解釈のバグ修正 ( r1154, r1155 )
++ ali-g と ali-l で pl-zone 指定対応 ( r1156, r1157 )
++ dc の出力ファイルでのピーク幅情報の再変更 ( r1162, r1163 )

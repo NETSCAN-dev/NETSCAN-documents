@@ -18,11 +18,11 @@
   28-29   rms_ax,rms_ay
   30      not used
   31-32   ix,iy   two dimensional index of the view
-  33-38   flags   ca ( compton align ) uses these fileds  
-                  dc first 3 colums as described below ( implemented from r1148 ) 
-                    f[0] : shrink-peak-flat-top-width  
-                    f[1] : distortion-x-peak-flat-top-width  
-                    f[2] : distortion-y-peak-flat-top-width  
+  33-38   flags-int    ca ( compton align ) uses these fileds  
+  39-41   flags-double dc uses these fields as below ( implemented from r1162 ) 
+            v[0] : shrink-peak-flat-top-width  
+            v[1] : distortion-x-peak-flat-top-width  
+            v[2] : distortion-y-peak-flat-top-width  
   ```
 
 > (i) For distortion-shrink correction map file ( dc-xx.lst ), these parameters have special meaning and are used as below.  
@@ -56,5 +56,6 @@
   28-29   rms_ax,rms_ay
   30      not used
   31-32   ix,iy   two dimensional index of the view
-  33-38   flags   used by ca - compton align - ...
+  33-38   flags-int
+  39-41   flags-double
   ```

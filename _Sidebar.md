@@ -36,6 +36,7 @@
 + [[conv2st|conv2st]]
 + [[f2mt|f2mt]]
 + [[f2bt|f2bt]]
++ [[integ_corr|integ_corr]]
 + [[linklet_window|linklet_window]]
 + [[bvxxplotl|bvxxplotl]]
 + [[l_pic|l_pic]]
