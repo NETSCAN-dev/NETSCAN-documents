@@ -44,3 +44,4 @@
 + regulate_corrmap 引数解釈のバグ修正 ( r1154, r1155 )
 + ali-g と ali-l で pl-zone 指定対応 ( r1156, r1157 )
 + dc の出力ファイルでのピーク幅情報の再変更 ( r1162, r1163 )
++ dump_bvxx 出力での micro-track xy 座標計算バグ修正 ( hg 1193,1194 )
