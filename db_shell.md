@@ -77,10 +77,13 @@
   > $8 : z of face 2 base surface  
   > $9 : z of face 2 film surface  
 
-  ---
-  - c pl0 pl1
+  - r a pl x y is_corrected
+  > get x,y corrdinates either not-corrected when is_corrected = 1, or corrected when is_corrected = 0  
 
-    > set correction pl1 relative to pl0 using relative corrmap specified in --c argument  
+  ---
+  - c pl0[-zone0] pl1[-zone1] [fname_corrmap]
+
+    > set correction pos1[-zone1] relative to pos0[-zone0] using relative corrmap either given as the 3rd argument or specified in --c argument  
 
   ---
   - f m pos max_tracks_per_view [ list_file_name +1/-1 ]
