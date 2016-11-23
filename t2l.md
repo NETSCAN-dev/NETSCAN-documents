@@ -53,6 +53,10 @@
   > $5 : high cache blocks for base-vxx  
   > $6 : high cache blocks for linklet-vxx  
 
+  - --dump-linklet output-file-name 0/1/2
+  > output dump_linklet equivalent format to  output-file-name  
+  > 0/1/2 is values given in --format 0/1/2 option to dump_linklet  
+  
   - --log ( obsoleted )
   >  
 
