@@ -50,3 +50,4 @@
 + 上記で混入した t2l.cpp のバグ修正 ( hg 1204,1206 )
 + zone で複数領域を区別する機能の強化 ( hg 1207,1209 )
 + db_shell に補正マップ適用コマンド、xy 座標変換コマンド追加 ( hg 1208,1210 )
++ event-descriptor に追加した Parameters::MaxZone の定義を、zone 数から最大 zone 番号に修正 ( 73f0bfbea926,b2d70a8c4943 )
