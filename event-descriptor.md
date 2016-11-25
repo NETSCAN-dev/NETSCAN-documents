@@ -73,4 +73,6 @@
                             # 1 : relative to event-descriptor's folder
     CorrectionMode = 0      # 0 : single affine, calculated by weighted avarage is ( default )
                             # 1 : closest correction-maps, possibly multiple affines, are used for a read-out area
+    MaxZone = 9             # 使える zone の最大値を指定する。この場合は 0-9 を使える。未指定の場合は MaxZone = 9 となる。
+
   ```

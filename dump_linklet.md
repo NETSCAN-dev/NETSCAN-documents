@@ -19,7 +19,7 @@
   - **--geom geom**
   > set geometry 0/1/...  
 
-  - **--format 0/1/2 ( 0 is for binary output )**
+  - **--format 0/1/2**
   ```
     columns description
     01-02   pos0,rawid0
@@ -41,6 +41,7 @@
     58-59   dx,dy (dx,dy) at zproj
     (*) columns 42 - 59 are when format=2
   ```
+  > 0 is for binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ )  
 
   - **--rc runcard-file**
   > set runcard used when linklets are built  
