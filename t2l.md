@@ -6,7 +6,7 @@
 + usage : t2l [ options ]
 + options ( those are in **bold** must be given )
 
-  - **--pos pos1[-zone1] pos2[-zone2]**
+  - **--pos pos0[-zone0] pos1[-zone1]**
   > set pos ( plate + face ) pair to connect. default for zone = 0.  
 
   - **--descriptor event-descriptor**

@@ -7,7 +7,9 @@
   > while scanning alignment parameter to suppress junk peaks.  
   > Rotation correction in position obtained for global alignment is also applied to angle correction.  
 
-+ usage : ali pl0 pl1 [ options ]
++ usage : ali pl0 pl1 [ options ]  
+  > for ali-g and ali-l, pl0 and pl1 can be pl[-zone]  
+ 
 + options ( those are in **bold** must be given )
   - **--descriptor event-descriptor**
   > set event descriptor  

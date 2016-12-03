@@ -3,7 +3,7 @@
 ---
 
 + description : build base track using ConnectBase2 / ConnectLinklet / IConnectLinklet
-+ usage : m2b pl [ options ]
++ usage : m2b pl[-zone] [ options ]
 + options ( those are in **bold** must be given )
   - **--descriptor event-descriptor**
   > set event descriptor  

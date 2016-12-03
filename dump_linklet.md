@@ -7,8 +7,8 @@
 > Be careful that there could be missing linklets from dump-output, when "--view" option values are different from those given to t2l.  
 
 + options ( those are in **bold** must be given )  
-  - **--pos pos1 pos2**
-  > limit dump linnklets between pos1 - pos2, otherwise all  
+  - **--pos pos0 pos1**
+  > limit dump linnklets between pos0 - pos1, otherwise all  
 
   - **--descriptor event-descriptor**
   > set event descriptor  
