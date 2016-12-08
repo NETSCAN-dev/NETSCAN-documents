@@ -41,7 +41,7 @@
 
   #
   # Linklet の vxx ファイルを指定します。
-  # 左辺は pos10 pos geometry zone です。
+  # 左辺は pos0 pos1 geometry zone です。
   # 右辺は file-name block-size です。通常は block-size = 1000000 として下さい。
   #   pos0-pos1 対毎に異なる vxx を使える様にしてあります。
   #   通常は pos0 = MAKEPOS(pl0,0), pos1 = MAKEPOS(pl1,0) と pl0-pl1 対毎に vxx を指定して下さい。

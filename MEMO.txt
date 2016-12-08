@@ -24,3 +24,6 @@ git push -u origin master
 git rm --cached a.md <- 削除
 git add a.md
 git status
+
+jQuery と IE の関係
+  3.x では local file に対して $.ajax が使えない。 1.x は使える。
