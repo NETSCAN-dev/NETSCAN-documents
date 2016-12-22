@@ -18,7 +18,8 @@
   > 2 : pos rawid 0 ( NF=3, to create aux-file for this micro-track-block )  
   > 3 : same as --format 2 but with one more digits for positions and angles.  
   > 4 : binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ ).  
-
+  > (*) xy position of micro-track is at z-center of an emulsion layer  
+  >    
   - --c correction-map-file-absolute
   - --ph phmin
   - --affine a b c d p q

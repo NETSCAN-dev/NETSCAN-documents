@@ -8,6 +8,7 @@
 ---
 + vxx-file 内部の hash entry に含まれる区画情報のバグ修正
 + runcard consistency の check program
++ eventdescriptor 生成用 script  
 
 ---
 ##### change log ( 未リリース分のみ )
@@ -51,3 +52,5 @@
 + zone で複数領域を区別する機能の強化 ( hg 1207,1209 )
 + db_shell に補正マップ適用コマンド、xy 座標変換コマンド追加 ( hg 1208,1210 )
 + event-descriptor に追加した Parameters::MaxZone の定義を、zone 数から最大 zone 番号に修正 ( 73f0bfbea926,b2d70a8c4943 )
++ zone 対応の書き出し時のバグ修正 ( hg )
++ NetScanDataFilter::GhostFilter のバグ修正 ( hg )
