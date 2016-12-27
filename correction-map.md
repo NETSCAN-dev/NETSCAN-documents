@@ -31,8 +31,10 @@
 >> z-corrected += dz  
 >> ax-corrected = a &times; ax-raw + p  
 >> ay-corrected = a &times; ay-raw + q  
->> where dz_fulcrum = nominal_fulcrum_z - z_nominal + b,  
->> i.e corrected distance between z-fulcrum and z-micro-track.
+>> where dz_fulcrum = nominal_fulcrum_z - z_nominal + b, 
+>> i.e corrected distance between z-fulcrum and z-micro-track. 
+>>  
+>> ![dz_fulcrum](./dz_fulcrum.png)
 
 > (ii) This value is "measured-base-thickness - nominal-base-thickness" for face-2 and 0 for face-1  
 
