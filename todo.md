@@ -6,12 +6,11 @@
 ---
 ##### todo list
 ---
-+ vxx-file 内部の hash entry に含まれる区画情報のバグ修正
 + runcard consistency の check program
 + eventdescriptor 生成用 script  
 
 ---
-##### change log ( 未リリース分のみ )
+##### change log
 ---
 + dc で使っている calc_bg のバグ修正 ( r1066, r1067 )
 + regulate_corrmap で角度補正の affine に回転以外の成分が含まれるバグ修正 ( r1068 )
@@ -51,6 +50,15 @@
 + 上記で混入した t2l.cpp のバグ修正 ( hg 1204,1206 )
 + zone で複数領域を区別する機能の強化 ( hg 1207,1209 )
 + db_shell に補正マップ適用コマンド、xy 座標変換コマンド追加 ( hg 1208,1210 )
-+ event-descriptor に追加した Parameters::MaxZone の定義を、zone 数から最大 zone 番号に修正 ( 73f0bfbea926,b2d70a8c4943 )
-+ zone 対応の書き出し時のバグ修正 ( hg )
-+ NetScanDataFilter::GhostFilter のバグ修正 ( hg )
++ event-descriptor に追加した Parameters::MaxZone の定義を、zone 数から最大 zone 番号に修正 ( 1211:b2d70a8c4943,1213:393703d2c0c9 )
++ f_filter で --append 指定の際に view-header を上書きするバグを修正 ( 1213:393703d2c0c9,1214:33f1045bbc39 )
++ ali-g ali-l t2l で zone 対応化に伴う補正マップ適用のバグを修正 ( 1219:860aa172dc90,1220:f2e1fdea3862 )
++ l_pic, dump_s のバグ修正 ( 1221:7a010a2ba6a0,1222:0bb8286f58a9 )
++ 不要なアプリ削除 ( 1223:a27ad3cb55a8,1224:40e7fdd488de )
++ zone 対応の書き出し時のバグ修正 ( 1225:ce9e5c7a127b,1226:201cada63dfb,1227:711fec3d05f1,1228:cb0367d56135 )
++ NetScanDataFilter::GhostFilter のバグ修正 ( 1229:6317639f4de1,1230:d49332624a04 )
++ t2l の thread 間で mutable_ptr が不正に解放されるバグの対策 ( 1231:d9eb28f11cf0,1232:c9ce3c2055e0 )
++ mk_views の zone 対応 ( 1233:c5f141969df2,1234:8e6fc157cc5c )
++ 不要なアプリ削除 ( 1235:ec4bb8dbf625,1236:2e237985fed4 ) ``` これ以降は ver-2016-09-01 のみ適用 ```
++ ViewDescriptor への m_id 追加と不要 method 削除 ( 1237:6b1a13bb284a )
++ ali-g で view-list の id を corrmap の区画 id にコピーする ( 1238:fd3a38b18c66 )
