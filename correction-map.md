@@ -43,6 +43,7 @@
 ---  
 
   > used for reltive correction between two plates  
+  > affine parameters are to be applied to values on pos1 to be comparable with those on pos0.  
 
   ```
   column  description

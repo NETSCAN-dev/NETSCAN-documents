@@ -61,4 +61,4 @@
 + mk_views の zone 対応 ( 1233:c5f141969df2,1234:8e6fc157cc5c )
 + 不要なアプリ削除 ( 1235:ec4bb8dbf625,1236:2e237985fed4 ) ``` これ以降は ver-2016-09-01 のみ適用 ```
 + ViewDescriptor への m_id 追加と不要 method 削除 ( 1237:6b1a13bb284a )
-+ ali-g で view-list の id を corrmap の区画 id にコピーする ( 1238:fd3a38b18c66 )
++ ali-g で view-list の id を corrmap の区画 id にコピーする。HistogramFileTemplate の向上 ( 1238:fd3a38b18c66,1239:4a02efc14a74,1240:6cd948b448e4 )
