@@ -1,8 +1,9 @@
 ---
-#### b_filter - filter base track vxx file - 
+#### b_filter
 ---
 
-+ usage : b_filter pl vxx-file [ options ]
++ description : filter base track vxx file  
++ usage : b_filter *pl* *vxx-file* [*options*]
 + options ( those are in **bold** must be given )
   - **--o output-vxx-file**
   > set output vxx-file  

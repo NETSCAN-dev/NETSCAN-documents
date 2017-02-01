@@ -1,8 +1,9 @@
 ---
-#### f_filter - filter micro track vxx file - 
+#### f_filter
 ---
 
-+ usage : f_filter pos vxx-file [ options ]
++ description : filter micro track vxx file  
++ usage : f_filter *pos* *vxx-file* [*options*]
 + options ( those are in **bold** must be given )
   - **--o output-vxx-file**
   > set output vxx-file

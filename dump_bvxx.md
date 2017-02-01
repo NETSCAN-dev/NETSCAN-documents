@@ -1,8 +1,9 @@
 ---
-#### dump_bvxx - dump base track vxx file -
+#### dump_bvxx
 ---
 
-+ usage : dump_bvxx vxx-file pl zone [ options ]
++ description : dump base track vxx file
++ usage : dump_bvxx *vxx-file* *pl* *zone* [*options*]
 + options
   - --index i0 i1
   > limit dump for i0 &le; rawid &le; i1  

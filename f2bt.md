@@ -1,8 +1,9 @@
 ---
-#### f2bt - build base track vxx file from text-file -
+#### f2bt
 ---
 
-+ usage : f2bt input-file output-vxx-file pl [ options ]
++ description : build base track vxx file from text-file  
++ usage : f2bt *input-file* *output-vxx-file* *pl* [*options*]
 > input-file format is that of dump_bvxx output with --format 0/3.  
 
 + options

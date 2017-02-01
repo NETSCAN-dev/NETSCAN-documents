@@ -1,8 +1,9 @@
 ---
-#### f2mt - build micro track vxx file from text-file ( f-file, $e, $res ) -
+#### f2mt
 ---
 
-+ usage : f2mt input-file output-vxx-file pos [ options ]
++ description : build micro track vxx file from text-file ( f-file, $e, $res )  
++ usage : f2mt *input-file* *output-vxx-file* *pos* [*options*]
 + options
   - --append
   > append to vxx-file

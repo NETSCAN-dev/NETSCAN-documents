@@ -1,8 +1,9 @@
 ---
-#### dump_linklet - dump linklet as an input for connect -
+#### dump_linklet
 ---
 
-+ usage : dump_linklet [ options ] > ../[geom]/linklet/linklet-dump-[pos1]-[pos2].lst  
++ description : dump linklet info, which should be used as input to make chain  
++ usage : dump_linklet [options] > *../0/linklet/linklet-dump-01-02.lst*  
 > To reproduce corrdinate system used in linklet connection by t2l, use the same options as of t2l.  
 > Be careful that there could be missing linklets from dump-output, when "--view" option values are different from those given to t2l.  
 

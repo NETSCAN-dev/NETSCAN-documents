@@ -1,8 +1,9 @@
 ---
-#### dump_fvxx - dump micro track vxx file -
+#### dump_fvxx
 ---
 
-+ usage : dump_fvxx vxx-file pos zone [ options ]
++ description : dump micro track vxx file  
++ usage : dump_fvxx *vxx-file* *pos* *zone* [*options*]
 + options
   - --index i0 i1
   > limit dump for i0 &le; rawid < i1  

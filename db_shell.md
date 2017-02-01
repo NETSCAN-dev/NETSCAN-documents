@@ -1,6 +1,8 @@
 ---
-#### db-shell - db-like access to NETSCAN data -
+#### db-shell
 ---
+
++ description : data-base-like access tool for NETSCAN data  
 
 + start db_server process
   

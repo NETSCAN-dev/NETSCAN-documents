@@ -15,6 +15,8 @@
 + [[t2l|t2l]]
 + [[mk_corrmap|mk_corrmap]]
 + [[dump_linklet|dump_linklet]]
++ [[l2c|l2c]]
++ [[mkmf_p3|mkmf_p3]]
 
 ##### file formats
 + [[event-descriptor|event-descriptor]]
@@ -38,6 +40,3 @@
 + [[f2bt|f2bt]]
 + [[integ_corr|integ_corr]]
 + [[linklet_window|linklet_window]]
-+ [[bvxxplotl|bvxxplotl]]
-+ [[l_pic|l_pic]]
-+ [[cpic_rel|cpic_rel]]

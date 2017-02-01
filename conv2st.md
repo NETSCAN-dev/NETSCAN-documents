@@ -1,7 +1,8 @@
 ---
-#### conv2st - parse parts.kar and chamber.kar to dump chamber structure in st.dat format
+#### conv2st
 ---
 
++ description : parse parts.kar and chamber.kar to dump chamber structure in st.dat format  
 + usage : conv2st [ options ] > st.dat
 > if eventdescriptor is not specified, use parts.kar and chamber.kar in current folder  
 + options

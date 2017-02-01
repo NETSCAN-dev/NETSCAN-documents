@@ -1,9 +1,9 @@
 ---
-#### t2l - connect micro/base tracks between plates -
+#### t2l
 ---
 
 + description :  connect micro/base tracks among plates using ConnectLinklet / IConnectLinklet
-+ usage : t2l [ options ]
++ usage : t2l [options]
 + options ( those are in **bold** must be given )
 
   - **--pos pos0[-zone0] pos1[-zone1]**

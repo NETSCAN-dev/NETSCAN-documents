@@ -2,6 +2,10 @@
 #### geometry descriptor files
 ---
 
++ face definition
+> face ( 1,2 ... ) for HTS scanned data is defined a la SUTS as shown below.  
+> ![face-definition](./hts2fvxx.png)
+
 + parts.kar ( m:/prg/netscan/ver-2011-03-01/rc/parts.kar )  
   ```
   #
@@ -43,7 +47,7 @@
 + chamber.kar ( m:/prg/netscan/ver-2011-03-01/rc/chamber-0.kar )  
   ```
   CHAMBER OPERA_ECC_EXPOSE B999 -1 0.0        <- (*3)
-  01   01 OPERAFilm -1 0.000000 0.000000 1.000000 0.000000
+  01   01 OPERAFilm -1 0.000000 0.000000 1.000000 0.000000 <- (*4)
   Pb01 -1 OPERAPb   -1 0.000000 0.000000 1.000000 0.000000
   02   02 OPERAFilm -1 0.000000 0.000000 1.000000 0.000000
   Pb02 -1 OPERAPb   -1 0.000000 0.000000 1.000000 0.000000
@@ -56,4 +60,10 @@
   (*3) CHAMBER 型名　固有名　$1 $2
        $1 : スタック順（上から下が正）と chamber 座標系 Z 軸の向き ... 1:同じ -1:逆
        $2 : chamber 座標系での z offset
+  (*4) $1 : unique-name ( a name of the tape, this plate is sticked onto ? ... set this name to own-name )  
+       $2 : own-name like '01', which is unique in chamber.kar  
+       $3 : parts-name in parts.kar
+       $4 : object coordinate's z-direction is the same (+1) or opposite (-1) to that of chamber-coordinate. 
+       $5,$6 : chamber xy corrdinate of object-coordinate's origin (0,0). 
+       $7,$8 : direction vector of object-coordinate's x-axis. 
   ```

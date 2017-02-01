@@ -6,7 +6,7 @@
   > Integrate relative correction map and output absolute correction map.  
   > This code works for relative correction map with single area for each plate.  
 
-+ usage : integ_corr corrmap-rel(in) corrmap-abs(out) [options]
++ usage : integ_corr *corrmap-rel(in)* *corrmap-abs(out)* [*options*]
 + options ( those are in **bold** must be given )
   - **--descriptor event-descriptor**
   > set event descriptor  

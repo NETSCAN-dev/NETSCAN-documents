@@ -3,7 +3,7 @@
 ---
 
 + description : create [[process-view-list|view-list]]  
-+ usage : mk_views pos0 pos1 [ options ]  
++ usage : mk_views *pos0* *pos1* [*options*]  
 > specify same pos for pos0 and pos1 to make a list for one plate  
 
 + options ( those are in **bold** must be given )

@@ -1,13 +1,12 @@
 ---
-#### m2b - build base track - </h4>
+#### m2b
 ---
 
 + description : build base track  
 > For view size larger than 32.5mm,  
 > micro-track's position resolution in connection calculation  
 > becomes x2 worse than basic resolution of 0.015micron.  
-
-+ usage : m2b pl[-zone] [ options ]
++ usage : m2b pl[-zone] [options]
 + options ( those are in **bold** must be given )
   - **--descriptor event-descriptor**
   > set event descriptor  
