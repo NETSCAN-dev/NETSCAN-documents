@@ -2,8 +2,8 @@
 #### Detailed description about connection algorithms used in t2l
 ---
 
-> Actual connection window evaluated from runcard settings can be obtained using a program,
-> linklet_window pos1 pos2 event-descriptor rc --geom 0/1  
+> Actual connection window evaluated from runcard settings can be obtained using a program,  
+> ```linklet_window pos1 pos2 event-descriptor rc --geom 0/1```  
 
 ---
 
@@ -13,7 +13,7 @@
   > RadialCut = 0(x-y,default) / 1(raadial-lateral)  
   > Errors1 = ErrX1 ErrY1 ErrAx1 ErrAy1 ErrCx1 ErrCy1 ErrCax1 ErrCay1 (errors for 1st track)  
   > Errors2 = ErrX2 ErrY2 ErrAx2 ErrAy2 ErrCx2 ErrCy2 ErrCax2 ErrCay2 (errors for 2nd track)  
-  > MinimumMomentum = pmin sigma  
+  > MinimumMomentum = pmin sigma ( used only for Mode=1 )  
 
 + connection window evaluation
   > ErrMomAng : 運動量下限から求めた角度窓 ( １シグマ相当 )  
@@ -32,8 +32,9 @@
   > Mode = 0  
   >>  ErrMomAng = 0  
   >>  ErrMomPos = 0  
-  >>  zp = ( z1+z2 )/2  
+  >>  zp = (1-f)*z1+f*z2 ( f is Linklet::Zproj in runcard or 0.5 )  
   >>  sigma = 1  
+  >>  (*) these variables, which are used in calulation shown below, are fixed as above.  
  
   > z1,z2 : 接続を試みる２面それぞれの Z 座標 ( BaseTrack の場合は、相互に近い側の乳剤ベース面 )  
   > ax,ay : 接続を試みるトラックの平均角度の絶対値  

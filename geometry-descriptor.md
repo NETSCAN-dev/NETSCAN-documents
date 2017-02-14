@@ -57,9 +57,9 @@
   57   57 OPERAFilm -1 0.000000 0.000000 1.000000 0.000000
   ENDCHAMBER
   
-  (*3) CHAMBER 型名　固有名　$1 $2
-       $1 : スタック順（上から下が正）と chamber 座標系 Z 軸の向き ... 1:同じ -1:逆
-       $2 : chamber 座標系での z offset
+  (*3) CHAMBER chamber-type-name chamber-id $1 $2
+       $1 : chamber-z-directon スタック順（上から下が正）と chamber 座標系 Z 軸の向き ... 1:同じ -1:逆
+       $2 : chamber-z-offset chamber 座標系での z offset
   (*4) $1 : unique-name ( a name of the tape, this plate is sticked onto ? ... set this name to own-name )  
        $2 : own-name like '01', which is unique in chamber.kar  
        $3 : parts-name in parts.kar
@@ -67,3 +67,4 @@
        $5,$6 : chamber xy corrdinate of object-coordinate's origin (0,0). 
        $7,$8 : direction vector of object-coordinate's x-axis. 
   ```
+  > ```[chamber-z-direction]x[$4-of-each-parts] == 1 is required, because of limited implementation in the code.```  
