@@ -3,9 +3,8 @@
 ---
 + m:/prg/netscan/ver-2011-03-01 ( branch ver-2011-03-01 ) ...... frozen
 + m:/prg/netscan/ver-2011-03-02 ( branch ver-2011-03-01 ) ...... frozen except for bug-fixes
-+ m:/prg/netscan/ver-2016-09-01 ( branch ver-2016-09-01 ) ...... updating
->
-> It is recommended to keep a copy of one of these folders to your own place,  
++ m:/prg/netscan/ver-2016-09-01 ( branch ver-2016-09-01 ) ...... updating  
+> It is **strongly** recommended to keep a copy of one of these folders to your own place,  
 > to avoid any unexpected changes in binaries and keep your analysis stable and uniform.  
 > There will be updates without notice except for frozen folders.  
 >
@@ -13,8 +12,7 @@
 ---
 ##### change log
 ---
-``` changes described here is applied from m:\prg\netscan\ver-2011-03-02\ ```  
-
+``` below changes are applied to m:\prg\netscan\ver-2011-03-02\ and newer branches ```  
 + dc で使っている calc_bg のバグ修正 ( r1066, r1067 )
 + regulate_corrmap で角度補正の affine に回転以外の成分が含まれるバグ修正 ( r1068 )
 + linklet_window の更新 ( r1069 )
@@ -53,15 +51,23 @@
 + 上記で混入した t2l.cpp のバグ修正 ( hg 1204,1206 )
 + zone で複数領域を区別する機能の強化 ( hg 1207,1209 )
 + db_shell に補正マップ適用コマンド、xy 座標変換コマンド追加 ( hg 1208,1210 )
-+ event-descriptor に追加した Parameters::MaxZone の定義を、zone 数から最大 zone 番号に修正 ( 1211:b2d70a8c4943,1213:393703d2c0c9 )
-+ f_filter で --append 指定の際に view-header を上書きするバグを修正 ( 1213:393703d2c0c9,1214:33f1045bbc39 )
-+ ali-g ali-l t2l で zone 対応化に伴う補正マップ適用のバグを修正 ( 1219:860aa172dc90,1220:f2e1fdea3862 )
-+ l_pic, dump_s のバグ修正 ( 1221:7a010a2ba6a0,1222:0bb8286f58a9 )
-+ 不要なアプリ削除 ( 1223:a27ad3cb55a8,1224:40e7fdd488de )
-+ zone 対応の書き出し時のバグ修正 ( 1225:ce9e5c7a127b,1226:201cada63dfb,1227:711fec3d05f1,1228:cb0367d56135 )
-+ NetScanDataFilter::GhostFilter のバグ修正 ( 1229:6317639f4de1,1230:d49332624a04 )
-+ t2l の thread 間で mutable_ptr が不正に解放されるバグの対策 ( 1231:d9eb28f11cf0,1232:c9ce3c2055e0 )
-+ mk_views の zone 対応 ( 1233:c5f141969df2,1234:8e6fc157cc5c )
-+ 不要なアプリ削除 ( 1235:ec4bb8dbf625,1236:2e237985fed4 ) ``` これ以降は ver-2016-09-01 のみ適用 ```
-+ ViewDescriptor への m_id 追加と不要 method 削除 ( 1237:6b1a13bb284a )
-+ ali-g で view-list の id を corrmap の区画 id にコピーする。HistogramFileTemplate の向上 ( 1238:fd3a38b18c66,1239:4a02efc14a74,1240:6cd948b448e4 )
++ event-descriptor に追加した Parameters::MaxZone の定義を、zone 数から最大 zone 番号に修正 ( b2d70a8c4943,393703d2c0c9 )
++ f_filter で --append 指定の際に view-header を上書きするバグを修正 ( 393703d2c0c9,33f1045bbc39 )
++ ali-g ali-l t2l で zone 対応化に伴う補正マップ適用のバグを修正 ( 860aa172dc90,f2e1fdea3862 )
++ l_pic, dump_s のバグ修正 ( 7a010a2ba6a0,0bb8286f58a9 )
++ 不要なアプリ削除 ( a27ad3cb55a8,40e7fdd488de )
++ zone 対応の書き出し時のバグ修正 ( ce9e5c7a127b,201cada63dfb,711fec3d05f1,cb0367d56135 )
++ NetScanDataFilter::GhostFilter のバグ修正 ( 6317639f4de1,d49332624a04 )
++ t2l の thread 間で mutable_ptr が不正に解放されるバグの対策 ( d9eb28f11cf0,c9ce3c2055e0 )
++ mk_views の zone 対応 ( c5f141969df2,8e6fc157cc5c )
++ 不要なアプリ削除 ( ec4bb8dbf625,2e237985fed4 )  
+
+``` below changes are applied to ver-2016-09-01 ```
++ ViewDescriptor への m_id 追加と不要 method 削除 ( 6b1a13bb284a )
++ ali-g で view-list の id を corrmap の区画 id にコピーする。HistogramFileTemplate の向上 ( fd3a38b18c66,4a02efc14a74,6cd948b448e4 )
++ t2l.cpp で未使用の GetLinkletBlock を削除 ( 8d3edd28f4d4 )
++ t2l 内で発生した例外の扱いの修正 ( ed02cd380c13,bec5d9f61613,c04beb13716b,95f3695b184c,2b1680bfe2fd,9c588184f678 )
++ mkmf_p3.cpp のメモリ使用量削減とその修正のバグ修正 ( 3f8f5c026738,d636153ccb90 )
++ l2c.cpp を分割入力ファイルにきちんと対応させた ( 56213e94ba4a )
++ b_filter の --aft option のバグ修正 ( 504003834c52,8fe2bfc0b0cd )
++ l2c bugfix ( d6a12b307b71 )
