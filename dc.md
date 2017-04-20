@@ -91,11 +91,18 @@ PHSUMCUT        = 1 0.1 21      #
 VolCut          = 1 0.1 3       #
 AngleStep       = 0.050 0.010 0.002     # distortion 探索 step ( 絞込み探索対応 2015-10-04 より ) 
 ShrinkStep      = 0.020 0.010 0.002     # shrink 探索 step
+                                          # For second and subsequent AngleStep(ShrinkStep),  
+                                          # a search area is defined as 
+                                          # +/- previous value of AngleStep(ShrinkStep).  
 MaxTracks       = 1000          # 探索に使用する１面トラック数の上限。これを超える場合、間引きを行う。
 Significance    = 3.0           # significance がこの値以上の区画を探索成功と判断。失敗区画は出力しない。
 MaxAng          = 0.8           # 探索に使用するトラックの最大角度
-#
-# For second and subsequent AngleStep(ShrinkStep),  
-# a search area is defined as +/- previous value of AngleStep(ShrinkStep).  
-#
+DumpDebugInfoFileName = xxx.xxx # Enable debug-info output to a file "xxx.xxx",  
+                                  # when non-null value for this entry is specified.  
+                                  # Format of this file is ...  
+                                  # $1,$2  : base-track ax,ay  
+                                  # $3,$4  : face 1 micro-track ax,ay corrected  
+                                  # $5,$6  : face 2 micro-track ax,ay corrected  
+                                  # $7,$8  : face 1 micro-track ax,ay raw  
+                                  # $9,$10 : face 2 micro-track ax,ay raw  
   ```

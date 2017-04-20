@@ -103,8 +103,8 @@ $9=$8のσ
   ```
 chainのheader（段が1段下がっている行）
 $1=chain ID
-$2=rootが同じchain達につけたグループID
-$3=rootとleafが同じchain達につけたグループID
+$2=rootが同じchain達につけたグループID ( root と leaf が同じ chain が同じ値になる ID ??? )
+$3=rootとleafが同じchain達につけたグループID ( root が同じ chain が同じ値になる ID ??? )
 $4=start plate (rootのplate)
 $5=end plate（leafのplate）
 $6=nseg
