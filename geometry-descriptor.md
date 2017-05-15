@@ -63,8 +63,13 @@
   (*4) $1 : unique-name ( a name of the tape, this plate is sticked onto ? ... set this name to own-name )  
        $2 : own-name like '01', which is unique in chamber.kar  
        $3 : parts-name in parts.kar
-       $4 : object coordinate's z-direction is the same (+1) or opposite (-1) to that of chamber-coordinate. 
-       $5,$6 : chamber xy corrdinate of object-coordinate's origin (0,0). 
-       $7,$8 : direction vector of object-coordinate's x-axis. 
+       $4 : object coordinate's z-direction is the same (+1) or opposite (-1) to that of stack coordinate. 
+       $5,$6 : (x,y) of object-coordinate's origin (0,0) in chamber/stack coordinate. 
+       $7,$8 : direction vector of object coordinate's x-axis in chamber/stack corrdinate. 
   ```
   > ```[chamber-z-direction]x[$4-of-each-parts] == 1 is required, because of limited implementation in the code.```  
+
++ coordinate systems
+  - object : defined in parts.kar  
+  - stack : chamber.kar の 1st object の z_object=0 が z_stack=0 であり、記載順に大きくなる。 xy は $5-$8 で規定されるが NETSCAN では未実装。
+  - chamber :  z_chamber = z_stack x chamber-z-direction + chamber-z-offset / xy_chamber = xy_stack

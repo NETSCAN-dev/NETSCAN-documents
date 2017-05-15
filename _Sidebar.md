@@ -12,7 +12,9 @@
 ##### core-1
 + [[dc|dc]]
 + [[m2b|m2b]]
-+ [[ali|ali]]
++ [[ali-g|ali-g]]
++ [[ali-l|ali-l]]
++ [[ali ( to be obsoleted )|ali]]
 + [[t2l|t2l]]
 + [[mk_corrmap|mk_corrmap]]
 + [[dump_linklet|dump_linklet]]

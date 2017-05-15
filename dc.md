@@ -14,8 +14,9 @@
   - **--rc fname-runcard**
   > set runcard  
 
-  - **--o corrmap-file-prefix**
-  > set corrmap file prefix  
+  - **--o corrmap-file [w/a]**
+  > set [[corrmap-dc(absolute)|correction-map]]  
+  > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
@@ -30,14 +31,9 @@
   > 1 : begin search in each view using correction-map given in --c option  
   > 2 : begin search in each view using closest view's result. use second values of ErrDist and ErrShur if they exists  
 
-  - --exclude xmin xmax ymin ymax
-  > register a region to be excluded for process. multiple regions can be registerd.  
-
-  - --position xmin xmax ymin ymax
-  > limit base-tracks in position  
-
-  - --angle axmin axmax aymin aymax
-  > limit base-tracks in angle  
+  - --filter-angle +1/-1 axmin axmax aymin aymax
+  > use angle regions (+1) or exclude angle regions(-1) in parameter search  
+  > multiple entries are accepted and includes(+1) are first evaluated and then excludes(-1)  
 
   - --filter-list filter-list +1/-1
   > include (+1) or exclude (-1) list-filter  
@@ -47,9 +43,6 @@
 
   - --filter-max-track-per-view value
   > avoid process in views having max-track-per-view track or more  
-
-  - --global xc yc
-  >  
 
   - --ang-shr ang-shr-base ang-shr-shift  
   > abs(&theta;) &le; ang-shr-base &rArr; &theta; += &theta; &times; (ang-shr-shift/ang-shr-base)  
