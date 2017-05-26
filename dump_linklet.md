@@ -40,9 +40,16 @@
     50-53   rawid,ph,ax,ay for 3rd micro track
     54-57   rawid,ph,ax,ay for 4th micro track
     58-59   dx,dy (dx,dy) at zproj
-    (*) columns 42 - 59 are when format=2
+    60-69   ph,ax,ay,x,y,z,z1,z2,px,py for 1st micro track ( z1,z2,px,py are valid when --access-micro )
+    70-79   ph,ax,ay,x,y,z,z1,z2,px,py for 2nd micro track
+    80-89   ph,ax,ay,x,y,z,z1,z2,px,py for 3rd micro track
+    90-99   ph,ax,ay,x,y,z,z1,z2,px,py for 4th micro track
+    (*) columns 42 - 99 are when format=2
   ```
   > 0 is for binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ )  
+
+  - --access-micro
+  > force to read micro-track-vxx file to obtain z1,z2,px,py  
 
   - **--rc runcard-file**
   > set runcard used when linklets are built  

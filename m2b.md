@@ -24,15 +24,6 @@
     **--view view-list-file-name**  
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
 
-  - --exclude xmin xmax ymin ymax
-  > register a region to be excluded for process. multiple regions can be registerd  
-
-  - --position xmin xmax ymin ymax
-  > limit base-tracks in position  
-
-  - --angle axmin axmax aymin aymax
-  > limit base-tracks in angle  
-
   - --filter-list filter-list +1/-1
   > include (+1) or exclude (-1) [[list-filter|filter-list]]  
 
@@ -42,20 +33,11 @@
   - --filter-max-track-per-view value
   > avoid process in views having max-track-per-view track or more  
 
-  - --global xc yc
-  >  
-
   - --ang-shr ang-shr-base ang-shr-shift
   > &theta; += &theta; &times; (ang-shr-shift/ang-shr-base) for abs(&theta;)≤ang-shr-base  
   > &theta; += ang-shr-base for &theta; > +ang-shr-base  
   > &theta; -= ang-shr-base for &theta; < -ang-shr-base  
   > (*) implemented by Komatani probably fot HTS specific needs.  
-
-  - --hist
-  > enable histogram ( obsoleted )  
-
-  - --o prefix
-  > set histogram file prefix ( obsoleted )  
 
 + memory usage
 > To suppress memory usage in Corei7, try "set OMP_NUM_THREADS=4" or less. 
