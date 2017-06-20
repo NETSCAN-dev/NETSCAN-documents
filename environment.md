@@ -20,16 +20,3 @@
   > C/C++ runtime というのは Visual C++ 20XX 再頒布可能パッケージと呼ばれているもので、ウェブから最新版をダウンロードできます。  
   > どれが必要か分からない場合、```C++ 2010 x86, C++ 2010 x64, C++ 2013 x86, C++ 2013 x64, C++ 2015 x86, C++ 2015 x64``` の  
   > 6つを入れておくことをお勧めします。
-
----
-#### required tools to build netscan programs
----
-
-+ visual c/c++ 2010 or 2015
-+ gnu make ( included in cygwin )
-+ perl ( included in cygwin )
-+ svn version 1.8.8
-+ boost 1.59.0 as described above
-+ jemalloc as described above
-  > boost and jemalloc are better to be installed as in Z:, since their path are hard-coded in Makefile settings.  
-  > minimum set of 64bit cygwin package is avaliable [here](cygwin.zip).  

@@ -1,0 +1,6 @@
+div#sidebar, div#header { display:none; }
+blockquote p { font-size:small; }
+h4,h5 {
+	font-size:12pt;
+	font-weight:bold;
+}

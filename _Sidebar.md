@@ -1,8 +1,12 @@
+#### NETSCAN document
++ maintained <a href="https://gitlab.com/kkodama/NETSCAN-documents.git">here</a>
+
 ##### README
 + [[release-status|release-status]]
 + [[todo|todo]]
 + [[environment|environment]]
 + [[pc-spec|pc-spec]]
++ [[build-steps|build-step]]
 
 ##### notes
 + [[2016-02-29|release-note.2016-02-29]]

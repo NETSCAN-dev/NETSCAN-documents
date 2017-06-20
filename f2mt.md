@@ -3,6 +3,8 @@
 ---
 
 + description : build micro track vxx file from text-file ( f-file, $e, $res )  
+  > The f-file format and its minimal example is described [[here|f-file-format]].
+ 
 + usage : f2mt *input-file* *output-vxx-file* *pos* [*options*]
 + options
   - --append

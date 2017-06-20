@@ -40,6 +40,7 @@ public:
 	double dx,dy;
 	double xc,yc;
 	base_track_t b[2];
+	micro_track_t m[4];
 };
 
 ```

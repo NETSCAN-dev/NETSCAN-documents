@@ -25,10 +25,11 @@
   > set [[corrmap-align(relative)|correction-map]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
 
-  - **--view view-step view-overlap**  
-    **--view view-list-file-name**
+  - **--view view-step view-overlap [view-select-mode]**  
+    **--view view-list-file-name [view-select-mode]**
   > set view step and overlap by value or by [[view-list-file|view-list]]  
-  > (*) 1st line of a view-list-file is used for global alignment.  
+  > view-select-mode ( optional ) can be specified to limit views used for process as  
+  > 1 = one view in center / 2 = one view in center and 4 views in corners.  
 
   - **--search-mode 0/1/2 \[ fname-corrmap-i \]**
   > set search mode ( default = 2 )  
@@ -59,6 +60,7 @@ PositionWindow  = 2500.0 2500.0 2500.0 2500.0   # xmin xmax ymin ymax
 RotationWindow  = 0.020 0.002
 PositionError   = 3.0               # 接続判定で許容する位置ズレは PositionError + AngleError x プレート間隔 /2 。
 AngleError      = 0.020
+Significance    = 10.0              # minimum significance for peak search. 
 ClusterSize     = 30.0              # When MaxPeaks > 1, obtained peaks which has distance < ClusterSize are clustered.  
 IsBaseTrack     = 1
 MaxPeaks        = 1                 # number of peaks to be searched. use 1 for usual cases. 

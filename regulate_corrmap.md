@@ -8,4 +8,5 @@
   > global-corrmap should be applied first and then local-corrmap.  
   > global angle correction is treated from r1062 onwards.  
 
-+ usage : regulate_corrmap *corrmap(in)* *local-corrmap(out)* *global-corrmap(out)*
++ usage : regulate_corrmap corrmap(in) local-corrmap(out) global-corrmap(out)
+  > corrmap-file-names ( i.e. arguments ) can be '-' and it means that those files are not written.  
