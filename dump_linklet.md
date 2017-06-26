@@ -20,7 +20,7 @@
   - **--geom geom**
   > set geometry 0/1/...  
 
-  - **--format 0/1/2**
+  - **--format 0/1/2 [customized_netscan_data_types_ui.h]**
   ```
     columns description
     01-02   pos0,rawid0
@@ -44,12 +44,18 @@
     70-79   ph,ax,ay,x,y,z,z1,z2,px,py for 2nd micro track
     80-89   ph,ax,ay,x,y,z,z1,z2,px,py for 3rd micro track
     90-99   ph,ax,ay,x,y,z,z1,z2,px,py for 4th micro track
-    (*) columns 42 - 99 are when format=2
+    (*) columns 42 - 99 are when format=2.
+    (*) columns 70 - 99 are currently disabled and not availble.
   ```
-  > 0 is for binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ )  
+  > --format 0 is for binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ )  
+  > You can choose data members to output by ...  
+  > (1) make a copy of netscan_data_types_ui.h and comment-out members you do not need.  
+  > (2) give this file as a second argument of --format and execute dump_linklet.  
+  > (3) use to your customized netscan_data_types_ui.h to read output.  
+  >
 
   - --access-micro
-  > force to read micro-track-vxx file to obtain z1,z2,px,py  
+  > force to read micro-track-vxx file to obtain z1,z2,px,py which are only available in micro-track-vxx.  
 
   - **--rc runcard-file**
   > set runcard used when linklets are built  

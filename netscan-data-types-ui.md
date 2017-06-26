@@ -2,8 +2,10 @@
 #### classes used in binary dump ( dump_fvxx, dump_bvxx, dump_linklet )
 ---
 
-```c
+> They are defined in namespace netscan.  
+> Constructores are not shown here.  
 
+```c
 class micro_track_t {
 public:
 	double ax,ay;
@@ -40,9 +42,10 @@ public:
 	double dx,dy;
 	double xc,yc;
 	base_track_t b[2];
-	micro_track_t m[4];
+
+	// Below member is commented-out ( i.e. de-activated ) by default action.  
+	// To access them, you need un-comment and give it to dump_linklet like --format 0 your-own-netscan_data-types-ui.
+//	micro_track_t m[4];
 };
 
 ```
-  > They are defined in namespace netscan.  
-  > Constructores are now show in code below.  
