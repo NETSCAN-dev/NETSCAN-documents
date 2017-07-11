@@ -3,14 +3,20 @@
 ---
 
 + usage : l2c [ options ] ( *linklet-dump-file-1* *linklet-dump-file-2* ... | *@linklet-dump-file-list* )
-> This code is an updated copy of connect.cpp written by K.Hamada and by Shiraishi.  
-> Algorithm to build chain is not modified from the original.  
-> Be careful that the original version does not work with input file larger than 4Gbytes.  
->  
-> Input linklet-dump-files can be specified in ...  
-> (1) Multiple file-names in sequence like linklet-dump-file-1 linklet-dump-file-2 ...   
-> (2) A list-file like @list-file  
 
+  > This code is an updated copy of connect.cpp written by K.Hamada and by Shiraishi.  
+  > Algorithm to build chain is not modified from the original.  
+  > Be careful that the original version does not work with input file larger than 4Gbytes.  
+  >  
+  > Input linklet-dump-files can be specified in ...  
+  > 1. Multiple file-names in sequence like linklet-dump-file-1 linklet-dump-file-2 ...  
+  > 1. A list-file like @list-file  
+  > .
+  >  
+  > l2c-x ( Komatani's version of l2c ) has restrictions below.  
+  > 1. --binary-input is not available.
+  > 2. EndPos and UnUsePos can not be used in runcard. One should use UsePos and plates should be sequential.
+  > 3. specify --debug to enable out_gr.txt output.
 
 + options
   - --rc chain.rc

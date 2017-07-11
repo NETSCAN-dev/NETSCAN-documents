@@ -19,8 +19,11 @@
   > 2 : pos rawid 0 ( NF=3, to create aux-file for this micro-track-block )  
   > 3 : same as --format 2 but with one more digits for positions and angles.  
   > 4 : binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ ).  
-  > (*) xy position of micro-track is at z-center of an emulsion layer  
-  >    
+  >  
+  > - xy position of micro-track is at z-center of an emulsion layer  
+  > - HTSから出力するときのxy座標は 0-15層中の7層目のxy座標で、micro-trackの真の中心座標ではない。  
+  >   ベース面に外挿する際、レンズ側乳剤層では8層、ステージ側乳剤層では7層分外挿すべきはず（吉本）。  
+  
   - --c correction-map-file-absolute
   - --ph phmin
   - --affine a b c d p q
