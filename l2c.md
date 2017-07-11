@@ -14,9 +14,10 @@
   > .
   >  
   > l2c-x ( Komatani's version of l2c ) has restrictions below.  
-  > 1. --binary-input is not available.
-  > 2. EndPos and UnUsePos can not be used in runcard. One should use UsePos and plates should be sequential.
-  > 3. specify --debug to enable out_gr.txt output.
+  > 1. 2 segment chains ( isolated linklets ) are rejected.  
+  > 2. --binary-input is not available.
+  > 3. EndPos and UnUsePos can not be used in runcard. One should use UsePos and plates should be sequential.
+  > 4. specify --debug to enable out_gr.txt output.
 
 + options
   - --rc chain.rc
