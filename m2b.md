@@ -3,6 +3,13 @@
 ---
 
 + description : build base track  
+>   
+> In currect connection algorhtm, only distortion and shrink correction to micro-track-angle in correction-map-file are used.  
+> Other values given in correction-map-file are NOT used in this program.  
+> They are used to obtain correct micro-track x,y,z when micro-tracks are read-out.  
+>   
+> To suppress memory usage in Corei7, try "set OMP_NUM_THREADS=4" or less.  
+>   
 > For view size larger than 32.5mm,  
 > micro-track's position resolution in connection calculation  
 > becomes x2 worse than basic resolution of 0.015micron.  
@@ -38,9 +45,6 @@
   > &theta; += ang-shr-base for &theta; > +ang-shr-base  
   > &theta; -= ang-shr-base for &theta; < -ang-shr-base  
   > (*) implemented by Komatani probably fot HTS specific needs.  
-
-+ memory usage
-> To suppress memory usage in Corei7, try "set OMP_NUM_THREADS=4" or less. 
 
 + runcard ( m:/prg/netscan/ver-2011-03-01/rc/m2b.rc )
   ```

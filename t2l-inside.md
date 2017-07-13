@@ -54,12 +54,16 @@
   > RadialCut = 0  
   >>  &delta;x,&delta;y : position difference at z = zp  
   >>  &delta;&theta;x,&delta;&theta;y : angle difference  
+  >>
+  >>  Runcard values in [Linklet] used in calculation below.  
+  >>  WindowMin = wxmin wymin waxmin waymin  
+  >>  WindowMax = wxmax wymax waxmax waymax  
   >>  
-  >>  CircleCut = 0 : &delta;&theta;x &le; eax && &delta;&theta;y &le; eay && &delta;x &le; ex && &delta;y &le; ey  
-  >>  CircleCut = 1 : sqrt( &delta;&theta;x<sup>2</sup> + &delta;&theta;y<sup>2</sup> ) &le; sqrt( eax<sup>2</sup>+eay<sup>2</sup> ) && sqrt( &delta;x<sup>2</sup>+&delta;y<sup>2</sup> ) &le; sqrt( ex<sup>2</sup>+ey<sup>2</sup> )  
+  >>  CircleCut = 0 : waxmin-eax &le; &delta;&theta;x &le; waxmax+eax && waymin-eay &le; &delta;&theta;y &le; waymax+eay && wxmin-ex &le; &delta;x &le; wxmax+ex && wymin-ey &le; &delta;y &le; wymax+ey  
+  >>  CircleCut = 1 : (&delta;&theta;x/(waxmax+eax))<sup>2</sup> + (&delta;&theta;y/(waymax+eay))<sup>2</sup> &le; 1 && (&delta;x/(wxmax+ex))<sup>2</sup>+(&delta;y/(wymax+ey))<sup>2</sup> &le; 1  
 
   > RadialCut = 1  
-  >> x を radial, y を lateral に読み替えて計算する。CircleCut の指定によらず CircleCut = 1 で計算する。  
+  >> x を radial, y を lateral に読み替えて計算する。CircleCut の値に応じて RadialCut = 0 の場合と同様の接続判定を行う。  
 
 ---
 #### 要改善点

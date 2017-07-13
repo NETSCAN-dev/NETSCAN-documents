@@ -17,7 +17,7 @@
     
   #
   # MicroTrack の vxx ファイルを指定します。
-  # 左辺は pos zone です。zone = 0 は real、zone = 1 は dummy MicroTrack です。
+  # 左辺は pos zone です。
   # 右辺は file-name block-size です。通常は block-size = 1000000 として下さい。
   #
   [MicroTrackBlock]
