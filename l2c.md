@@ -17,7 +17,14 @@
   > 1. 2 segment chains ( isolated linklets ) are rejected.  
   > 2. --binary-input is not available.
   > 3. EndPos and UnUsePos can not be used in runcard. One should use UsePos and plates should be sequential.
-  > 4. specify --debug to enable out_gr.txt output.
+  > 4. specify --debug to enable out_gr.txt output.  
+  > .
+  >  
+  > Group means a set of chains, which have at least one track-segments in common.  
+  > Be careful that this does not mean that any two chains in a group have track-segments in common.  
+  > For example, chain A and chain B have a common segment S1 and chain B and chain C have a common segment S2.  
+  > In this case, all chains A,B,C are in a group but chain A and C have no segments in common.  
+  >  
 
 + options
   - --rc chain.rc
@@ -110,8 +117,8 @@ $9=$8のσ
   ```
 chainのheader（段が1段下がっている行）
 $1=chain ID
-$2=rootが同じchain達につけたグループID ( root と leaf が同じ chain が同じ値になる ID ??? )
-$3=rootとleafが同じchain達につけたグループID ( root が同じ chain が同じ値になる ID ??? )
+$2=root と leaf が同じ chain に対して同じ値になる ID
+$3=root が同じ chain に対して同じ値になる ID
 $4=start plate (rootのplate)
 $5=end plate（leafのplate）
 $6=nseg
