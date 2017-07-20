@@ -25,7 +25,8 @@
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
-  > set view step and overlap by value or by [[view-list-file|view-list]]  
+  > set view step and overlap by value or by [[process-view-list-file|view-list]]  
+  > see [[view-step and view-overlap definitions|mk_views]].  
 
   - --search-mode 0/1/2 \[ fname-corrmap-i \]
   > set search mode ( default = 2 )  

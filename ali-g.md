@@ -27,7 +27,8 @@
 
   - **--view view-step view-overlap [view-select-mode]**  
     **--view view-list-file-name [view-select-mode]**
-  > set view step and overlap by value or by [[view-list-file|view-list]]  
+  > set view step and overlap by value or by [[process-view-list-file|view-list]]  
+  > see [[view-step and view-overlap definitions|mk_views]].  
   > view-select-mode ( optional ) can be specified to limit views used for process as  
   > 1 = one view in center / 2 = one view in center and 4 views in corners.  
 

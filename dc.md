@@ -20,7 +20,8 @@
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
-  > set view step and overlap by value or by file  
+  > set view step and overlap by value or by [[process-view-list-file|view-list]]  
+  > see [[view-step and view-overlap definitions|mk_views]].  
 
   - --c corrmap-file
   > set corrmap file used as a starting point for each view  

@@ -30,8 +30,9 @@
   - --rc chain.rc
   > set runcard file  
 
-  - --binary-input
+  - --binary-input [ netscan_data_types_ui.h -- ]
   > tell l2c that input linklet-dump-files are in binary format ( i.e. created with option '--format 0' )  
+  > you need to give 2nd and 3rd ('--') arguments to read customized-binary-linklet-dump-file correctly.  
 
 + runcard ( m:/prg/netscan/ver-2016-09-01/rc/chain.rc )
   ```

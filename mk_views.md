@@ -15,6 +15,8 @@
 
   - **--view view-step view-overlap**
   > set view step and overlap by value  
+  > - view-size = view-step + view-overlap x 2 and it steps by view-step.  
+  > - out-most areas might be enlarged to include remainng edges of area to be processed.  
 
   - --o fname-view
   > set output view-list filename  

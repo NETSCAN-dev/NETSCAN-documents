@@ -45,9 +45,9 @@
     80-89   ph,ax,ay,x,y,z,z1,z2,px,py for 3rd micro track
     90-99   ph,ax,ay,x,y,z,z1,z2,px,py for 4th micro track
     (*) columns 42 - 99 are when format=2.
-    (*) columns 70 - 99 are currently disabled and not availble.
+    (*) columns 70 - 99 are currently disabled and not available.
   ```
-  > --format 0 is for binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ )  
+  > --format 0 is for binary output ( see [[netscan_data_types_ui.h|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ )  
   > You can choose data members to output by ...  
   > (1) make a copy of netscan_data_types_ui.h and comment-out members you do not need.  
   > (2) give this file as a second argument of --format and execute dump_linklet.  
@@ -68,6 +68,7 @@
   - **--view view-step view-overlap**  
     **--view view-list-file-name**  
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
+  > see [[view-step and view-overlap definitions|mk_views]].  
 
   - --window xmin xmax ymin ymax
   > limit position of tracks to be connected  

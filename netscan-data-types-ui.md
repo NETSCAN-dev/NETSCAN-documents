@@ -31,6 +31,7 @@ public:
 	double x,y,z;
 	int pl;
 	int isg,zone;
+	int dmy;	// In ROOT, you will have to add this member because CINT does not handle 8byte alignment. 
 	int64_t rawid;
 	micro_track_subset_t m[2];
 };
@@ -44,8 +45,8 @@ public:
 	base_track_t b[2];
 
 	// Below member is commented-out ( i.e. de-activated ) by default action.  
-	// To access them, you need un-comment and give it to dump_linklet like --format 0 your-own-netscan_data-types-ui.
-//	micro_track_t m[4];
+	// To access them, you need un-comment and give it to dump_linklet like --format 0 your-netscan-data-types-ui.h 
+	micro_track_t m[4];
 };
 
 ```

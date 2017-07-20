@@ -28,6 +28,7 @@
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
+  > see [[view-step and view-overlap definitions|mk_views]].  
 
   - --append
   > add built linklets to vxx, otherwise vxx is overwritten  
