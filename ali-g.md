@@ -57,7 +57,7 @@ AngleCut        = 0 -0.40 0.40 -0.40 0.40   # First column controls how this reg
 PhCut           = 18
 VolCut          = 3
 MinimumTracks   = 10                # multiple threshold for faster search is not needed from this version on, for MaPeaks = 1. 
-PositionWindow  = 2500.0 2500.0 2500.0 2500.0   # xmin xmax ymin ymax 
+PositionWindow  = -2500.0 +2500.0 -2500.0 +2500.0   # xmin xmax ymin ymax ( single value is treated as -value +value -value +value )
 RotationWindow  = 0.020 0.002
 PositionError   = 3.0               # 接続判定で許容する位置ズレは PositionError + AngleError x プレート間隔 /2 。
 AngleError      = 0.020
