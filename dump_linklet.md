@@ -76,7 +76,7 @@
   - --filter-list file-name mode-0 mode-1 mode-x
   > mode-0 : include(+1) / exclude(-1) for pos0  
   > mode-1 : include(+1) / exclude(-1) for pos1  
-  > mode-x : both-tracks(1) / at-least-one-track(2) must be 'accepted'.  
+  > mode-x : at-least-one-track(1) / both-tracks(2) must be 'accepted'.  
   > caution **'accepted' means 'not in the list' for exclude mode.**  
 
   - --warning-level 0/1
