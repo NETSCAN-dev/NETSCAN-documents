@@ -26,21 +26,9 @@
   > - HTSから出力するときのxy座標は 0-15層中の7層目のxy座標で、micro-trackの真の中心座標ではない。  
   >   ベース面に外挿する際、レンズ側乳剤層では8層、ステージ側乳剤層では7層分外挿すべきはず（吉本）。  
   
-  - --c correction-map-file-absolute
-  - --ph phmin
-  - --affine a b c d p q
-  > apply affine transformation ( after correction-map-absolute if specified )  
+  - --c correction-map-file-absolute  
 
-+ HTS info embedded in 'col' and in 'row' at Alpha files
-  ``` c
-  ImagerID = CameraID * 12 + SensorID;
-  col = (int16_t)("ViewID"&0x0000ffff);
-  row = (int16_t)((("ImagerID")&0x000000ff)|(("ViewID"&0x00ff0000)>>8));
-  ```
-+ HTS info embedded in 'col' and in 'row' at Beta files (仕様変更の可能性あり)
-  ``` c
-  ImagerID = CameraID * 12 + SensorID;
-  ShotID = ViewID * ImagerID + ImagerID;
-  col = (int16_t)("ShotID"&0x0000ffff);
-  row = (int16_t)(("ShotID"&0xffff0000)>>8);
-  ```
+  - --ph phmin  
+
+  - --affine a b c d p q  
+  > apply affine transformation ( after correction-map-absolute if specified )  
