@@ -2,7 +2,9 @@
 #### dump_fvxx
 ---
 
-+ description : dump micro track vxx file  
++ description : dump micro-track vxx file  
+> micro-track data members in vxx-file are described in [dump_fvxx_columns.md](dump_fvxx_columns.md).  
+
 + usage : dump_fvxx *vxx-file* *pos* *zone* [*options*]
 + options
   - --index i0 i1
