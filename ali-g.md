@@ -1,12 +1,12 @@
 ---
-#### ali-l
+#### ali-g
 ---
 
 + description : search alignment in large scan area ( global ) in given process-views  
   > For MaxPeaks=1, MinimumTracks are auto-incremented  
   > while scanning alignment parameter to suppress junk peaks.  
   > Rotation correction in position obtained is also applied to angle correction.  
-+ usage : ali-l pl0[-zone0] pl1[-zone1] [options]  
++ usage : ali-g pl0[-zone0] pl1[-zone1] [options]  
   > default value for zone0/1 are 0  
 + options ( those are in **bold** must be given )
   - **--descriptor event-descriptor**
