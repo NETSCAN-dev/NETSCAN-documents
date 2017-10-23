@@ -66,6 +66,14 @@
   >> x を radial, y を lateral に読み替えて計算する。CircleCut の値に応じて RadialCut = 0 の場合と同様の接続判定を行う。  
 
 ---
+#### Linklet::MinimumMomentum に関するメモ ( 不要な計算？ )
++ t2l ( IConnectLinklet ) では、運動量の逆数 ( 1/p ) 空間で 0 ~ 1/pmin を 19 分割し、  
+  各 linklet がどの区画から接続されるかを求め、これ ( 接続可能な最低運動量 ) を Linklet::m_MomCut に記録している。  
+  ここで pmin は runcard の Linklet::MinimumMomentum の $1 であるが、$2 (sigma) は接続窓の計算で使われるため、  
+  記録される接続可能な最低運動量はその sigma での値である。  
+  m_MomCut へのアクセスには Linklet::GetMomCut() を使う事。  
+
+---
 #### 要改善点
 + sigma は運動量起因の窓にのみ適用すべきではないか？
 + 位置窓の計算に、角度エラーは入れない方が使い易くないか？
