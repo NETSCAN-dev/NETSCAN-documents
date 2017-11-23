@@ -63,5 +63,5 @@ HTS info embedded in `col` and in `row` at Beta files (仕様変更の可能性�
   ImagerID = CameraID * 12 + SensorID;
   ShotID = ViewID * NumberOfImager + ImagerID;
   col = (int16_t)("ShotID"&0x0000ffff);
-  row = (int16_t)(("ShotID"&0xffff0000)>>8);
+  row = (int16_t)(("ShotID"&0xffff0000)>>16);
   ```

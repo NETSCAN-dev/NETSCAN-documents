@@ -57,7 +57,13 @@
   - --dump-linklet output-file-name 0/1/2
   > output dump_linklet equivalent format to  output-file-name  
   > 0/1/2 is values given in --format 0/1/2 option to dump_linklet  
-  
+
+  - --hts-a
+  > parse (col,row) according to HTS alpha format and print (view-id,imager-id) in text-mode output.  
+
+  - --hts-b
+  > parse (col,row) according to HTS beta format and print (shot-id,0) in text-mode output.  
+
   - --log ( obsoleted )
   >  
 

@@ -79,6 +79,12 @@
   > mode-x : at-least-one-track(1) / both-tracks(2) must be 'accepted'.  
   > caution **'accepted' means 'not in the list' for exclude mode.**  
 
+  - --hts-a
+  > parse (col,row) according to HTS alpha format and print (view-id,imager-id) in text-mode output.  
+
+  - --hts-b
+  > parse (col,row) according to HTS beta format and print (shot-id,0) in text-mode output.  
+
   - --warning-level 0/1
   > set 0 to suppress non-fatal warning messages ( old versions may have default value 1 ).  
 
