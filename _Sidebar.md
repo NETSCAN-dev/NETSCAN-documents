@@ -9,9 +9,10 @@
 + [[build-steps|build-step]]
 
 ##### notes
-+ [[2016-02-29|release-note.2016-02-29]]
-+ [[2016-03-09|release-note.2016-03-09]]
++ <a href="file:netscan-manual-v3.pdf" target=_blank>tutorial for beginners</a>
++ <a href="file:ali-l-inside.pdf" target=_blank>ali-l inside</a>
 + [[option --cache|note-cache]]
++ [[old notes|old-notes]]
  
 ##### core-1
 + [[dc|dc]]

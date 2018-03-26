@@ -4,7 +4,10 @@
 
 + description : integrate relative correction map to absolute 
   > Integrate relative correction map and output absolute correction map.  
-  > This code works for relative correction map with single area for each plate.  
+  > **BE CAREFUL that ...**  
+  > When a given relative correction map file has multiple areas,  
+  > this code calculates SIGNLE affine parameter for each plate by fitting all affine parameters in one plate first,  
+  > and then integrates these SINGLE affine parameters to obtain absolute correction map.  
 
 + usage : integ_corr *corrmap-rel(in)* *corrmap-abs(out)* [*options*]
 + options ( those are in **bold** must be given )

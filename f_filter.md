@@ -51,4 +51,5 @@
   > append micro tracks to output vxx file  
 
   - --ghost dr dt
-  > ghost filter ( for each pair of micro-tracks, choose high ph, if position-diff < dr and angle-dif < dt ) 
+  > ghost filter in position (dr micron) and angle (dt rad).  
+  > For each pair of micro-tracks, choose high ph, if position-diff < dr and angle-dif < dt.  

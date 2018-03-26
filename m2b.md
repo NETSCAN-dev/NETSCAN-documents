@@ -70,5 +70,5 @@ PHCUT       = 0 0.1 0
 PHSUMCUT    = 0 0.1 0
 VolCut      = 0 0.1 0
 Algorithm   = 0/1/2 ConnectBase2/ConnectLinklet/IConnectLinklet
-GhostFilter = 0 5 10 <- enable dr dt
+GhostFilter = 0 5 10 <- enable dr dt <- obsoleted
   ```

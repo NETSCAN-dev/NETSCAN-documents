@@ -45,7 +45,7 @@
   > append base tracks to output vxx file  
 
   - --ghost dr dt
-  > ghost filter  
+  > ghost filter in position (dr micron) and angle (dt rad).  
 
   - --edit fname-edit
   > edit limited properties of each base track ( x,y,col,row are not accepted ).  
