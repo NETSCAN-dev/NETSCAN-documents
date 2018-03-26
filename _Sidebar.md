@@ -9,8 +9,8 @@
 + [[build-steps|build-step]]
 
 ##### notes
-+ <a href="file:netscan-manual-v3.pdf" target=_blank>tutorial for beginners</a>
-+ <a href="file:ali-l-inside.pdf" target=_blank>ali-l inside</a>
++ <a href="netscan-manual-v3.pdf" target=_blank>tutorial for beginners</a>
++ <a href="ali-l-inside.pdf" target=_blank>ali-l inside</a>
 + [[option --cache|note-cache]]
 + [[old notes|old-notes]]
  
