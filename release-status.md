@@ -8,6 +8,11 @@
 > to avoid any unexpected changes in binaries and keep your analysis stable and uniform.  
 > There will be updates without notice except for frozen folders.  
 >
+> For branch ver-2016-09-01 or later,  
+> zip-files containing binaries, when codes are updated, are prepared for your convenience.  
+> They are in m:/prg/netscan/ver-2016-09-01/obj/  
+> with file-names like ver-2016-09-01.win-msvc-x64-12.2018-04-06.zip.  
+>
 
 ---
 ##### change log
