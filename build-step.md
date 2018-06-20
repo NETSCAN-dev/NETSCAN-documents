@@ -27,8 +27,13 @@
 
 + Build NETSCAN application.
   - cd your-repositoryobj\win-msvc-x64-12
-  - make update clean all install clean-obj
+  - make update
+  - make clean
+  - make all
+  - make install
+  - make clean-obj
 
+  > do not specify multiple targets in using make.  
 
 + Import all changes uploaded to the master repository to your-repository and your-working-copy.
   - cd your-repository

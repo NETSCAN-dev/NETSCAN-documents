@@ -14,7 +14,6 @@
   > .
   >  
   > l2c-x ( Komatani's version of l2c ) has restrictions below.  
-  > 1. 2 segment chains ( isolated linklets ) are rejected.  
   > 2. --binary-input is not available.
   > 3. EndPos and UnUsePos can not be used in runcard. One should use UsePos and plates should be sequential.
   > 4. specify --debug to enable out_gr.txt output.  
@@ -30,9 +29,10 @@
   - --rc chain.rc
   > set runcard file  
 
-  - --binary-input [ netscan_data_types_ui.h -- ]
+  - --binary-input [ record-size ]
   > tell l2c that input linklet-dump-files are in binary format ( i.e. created with option '--format 0' )  
-  > you need to give 2nd and 3rd ('--') arguments to read customized-binary-linklet-dump-file correctly.  
+  > you need to give record-size in byte as a 2nd argument,  
+  > if your binary file is a subset or superset of linklet_t and has different record-size.  
 
   - --output-isolated-linklet
   > *This option is for t2l-x only.*  
