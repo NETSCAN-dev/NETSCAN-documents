@@ -81,11 +81,15 @@ PHSUMCUT    = 0 1.0 0
 CircleCut   = 1
 RadialCut   = 0     # errors and windows are in X-Y (0) / Radial-Lateral (1)
 MaxAng      = 0.8   # 
-WindowMin   = wxmin wymin waxmin waymin # asymmetric fixed connection window. default values are 0.  
-WindowMax   = wxmax wymax waxmax waymax # this parameter assumes Mode = 0 and CircleCut = 0
 Zproj       = f     # connection is done at z = (1-f)*z0 + f*z1 when Mode = 0 ( default is 0.5 )
 Offset1     = 100 0 # equivalent to --offset-xy 1 100 0
 Offset2     = 100 0 # equivalent to --offset-xy 2 100 0
+UseAngleErrorForPositionWindow = 1  # default = 1. when set 0, angle-errors in Errors1/2 are not used to calculate PositionWindow at zproj.
+ConnectionWindow-0 = xmin xmax ymin ymax axmin axmax aymin aymax # multiple connection window can be specified using ConnectionWindow-0/1/2 ... 
+ConnectionWindow-1 = xmin xmax ymin ymax axmin axmax aymin aymax # 
+ConnectionWindow-X = xmin xmax ymin ymax axmin axmax aymin aymax # This is a replacement of WindowMin and WindowMax, and they will be obsoleted.
+WindowMin   = wxmin wymin waxmin waymin # asymmetric fixed connection window. default values are 0.  
+WindowMax   = wxmax wymax waxmax waymax # this parameter assumes Mode = 0 and CircleCut = 0
   ```
   > To set connection window, do not use ErrPos and ErrAng anymore and use Errors1 and Errors2 instead.  
   > Please refer to **[[inside description|t2l-inside]]** below for their usage. 
