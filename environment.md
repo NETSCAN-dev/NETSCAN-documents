@@ -2,9 +2,10 @@
 #### environment setting to run netscan programs
 ---
 
-+ boost ( 1.65.0 for ver-2016-09-01 and 1.59.0 for earlier versions )
-  - add Z:\usr\boost\boost_1_65_0\stage\lib64 and Z:\usr\boost\boost_1_65_0\stage\lib32 to PATH
-  - add Z:\usr\boost\boost_1_59_0\stage\lib64 and Z:\usr\boost\boost_1_59_0\stage\lib32 to PATH
++ boost ( 1.65.0 for ver-2016-09-01 and 1.59.0 for earlier versions )  
+  - add Z:\usr\boost_1_65_0\stage\lib64 and Z:\usr\boost_1_65_0\stage\lib32 to PATH  
+  - add Z:\usr\boost_1_59_0\stage\lib64 and Z:\usr\boost_1_59_0\stage\lib32 to PATH  
+  > those path are for f-lab intranet and depends on where you installed boost.  
 + jemalloc ( Komatani patch is required )
   - add Z:\usr\jemalloc\bin64 and Z:\usr\jemalloc\bin to PATH
 + root ( required for 32bit only )
