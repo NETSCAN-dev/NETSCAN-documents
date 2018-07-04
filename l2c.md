@@ -36,7 +36,11 @@
 
   - --output-isolated-linklet
   > *This option is for t2l-x only.*  
-  > output isolated linklets as chains ( i.e. output 2 segment chains ).  
+  > output isolated linklets as chains ( i.e. output 2 segment chains ). 
+
+  - --o fname-out
+  > *This option is for l2c-x only.*  
+  > specify output file. default output is to stdout.  
 
 + runcard ( m:/prg/netscan/ver-2016-09-01/rc/chain.rc )
   ```
