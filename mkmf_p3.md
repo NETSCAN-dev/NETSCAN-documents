@@ -3,7 +3,7 @@
 ---
 
 + description : convert chain to m-file  
-+ usage : mkmf_p3 *event-descriptor* *chain.dat* [options]
++ usage : mkmf_p3 *event-descriptor* *chain.dat* [*corrmap-abs.lst*] [options]
 + options
   - --geom geom
   > set geometry ( default is 0 ).  
