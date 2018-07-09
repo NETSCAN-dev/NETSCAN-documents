@@ -7,6 +7,7 @@
 + [[environment|environment]]
 + [[pc-spec|pc-spec]]
 + [[build-steps|build-step]]
++ [[windows10-settings|windows10-settings]]
 
 ##### notes
 + <a href="netscan-manual-v3.pdf" target=_blank>tutorial for beginners</a>
