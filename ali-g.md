@@ -72,6 +72,7 @@ FitMode         = 1                 # 1:offset＋rotation / 2:offset＋shrink / 
 HistogramFileTemplate   =           # dump histogram data if specified like hist-%02d-%02d-%05d-%d.dmp
                                     # ( format specifiers are for pl0,pl1,view-id,peak-id in the file-name. see below for format spec. )
 Zproj           = 0.5               # 最近接ベース面間距離を Zproj : 1-Zproj に内分する z で alignment 探索を行う。default = 0.5
+GhostFilter     = 1.0 0.007
 ```
 
   > File specified by HistogramFileTemplate has [[dump-file format|ali-histogram]].  
