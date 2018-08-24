@@ -59,7 +59,7 @@
 # それぞれのパラメータの誤差として使われる。
 #
 [MT2BT]
-Algorithm   = 0 # 0 => ConnectBase2 / 1 => ConnectLinklet / 2 => IConnectLinklet
+Algorithm   = 0 # 0 => ConnectBase2 / 1 => ConnectLinklet
 FACE1       = 0.0 0.0 0.0 0.000 0.000 1.00
 FACE2       = 0.0 0.0 0.0 0.000 0.000 1.00
 ErrPos      = 10.0;
@@ -70,4 +70,5 @@ PHCUT       = 0 0.1 0
 PHSUMCUT    = 0 0.1 0
 VolCut      = 0 0.1 0
 GhostFilter = 0 5 10 <- enable dr dt <- obsoleted
+(*) ConnectLinklet を使う際の runcard は t2l 用の Mode = 0 を参照のこと
   ```
