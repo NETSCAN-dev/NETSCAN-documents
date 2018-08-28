@@ -12,11 +12,10 @@
   - set ROOTSYS=z:\usr\root\root_v5.34.32_vc10
   - add %ROOTSYS%\bin to PATH
 + appropreate version of visual c/c++ runtime
+  - 対応している Visual C/C++ は vc-2017 です。( vc-2013 以前は対応打ち切り )  
+  - C/C++ runtime というのは Visual C++ 20XX 再頒布可能パッケージと呼ばれているもので、ウェブから最新版をダウンロードできます。  
+
 
   > boost, jemallocは必須です。これらの Path 設定は 32bit と 64bit を同時に指定して良いです。  
   > また、上記 root 設定は l_pic, cpic_rel など本ドキュメント記載のツールを使う場合の設定です。  
   > HTS 処理で使っている root ツールの環境設定とは別です。  
-  
-  > C/C++ runtime というのは Visual C++ 20XX 再頒布可能パッケージと呼ばれているもので、ウェブから最新版をダウンロードできます。  
-  > どれが必要か分からない場合、```C++ 2010 x86, C++ 2010 x64, C++ 2013 x86, C++ 2013 x64, C++ 2015 x86, C++ 2015 x64``` の  
-  > 6つを入れておくことをお勧めします。
