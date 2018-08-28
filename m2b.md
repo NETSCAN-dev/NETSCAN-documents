@@ -49,20 +49,10 @@
 
 + runcard ( m:/prg/netscan/ver-2011-03-01/rc/m2b.rc )
   ```
-#
-# ver-2006-11-05 の mt2bt を --exec-local-correction で動かす場合は、
-# ErrDist と ErrShur はそれぞれの補正パラメータの探索範囲として使われ、
-# トラックのつなぎの際には、それぞれの誤差は ErrDist = 0.020, ErrShur = 0.01 
-# ( これらの値は、それぞれの補正パラメータを探索する際のステップ ) 
-# としてつなぎを行っていた。
-# これとは異なり m2b では ErrDist と ErrShur はつなぎの許容範囲計算での
-# それぞれのパラメータの誤差として使われる。
-#
 [MT2BT]
 Algorithm   = 0 # 0 => ConnectBase2 / 1 => ConnectLinklet
 FACE1       = 0.0 0.0 0.0 0.000 0.000 1.00
 FACE2       = 0.0 0.0 0.0 0.000 0.000 1.00
-ErrPos      = 10.0;
 ErrAng      = 0.060
 ErrDist     = 0.000
 ErrShur     = 0.010

@@ -50,3 +50,8 @@
   - --edit fname-edit
   > edit limited properties of each base track ( x,y,col,row are not accepted ).  
   > 'fname-edit' format is that of dump_bvxx output with --format 0/3.  
+
+  - --cut-rl face1-rad-0 face1-rad-1 face1-lat-0 face2-rad-0 face2-rad-1 face2-lat-0
+  > radial-lateral cut  
+  > face1/2-rad max difference = face1/2-rad-0 + face1/2-rad-1 x base-angle  
+  > face1/2-lat max difference = face1/2-lat-0  
