@@ -67,6 +67,9 @@
   - --log ( obsoleted )
   >  
 
+  - --max-write-views max-views-in-write-queue
+  > limit # of views in write queue. use this option when you faced memory usage problem.  
+
 + runcard ( m:/prg/netscan/ver-2011-03-01/rc/t2l.rc )
   ```
 [Linklet]

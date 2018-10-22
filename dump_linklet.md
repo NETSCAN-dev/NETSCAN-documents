@@ -95,4 +95,7 @@
   > $5 : high cache blocks for base-vxx  
   > $6 : high cache blocks for linklet-vxx  
 
+  - --max-write-views max-views-in-write-queue
+  > limit # of views in write queue. use this option when you faced memory usage problem.  
+
   ```options --v and --c-view are obsoleted ( use --format 1 instead of --v ).```
