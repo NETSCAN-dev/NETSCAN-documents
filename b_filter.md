@@ -55,3 +55,8 @@
   > radial-lateral cut  
   > face1/2-rad max difference = face1/2-rad-0 + face1/2-rad-1 x base-angle  
   > face1/2-lat max difference = face1/2-lat-0  
+
+  - ---trapezoid a0 b0 c0 a1 b1 c1 a2 b2 c2 a3 b3 c3  
+  > apply projective transformation  
+  > X = ( a0*x+b0*y+c0 )/( a1*x+b1*y+c1 )  
+  > Y = ( a2*x+b2*y+c2 )/( a3*x+b3*y+c3 )  

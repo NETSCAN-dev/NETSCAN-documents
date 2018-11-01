@@ -6,8 +6,8 @@
   - add Z:\usr\boost_1_65_0\stage\lib64 and Z:\usr\boost_1_65_0\stage\lib32 to PATH  
   - add Z:\usr\boost_1_59_0\stage\lib64 and Z:\usr\boost_1_59_0\stage\lib32 to PATH  
   > those path are for f-lab intranet and depends on where you installed boost.  
-+ jemalloc ( Komatani patch is required )
-  - add Z:\usr\jemalloc\bin64 and Z:\usr\jemalloc\bin to PATH
++ jemalloc ( 5.1.0 for ver-2016-09-01 and Komatani-patch for earlier versions )
+  - add Z:\usr\jemalloc-5.1.0\dll64 and Z:\usr\jemalloc-5.1.0\dll to PATH
 + root ( required for 32bit only )
   - set ROOTSYS=z:\usr\root\root_v5.34.32_vc10
   - add %ROOTSYS%\bin to PATH
