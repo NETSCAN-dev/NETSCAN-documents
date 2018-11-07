@@ -49,6 +49,11 @@
   - --filter-max-track-per-view value
   > avoid process in views having max-track-per-view track or more
 
+  - --filter-area area-list-file
+  > For each view, use tracks in areas given in area-list-file only.  
+  > This option will be useful for whole plate (pc) alignment.  
+  > First 4 columns of each line in area-list-file should be xmin, xmax, ymin and ymax.  
+
 + runcard template( m:/prg/netscan/ver-2011-03-01/rc/align-0.rc )
 
 ```
