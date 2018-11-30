@@ -32,11 +32,12 @@
   > view-select-mode ( optional ) can be specified to limit views used for process as  
   > 1 = one view in center / 2 = one view in center and 4 views in corners.  
 
-  - **--search-mode 0/1/2 \[ fname-corrmap-i \]**
-  > set search mode ( default = 2 )  
-  > 0 : independent search. use global alignment result as a basis in each process-view  
-  > 1 : begin search in each process-view using fname-corrmap-i specified in this option.  
-  > 2 : begin search in each prcess-view using closest process-view's result.  
+  - **--search-mode 0/1 \[ fname-corrmap-i \]**
+  > This option is to give fname-corrmap-i as a starting point for alignment search.  
+  > There is  no difference between mode 0 and 1 and  
+  > They are remained just for backward compatibility of this option.  
+  > Without fname-corrmap-i specified, search starts from unit affine transform.  
+  > Mode = 2 was discarded.  
 
   - --offset-xy offset-i offset-x offset-y
   > modify GlobalAlign::PositionWindow as  
@@ -78,6 +79,8 @@ HistogramFileTemplate   =           # dump histogram data if specified like hist
                                     # ( format specifiers are for pl0,pl1,view-id,peak-id in the file-name. see below for format spec. )
 Zproj           = 0.5               # 最近接ベース面間距離を Zproj : 1-Zproj に内分する z で alignment 探索を行う。default = 0.5
 GhostFilter     = 1.0 0.007
+InternalMode    = 2                 # 0:従来動作の内部計算 / 1:PositionError をビン幅とする / 2:PositonError+=nominal-dz*AngleError をビン幅とする。
+                                    # InteranlMode=1/2 を推奨。0 は廃止予定。
 ```
 
   > File specified by HistogramFileTemplate has [[dump-file format|ali-histogram]].  

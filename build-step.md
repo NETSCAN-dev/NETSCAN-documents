@@ -22,11 +22,11 @@
   - cd your-repository
   - hg clone --branch ver-2016-09-01 http://192.168.0.129/repos/hg/netscan . ( do not forget last '.' which means current folder )  
   - mkdir obj
-  - perl ..\config\objdir.pl win-msvc-x64-12
+  - perl ..\config\objdir.pl win-msvc-x64-15
 
 
 + Build NETSCAN application.
-  - cd your-repositoryobj\win-msvc-x64-12
+  - cd your-repositoryobj\win-msvc-x64-15
   - make clean
   - make all
   - make install

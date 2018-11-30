@@ -28,11 +28,12 @@
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
   > see [[view-step and view-overlap definitions|mk_views]].  
 
-  - --search-mode 0/1/2 \[ fname-corrmap-i \]
-  > set search mode ( default = 2 )  
-  > 0 : independent search. use global alignment result as a basis in each process-view  
-  > 1 : begin search in each process-view using fname-corrmap-i specified in this option.  
-  > 2 : begin search in each prcess-view using closest process-view's result.  
+  - --search-mode 0/1 \[ fname-corrmap-i \]
+  > This option is to give fname-corrmap-i as a starting point for alignment search.  
+  > There is  no difference between mode 0 and 1 and  
+  > They are remained just for backward compatibility of this option.  
+  > Without fname-corrmap-i specified, search starts from unit affine transform.  
+  > Mode = 2 was discarded.  
 
   - --filter-list filter-list +1/-1
   > include (+1) or exclude (-1) [[list-filter|filter-list]]  
@@ -59,7 +60,7 @@ PeakSizeMin     = 1.0 0.000         # minimum peak size ( $1+$2*gap ) to be sear
 PeakSizeMax     = 50.0              # maximum peak size to be serarched 
 Gap             = 0.01 50.0 1.0     # 探索範囲 +/- ( 50.0 + 0.01xnominal-dz ) を 1.0micron ステップ
 IsVerbose       = 0
-AffineFitMode   = 1                 # 0 = full affine fit / 1 = shrink+rotation+shift
+AffineFitMode   = 1                 # 0 = full affine fit / 1 = shrink+rot+shift / 2 = shirnk+rot
 Zproj           = 0.5               # 最近接ベース面間距離を Zproj : 1-Zproj に内分する z で alignment 探索を行う。default = 0.5
 ```
 

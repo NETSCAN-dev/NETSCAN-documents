@@ -13,6 +13,10 @@
 > For view size larger than 32.5mm,  
 > micro-track's position resolution in connection calculation  
 > becomes x2 worse than basic resolution of 0.015micron.  
+>
+> Angle torelance is calculated as ErrAng + ErrDist + ErrShur x base-track-angle for x and y projections.  
+>
+
 + usage : m2b pl[-zone] [options]
 + options ( those are in **bold** must be given )
   - **--descriptor event-descriptor**
@@ -60,5 +64,6 @@ PHCUT       = 0 0.1 0
 PHSUMCUT    = 0 0.1 0
 VolCut      = 0 0.1 0
 GhostFilter = 0 5 10 <- enable dr dt <- obsoleted
+(*) 角度ズレ許容範囲 = ErrAng + ErrDist + ErrShur x ベース角
 (*) ConnectLinklet を使う際の runcard は t2l 用の Mode = 0 を参照のこと
   ```
