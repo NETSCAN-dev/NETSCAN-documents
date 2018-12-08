@@ -25,29 +25,31 @@
   >>  運動量 pmin, 角度 0 のトラックに対して、  
   >>  投影 Z 面を [z1,z2] の間を 100 分割した各 Z に置き、  
   >>  それぞれの 投影 Z 面での多重散乱起因の位置・角度の rms を 1000 回のモンテカルロ計算で求める。  
-  >>  そして、与えられた Errors1,2,3,4 を加味し、位置エラーが最小となる投影 Z 面を求める。  
+  >>  そして、与えられた Errors1,2,3,4 を加味し、位置エラーが最小となる投影 Z 面 (zp) を求める。  
   >>  その Z 面での多重散乱起因の位置・角度の rms を ErrMonPos,ErrMonAng とする。  
+  >>  
+  >>  s = sqrt(2) &times; sigma  
   >>  
 
   > Mode = 0  
   >>  ErrMomAng = 0  
   >>  ErrMomPos = 0  
   >>  zp = (1-f)*z1+f*z2 ( f is Linklet::Zproj in runcard or 0.5 )  
-  >>  sigma = 1  
-  >>  (*) these variables, which are used in calulation shown below, are fixed as above.  
- 
+  >>  s = 1  
+  >>
+
   > z1,z2 : 接続を試みる２面それぞれの Z 座標 ( BaseTrack の場合は、相互に近い側の乳剤ベース面 )  
   > ax,ay : 接続を試みるトラックの平均角度の絶対値  
   >  
   > dz1 = fabs( z1-zp )  
   > dz2 = fabs( z2-zp )  
   >  
-  > eax = sigma &times; sqrt( (ErrAx1+ErrCax1 &times; ax)<sup>2</sup> + (ErrAx2+ErrCax2 &times; ax)<sup>2</sup> + (ErrMomAng)<sup>2</sup> &times; w )  
-  > eay = sigma &times; sqrt( (ErrAy1+ErrCay1 &times; ay)<sup>2</sup> + (ErrAy2+ErrCay2 &times; ay)<sup>2</sup> + (ErrMomAng)<sup>2</sup> &times; w )  
+  > eax = s &times; sqrt( (ErrAx1+ErrCax1 &times; ax)<sup>2</sup> + (ErrAx2+ErrCax2 &times; ax)<sup>2</sup> + (ErrMomAng)<sup>2</sup> &times; w )  
+  > eay = s &times; sqrt( (ErrAy1+ErrCay1 &times; ay)<sup>2</sup> + (ErrAy2+ErrCay2 &times; ay)<sup>2</sup> + (ErrMomAng)<sup>2</sup> &times; w )  
   >> w &equiv; sqrt( 1.0 + min(ax<sup>2</sup>+ay<sup>2</sup>,1.0) ) &larr; トラックの角度により、通過経路が長くなる効果を補正するための係数。
   >  
-  > ex = sigma &times; sqrt( (ErrX1+ErrCx1 &times; ax )<sup>2</sup> + (dz1 &times; (ErrAx1+ErrCax1 &times; ax))<sup>2</sup> + (ErrX2+ErrCx2 &times; ax)<sup>2</sup> + (dz2 &times; (ErrAx2+ErrCax2 &times; ax))<sup>2</sup> + ErrMomPos<sup>2</sup> &times; w<sup>3</sup> )  
-  > ey = sigma &times; sqrt( (ErrY1+ErrCy1 &times; ay )<sup>2</sup> + (dz1 &times; (ErrAy1+ErrCay1 &times; ay))<sup>2</sup> + (ErrY2+ErrCy2 &times; ay)<sup>2</sup> + (dz2 &times; (ErrAy2+ErrCay2 &times; ay))<sup>2</sup> + ErrMomPos<sup>2</sup> &times; w<sup>3</sup> )  
+  > ex = s &times; sqrt( (ErrX1+ErrCx1 &times; ax )<sup>2</sup> + (dz1 &times; (ErrAx1+ErrCax1 &times; ax))<sup>2</sup> + (ErrX2+ErrCx2 &times; ax)<sup>2</sup> + (dz2 &times; (ErrAx2+ErrCax2 &times; ax))<sup>2</sup> + ErrMomPos<sup>2</sup> &times; w<sup>3</sup> )  
+  > ey = s &times; sqrt( (ErrY1+ErrCy1 &times; ay )<sup>2</sup> + (dz1 &times; (ErrAy1+ErrCay1 &times; ay))<sup>2</sup> + (ErrY2+ErrCy2 &times; ay)<sup>2</sup> + (dz2 &times; (ErrAy2+ErrCay2 &times; ay))<sup>2</sup> + ErrMomPos<sup>2</sup> &times; w<sup>3</sup> )  
   >  
   > これら eax,eay,ex,ey を使い、下記で接続判定を行う。  
 
