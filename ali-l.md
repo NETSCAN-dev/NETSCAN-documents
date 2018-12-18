@@ -60,7 +60,7 @@ PeakSizeMin     = 1.0 0.000         # minimum peak size ( $1+$2*gap ) to be sear
 PeakSizeMax     = 50.0              # maximum peak size to be serarched 
 Gap             = 0.01 50.0 1.0     # 探索範囲 +/- ( 50.0 + 0.01xnominal-dz ) を 1.0micron ステップ
 IsVerbose       = 0
-AffineFitMode   = 1                 # 0 = full affine fit / 1 = shrink+rot+shift / 2 = shirnk+rot
+AffineFitMode   = 1                 # 0 = full affine fit / 1 = shrink+rot+shift / 2 = rot+shift
 Zproj           = 0.5               # 最近接ベース面間距離を Zproj : 1-Zproj に内分する z で alignment 探索を行う。default = 0.5
 ```
 
