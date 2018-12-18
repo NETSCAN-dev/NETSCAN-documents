@@ -40,7 +40,8 @@
 
   - --o fname-out
   > *This option is for l2c-x only.*  
-  > specify output file. default output is to stdout.  
+  > specify output file. default output is to fname-out = "chain_dat.txt".  
+  > fname-out = "-" is to stdout.  
 
 + runcard ( m:/prg/netscan/ver-2016-09-01/rc/chain.rc )
   ```
