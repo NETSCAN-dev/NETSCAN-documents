@@ -1,5 +1,7 @@
 #### NETSCAN document
 + maintained <a href="https://gitlab.com/kkodama/NETSCAN-documents.git">here</a>
++ <a href="http://heplab3.physics.aichi-edu.ac.jp/kodama/netscan/downloads/">binary relases</a>
++ <a href="http://heplab3.physics.aichi-edu.ac.jp/kodama/netscan/downloads/">tools</a>
 
 ##### README
 + [[binary release|binary-release]]
