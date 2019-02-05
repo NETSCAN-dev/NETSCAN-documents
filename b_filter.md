@@ -36,10 +36,10 @@
   > apply affine transform on angle ax-ay  
 
   - --ph nbin wbin val ...
-  > apply phmin cut  
+  > apply phmin cut. cut is on the sum of ph of micro-tracks.  
 
   - --vol nbin wbin val ...
-  > apply volmin cut  
+  > apply volmin cut. cut is on the sum of vol of micro-tracks.  
 
   - --append
   > append base tracks to output vxx file  
