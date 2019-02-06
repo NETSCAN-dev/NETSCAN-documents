@@ -32,7 +32,7 @@
 
   #
   # BaseTrack の vxx ファイルを指定します。
-  # 左辺は pl 0 です。
+  # 左辺は pl zone です。
   # 右辺は file-name block-size です。通常は block-size = 1000000 として下さい。
   #
   [BaseTrackBlock]
