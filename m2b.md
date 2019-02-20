@@ -8,7 +8,10 @@
 > Other values given in correction-map-file are NOT used in this program.  
 > They are used to obtain correct micro-track x,y,z when micro-tracks are read-out.  
 >   
-> To suppress memory usage in Corei7, try "set OMP_NUM_THREADS=4" or less.  
+> \# of threads in m2b is NOW FIXED to be  
+> `std::min(GetProcessorInfo().nCore,6)` for process-view loop, and  
+> `0.65*GetProcessorInfo().nCore` for internal connection algorithm.  
+> ~~To suppress memory usage in Corei7, try "set OMP_NUM_THREADS=4" or less.~~  
 >   
 > For view size larger than 32.5mm,  
 > micro-track's position resolution in connection calculation  
