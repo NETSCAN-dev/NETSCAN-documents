@@ -42,6 +42,11 @@
   > *This option is for l2c-x only.*  
   > specify output file. default output is to fname-out = "chain_dat.txt".  
   > fname-out = "-" is to stdout.  
+ 
+  - --over fname-over
+  > *This option is for l2c only.*  
+  > specify output file for groups having more than Chain::UpperLim chains.  
+  > default is "over_upperlim.dat".  
 
 + runcard ( m:/prg/netscan/ver-2016-09-01/rc/chain.rc )
   ```
