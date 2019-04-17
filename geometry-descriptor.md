@@ -45,7 +45,7 @@
 ```
 
 + chamber.kar ( m:/prg/netscan/ver-2011-03-01/rc/chamber-0.kar )  
-  ```
+```
   CHAMBER OPERA_ECC_EXPOSE B999 -1 0.0        <- (*3)
   01   01 OPERAFilm -1 0.000000 0.000000 1.000000 0.000000 <- (*4)
   Pb01 -1 OPERAPb   -1 0.000000 0.000000 1.000000 0.000000
@@ -66,7 +66,7 @@
        $4 : object coordinate's z-direction is the same (+1) or opposite (-1) to that of stack coordinate. 
        $5,$6 : (x,y) of object-coordinate's origin (0,0) in chamber/stack coordinate. 
        $7,$8 : direction vector of object coordinate's x-axis in chamber/stack corrdinate. 
-  ```
+```
   > ```[chamber-z-direction]x[$4-of-each-parts] == 1 is required, because of limited implementation in the code.```  
 
 + coordinate systems
