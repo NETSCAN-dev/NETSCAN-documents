@@ -7,7 +7,7 @@
 > ![face-definition](./hts2fvxx.png)
 
 + parts.kar ( m:/prg/netscan/ver-2011-03-01/rc/parts.kar )  
-  ```
+```
   #
   # opera file                    <- コメント行
   #
