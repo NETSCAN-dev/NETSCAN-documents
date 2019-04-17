@@ -55,7 +55,7 @@
   > (*) implemented by Komatani probably fot HTS specific needs.  
 
 + runcard ( m:/prg/netscan/ver-2011-03-01/rc/m2b.rc )
-  ```
+```
 [MT2BT]
 Algorithm   = 0 # 0 => ConnectBase2 / 1 => ConnectLinklet
 FACE1       = 0.0 0.0 0.0 0.000 0.000 1.00
@@ -69,4 +69,4 @@ VolCut      = 0 0.1 0
 GhostFilter = 0 5 10 <- enable dr dt <- obsoleted
 (*) 角度ズレ許容範囲 = ErrAng + ErrDist + ErrShur x ベース角
 (*) ConnectLinklet を使う際の runcard は t2l 用の Mode = 0 を参照のこと
-  ```
+```
