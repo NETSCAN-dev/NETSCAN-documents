@@ -59,7 +59,7 @@
   > set verbose console output  
 
 + runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )
-  ```
+```
 [DC]
 #
 # FACE1,FACE2 で探索開始位置 dx dy dz dax day shrink_inv dz_fulcrum を指定する。
@@ -99,4 +99,4 @@ DumpDebugInfoFileName = xxx.xxx # Enable debug-info output to a file "xxx.xxx",
                                   # $5,$6  : face 2 micro-track ax,ay corrected  
                                   # $7,$8  : face 1 micro-track ax,ay raw  
                                   # $9,$10 : face 2 micro-track ax,ay raw  
-  ```
+```
