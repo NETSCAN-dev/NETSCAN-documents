@@ -11,11 +11,11 @@
   - **--pos pos0 pos1**
   > limit dump linnklets between pos0 - pos1, otherwise all  
 
-  - **--descriptor event-descriptor**
-  > set event descriptor  
+  - **--descriptor [event-descriptor](event-descriptor)**
+  > set [event-descriptor](event-descriptor)  
 
   - --io fname-io
-  > override event descriptor entries  
+  > override [event-descriptor](event-descriptor) entries  
 
   - **--geom geom**
   > set geometry 0/1/...  

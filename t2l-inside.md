@@ -3,7 +3,7 @@
 ---
 
 > Actual connection window evaluated from runcard settings can be obtained using a program,  
-> ```linklet_window pos1 pos2 event-descriptor rc --geom 0/1```  
+> ```linklet_window pos1 pos2 [event-descriptor](event-descriptor) rc --geom 0/1```  
 
 ---
 

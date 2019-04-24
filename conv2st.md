@@ -7,7 +7,7 @@
 > if eventdescriptor is not specified, use parts.kar and chamber.kar in current folder  
 + options
   - --desriptor eventdescriptor
-  > set event-descriptor  
+  > set [event-descriptor](event-descriptor)  
 
   - --geom 0/1/2/...
   > set geometry in eventdescriptor ( default = 0 )  

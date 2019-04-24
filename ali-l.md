@@ -7,11 +7,11 @@
 + usage : ali-l pl0[-zone0 pl1[-zone1] [options]  
   > default value for zone0/1 are 0  
 + options ( those are in **bold** must be given )
-  - **--descriptor event-descriptor**
-  > set event descriptor  
+  - **--descriptor [event-descriptor](event-descriptor)**
+  > set [event-descriptor](event-descriptor)  
 
   - --io fname-io  
-  > override event descriptor entries  
+  > override [event-descriptor](event-descriptor) entries  
 
   - **--rc runcard-file**
   > set runcard  

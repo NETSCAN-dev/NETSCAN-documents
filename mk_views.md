@@ -7,11 +7,11 @@
 > specify same pos for pos0 and pos1 to make a list for one plate  
 
 + options ( those are in **bold** must be given )
-  - **--descriptor event-descriptor**
-  > set event descriptor  
+  - **--descriptor [event-descriptor](event-descriptor)**
+  > set [event-descriptor](event-descriptor)  
 
   - --io fname-io
-  > override event descriptor entries  
+  > override [event-descriptor](event-descriptor) entries  
 
   - **--view view-step view-overlap**
   > set view step and overlap by value  

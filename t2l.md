@@ -9,11 +9,11 @@
   - **--pos pos0[-zone0] pos1[-zone1]**
   > set pos ( plate + face ) pair to connect. default for zone = 0.  
 
-  - **--descriptor event-descriptor**
-  > set event descriptor  
+  - **--descriptor [event-descriptor](event-descriptor)**
+  > set [event-descriptor](event-descriptor)  
 
   - --io fname-io
-  > override event descriptor entries  
+  > override [event-descriptor](event-descriptor) entries  
 
   - **--rc runcard-file**
   > set runcard  

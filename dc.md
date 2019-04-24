@@ -2,20 +2,20 @@
 #### dc
 ---
 
-+ description : search shrink and distortion. no correction tried for FulcrumDz in runcard
++ description : search shrink and distortion. no correction tried for FulcrumDz in [runcard](#runcard)
 + usage : dc pl[-zone] [options]
 + options ( those are in **bold** must be given )
-  - **--descriptor event-descriptor**
-  > set event descriptor  
+  - **--descriptor [event-descriptor](event-descriptor)**
+  > set [event-descriptor](event-descriptor)  
 
   - --io fname-io
-  > override event descriptor entries  
+  > override [event-descriptor](event-descriptor) entries  
 
-  - **--rc fname-runcard**
-  > set runcard  
+  - **--rc fname-[runcard](#runcard)**
+  > set [runcard](#runcard)  
 
-  - **--o correction-map-file [w/a]**
-  > set [[correction-map-dc(absolute)|correction-map]]  
+  - **--o [correction-map](correction-map)-file [w/a]**
+  > set [[[correction-map](correction-map)-dc(absolute)|[correction-map](correction-map)]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
 
   - **--view view-step view-overlap**  
@@ -23,13 +23,13 @@
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
   > see [[view-step and view-overlap definitions|mk_views]].  
 
-  - --c correction-map-file
-  > set correction-map file used as a starting point for each view  
+  - --c [correction-map](correction-map)-file
+  > set [correction-map](correction-map) file used as a starting point for each view  
 
   - --search-mode 0/1/2
   > set search mode ( default = 0 )  
   > 0 : independent search. use first values of ErrDist and ErrShur  
-  > 1 : begin search in each view using correction-map given in --c option  
+  > 1 : begin search in each view using [correction-map](correction-map) given in --c option  
   > 2 : begin search in each view using closest view's result. use second values of ErrDist and ErrShur if they exists  
 
   - --filter-angle +1/-1 axmin axmax aymin aymax
@@ -59,6 +59,7 @@
   > set verbose console output  
 
 + runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )
+#### runcard
 ```
 [DC]
 #

@@ -3,7 +3,7 @@
 ---
 
 + description : evaluate connection window from runcard [Linklet]  
-+ usage : linklet_window *pos0* *pos1* *event-descriptor* *rc-file* [ --geom *id* ]
++ usage : linklet_window *pos0* *pos1* *[event-descriptor](event-descriptor)* *rc-file* [ --geom *id* ]
 
   > Z-correction in a correction-map given to t2l is not taken into account,  
   > while in evaluating connection windows by this code.  

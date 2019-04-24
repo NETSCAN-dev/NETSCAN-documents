@@ -8,11 +8,11 @@
   
   ```db_shell --descriptor eventdescriptor.ini --geom 0 --c correction-map-align.lst distortion.lst```
 
-  - **--descriptor event-descriptor**
-  > set event descriptor  
+  - **--descriptor [event-descriptor](event-descriptor)**
+  > set [event-descriptor](event-descriptor)  
 
   - --io fname-io
-  > override event descriptor entries  
+  > override [event-descriptor](event-descriptor) entries  
 
   - --geom geom
   > set geometry 0/1/... ( default 0 )  
