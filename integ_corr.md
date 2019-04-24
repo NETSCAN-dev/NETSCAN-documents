@@ -11,8 +11,8 @@
 
 + usage : integ_corr *correction-map-rel(in)* *correction-map-abs(out)* [*options*]
 + options ( those are in **bold** must be given )
-  - **--descriptor [event-descriptor](event-descriptor)**
-  > set [event-descriptor](event-descriptor)  
+  - **--descriptor [event-descriptor](event-descriptor.md)**
+  > set [event-descriptor](event-descriptor.md)  
 
   - --geom geom
   > set geometry 0/1/...  

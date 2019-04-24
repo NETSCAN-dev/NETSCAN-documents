@@ -5,11 +5,11 @@
 + usage : l_pic [ options ] < linklet-dump-file
   > This program assumes output file created by dump_linklet is to be given from stdin.  
 + options ( those are in **bold** must be given )
-  - **--descriptor [event-descriptor](event-descriptor)**
-  > set [event-descriptor](event-descriptor)  
+  - **--descriptor [event-descriptor](event-descriptor.md)**
+  > set [event-descriptor](event-descriptor.md)  
 
   - --io fname-io
-  > override [event-descriptor](event-descriptor) entries  
+  > override [event-descriptor](event-descriptor.md) entries  
 
   - --geom 0/1/...
   > set geometry 0/1/... ( default = 0 )  

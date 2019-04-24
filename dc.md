@@ -6,10 +6,10 @@
 + usage : dc pl[-zone] [options]
 + options ( those are in **bold** must be given )
   - **--descriptor [event-descriptor](event-descriptor.md)**
-  > set [event-descriptor](event-descriptor)  
+  > set [event-descriptor](event-descriptor.md)  
 
   - --io fname-io
-  > override [event-descriptor](event-descriptor) entries  
+  > override [event-descriptor](event-descriptor.md) entries  
 
   - **--rc fname-[runcard](#runcard)**
   > set [runcard](#runcard)  
