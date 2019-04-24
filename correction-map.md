@@ -40,6 +40,11 @@
 
 > (ii) This value is "measured-base-thickness - nominal-base-thickness" for face-2 and 0 for face-1  
 
+#### ShrinkとDistortion
+
+ShrinkとDistortionは、角度に対するアフィンパラメータとして与えられる。
+詳細は(i)を参照してほしいが、 `a,b,c,d,p,q affine parameter for angle` の `a` がShrinkであり、 `p,q` がそれぞれ `DAX DAY` である。
+
 ---
 #### correction-map-relative
 ---  
