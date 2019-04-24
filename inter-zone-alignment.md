@@ -30,6 +30,6 @@ ex.) PL23(Area3)を基準としてPL23(Area1)のアライメントを取る場�
  * 作成した correction-map の中には zone は埋め込めないので、ファイル名などでユーザーが管理する。
 
 参考資料
- NETSCAN manual の mk_views,ali-g のページ http://heplab3.physics.aichi-edu.ac.jp/kodama/netscan/docs.md/index.html
+ NETSCAN manual の [mk_views](mk_views),ali-g のページ http://heplab3.physics.aichi-edu.ac.jp/kodama/netscan/docs.md/index.html
 ```
 

@@ -21,7 +21,7 @@
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
-  > see [[view-step and view-overlap definitions|mk_views]].  
+  > see [[view-step and view-overlap definitions|[mk_views](mk_views)]].  
 
   - --c [correction-map](correction-map)-file
   > set [correction-map](correction-map) file used as a starting point for each view  
@@ -36,8 +36,8 @@
   > use angle regions (+1) or exclude angle regions(-1) in parameter search  
   > multiple entries are accepted and includes(+1) are first evaluated and then excludes(-1)  
 
-  - --filter-list filter-list +1/-1
-  > include (+1) or exclude (-1) list-filter  
+  - --[filter-list](filter-list) [filter-list](filter-list) +1/-1
+  > include (+1) or exclude (-1) [filter-list](filter-list)  
 
   - --filter-phmin phmin
   > phmin filter  
@@ -58,8 +58,8 @@
   - --debug 1 
   > set verbose console output  
 
-+ runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )
 #### runcard
+runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )
 ```
 [DC]
 #

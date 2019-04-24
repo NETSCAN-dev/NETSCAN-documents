@@ -46,8 +46,8 @@
   > when offset_i = 1 &rArr; xmin-offset_x, xmax-offset_x, ymin-offset_y, ymax-offset_y  
   > when offset_i = 2 &rArr; xmin+offset_x, xmax+offset_x, ymin+offset_y, ymax+offset_y  
 
-  - --filter-list filter-list +1/-1
-  > include (+1) or exclude (-1) [[list-filter|filter-list]]  
+  - --[filter-list](filter-list) [filter-list](filter-list) +1/-1
+  > include (+1) or exclude (-1) [[[filter-list](filter-list)|[filter-list](filter-list)]]  
 
   - --filter-max-track-per-view value
   > avoid process in views having max-track-per-view track or more

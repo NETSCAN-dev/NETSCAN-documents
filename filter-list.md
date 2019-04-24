@@ -4,7 +4,7 @@
 > One can not have additional columns in this filter list,  
 > since the number of columns is used to recognize different formats.  
 
-+ list-filter-file format for base tracks
++ filter-list-file format for base tracks
   - specify each base track case-1
   > pl rawid  
 
@@ -15,7 +15,7 @@
   - specify all base tracsk in a view
   > pos col row zone  
 
-+ list-filter-file format for micro tracks
++ filter-list-file format for micro tracks
   - specify each micro track case-1
   > pos rawid  
 

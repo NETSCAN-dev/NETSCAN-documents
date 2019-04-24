@@ -4,7 +4,7 @@
 
 + description
   > This is a process-view-list which can be given as an argument for option --view in core-1 programs.  
-  > One can use [[mk_views|mk_views]] to create for each data-set.  
+  > One can use [[[mk_views](mk_views)|[mk_views](mk_views)]] to create for each data-set.  
 
 + view-list-file
   ```
