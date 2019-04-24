@@ -25,8 +25,8 @@
   - --err errpos errang
   > set plot area size ( &plusmn; errpos &times; 2 and &plusmn; errang &times; 2 ) directly.  
   
-  - --c-view fname-corrmap
-  > set corrmap file used by t2l. this is used to know a view size to determine plot area size.  
+  - --c-view fname-correction-map
+  > set correction-map file used by t2l. this is used to know a view size to determine plot area size.  
   
   - --o prefix
   > set output file prefix. prefix.root and prefix.ps are created ( default is l_pic.root ).  

@@ -21,24 +21,24 @@
   - **--id-geom geom**
   > set geometry 0/1/...  
 
-  - **--pc corrmap-pc-file**
-  > set [[corrmap-pc(relative)|correction-map]] ( global )  
+  - **--pc correction-map-pc-file**
+  > set [[correction-map-pc(relative)|correction-map]] ( global )  
 
-  - **--c corrmap-file**
-  > set [[corrmap-align(relative)|correction-map]] ( local with global convoluted )  
+  - **--c correction-map-file**
+  > set [[correction-map-align(relative)|correction-map]] ( local with global convoluted )  
 
-  - **--dif corrmap-file**
-  > set [[corrmap-dif(relative)|correction-map]] ( local only )  
+  - **--dif correction-map-file**
+  > set [[correction-map-dif(relative)|correction-map]] ( local only )  
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
   > set view step and overlap by value or by [[view-list-file|view-list]]  
   > (*) 1st line of a view-list-file is used for global alignment.  
 
-  - --search-mode 0/1/2 \[ fname-corrmap-i \]
+  - --search-mode 0/1/2 \[ fname-correction-map-i \]
   > set search mode ( default = 2 )  
   > 0 : independent search. use global alignment result as a basis in each process-view  
-  > 1 : begin search in each process-view using fname-corrmap-i specified in this option.  
+  > 1 : begin search in each process-view using fname-correction-map-i specified in this option.  
   > 2 : begin search in each prcess-view using closest process-view's result.  
 
   - --offset-xy offset-i offset-x offset-y

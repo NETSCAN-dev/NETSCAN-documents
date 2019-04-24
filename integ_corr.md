@@ -9,7 +9,7 @@
   > this code calculates SIGNLE affine parameter for each plate by fitting all affine parameters in one plate first,  
   > and then integrates these SINGLE affine parameters to obtain absolute correction map.  
 
-+ usage : integ_corr *corrmap-rel(in)* *corrmap-abs(out)* [*options*]
++ usage : integ_corr *correction-map-rel(in)* *correction-map-abs(out)* [*options*]
 + options ( those are in **bold** must be given )
   - **--descriptor event-descriptor**
   > set event descriptor  
@@ -21,7 +21,7 @@
   > enable(1) or disable(0/defaule) global correction to fix end-plates  
 
   - --split 0/1
-  > 1: corrmap-abs with plate(0) or pos(1) entries  
+  > 1: correction-map-abs with plate(0) or pos(1) entries  
 
   - --fix pos
   > fix specified pos  

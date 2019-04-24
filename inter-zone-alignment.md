@@ -21,13 +21,13 @@ ex.) PL23(Area3)を基準としてPL23(Area1)のアライメントを取る場�
  y shift = -4mm - 76mm   = -80mm = -80000um
 
 (4) global alignment
- m:\prg\netscan\ver-2016-09-01\obj\win-msvc-x64-12\bin\ali-g.exe 23-0 23-1 --descriptor ..\EventDescriptor.ini --id-geom 0 --view view.lst --rc ..\..\rc\align.rc --search-mode 0 --c .\align\corrmap-g-23-23-1.lst --offset-xy 1 0 -80000
+ m:\prg\netscan\ver-2016-09-01\obj\win-msvc-x64-12\bin\ali-g.exe 23-0 23-1 --descriptor ..\EventDescriptor.ini --id-geom 0 --view view.lst --rc ..\..\rc\align.rc --search-mode 0 --c .\align\correction-map-g-23-23-1.lst --offset-xy 1 0 -80000
 	(23-0はzone=0のPL23, 23-1はzone=1のPL23という意味)
 	(--offset-xy offset-i offset-x offset-y　でスキャン原点のシフト量を入力する。)
 
 注意点
  * --offset-xy が有効なのは、ver-2016-09-01 のみ。
- * 作成した corrmap の中には zone は埋め込めないので、ファイル名などでユーザーが管理する。
+ * 作成した correction-map の中には zone は埋め込めないので、ファイル名などでユーザーが管理する。
 
 参考資料
  NETSCAN manual の mk_views,ali-g のページ http://heplab3.physics.aichi-edu.ac.jp/kodama/netscan/docs.md/index.html

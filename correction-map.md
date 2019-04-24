@@ -2,6 +2,8 @@
 #### correction-map-absolute
 ---
 
+一部の人が「corrmap(コルマップ)」と呼んでいるものと同一である。ドキュメント上は「correction-map」で統一する。
+
   > used for distortion-shrink correction and absolute correction among plates  
 
   ```

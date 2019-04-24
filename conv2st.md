@@ -18,8 +18,8 @@
   - --format 0/1
   > set output format ( 0:st-file / 1:detailed-dump )  
   
-  - --c corrmap-absolute.lst
-  > apply correction in z by corrmap-absolute.lst  
+  - --c correction-map-absolute.lst
+  > apply correction in z by correction-map-absolute.lst  
   
   - --dir current-folder
   > set current folder to parse correctly a given eventdesriptor written using relative path ( to be obsoleted )  

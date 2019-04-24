@@ -14,8 +14,8 @@
   - **--rc fname-runcard**
   > set runcard  
 
-  - **--o corrmap-file [w/a]**
-  > set [[corrmap-dc(absolute)|correction-map]]  
+  - **--o correction-map-file [w/a]**
+  > set [[correction-map-dc(absolute)|correction-map]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
 
   - **--view view-step view-overlap**  
@@ -23,8 +23,8 @@
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
   > see [[view-step and view-overlap definitions|mk_views]].  
 
-  - --c corrmap-file
-  > set corrmap file used as a starting point for each view  
+  - --c correction-map-file
+  > set correction-map file used as a starting point for each view  
 
   - --search-mode 0/1/2
   > set search mode ( default = 0 )  

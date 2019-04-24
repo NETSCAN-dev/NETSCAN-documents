@@ -58,9 +58,9 @@
   - **--rc runcard-file**
   > set runcard used when linklets are built  
 
-  - **--c corrmap-file [ corrmap-dist ]**  
-    **--c - corrmap-dist**
-  > set corrmap-align ( relative corrmap ) and corrmap-dist ( required to connect micro tracks ),  
+  - **--c correction-map-file [ correction-map-dist ]**  
+    **--c - correction-map-dist**
+  > set correction-map-align ( relative correction-map ) and correction-map-dist ( required to connect micro tracks ),  
   > used when linklets are built  
 
   - **--view view-step view-overlap**  

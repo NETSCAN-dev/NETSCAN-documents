@@ -6,7 +6,7 @@
 
 + start db_server process
   
-  ```db_shell --descriptor eventdescriptor.ini --geom 0 --c corrmap-align.lst distortion.lst```
+  ```db_shell --descriptor eventdescriptor.ini --geom 0 --c correction-map-align.lst distortion.lst```
 
   - **--descriptor event-descriptor**
   > set event descriptor  
@@ -17,10 +17,10 @@
   - --geom geom
   > set geometry 0/1/... ( default 0 )  
 
-  - --c corrmap-file [ corrmap-dist ]  
-    --c - corrmap-dist
-  > set relative or absolute corrmap and corrmap-dist.  
-  > **relative corrmap is in effect when you specify plate pair by 'c' command**  
+  - --c correction-map-file [ correction-map-dist ]  
+    --c - correction-map-dist
+  > set relative or absolute correction-map and correction-map-dist.  
+  > **relative correction-map is in effect when you specify plate pair by 'c' command**  
 
   - --dir event-data-folder
   > set current folder of db_server to work with an eventdescriptor written in relavie path.  
@@ -65,7 +65,7 @@
   > read linklet using keys  
   
   - r pos level col row
-  > read correction map **when corrmap vxx is used**  
+  > read correction map **when correction-map vxx is used**  
   
   - r c pl x y
   > get z coordinate with correction-map applied as shown below.  
@@ -83,9 +83,9 @@
   > get x,y corrdinates either not-corrected when is_corrected = 1, or corrected when is_corrected = 0  
 
   ---
-  - c pl0[-zone0] pl1[-zone1] [fname_corrmap]
+  - c pl0[-zone0] pl1[-zone1] [fname_correction-map]
 
-    > set correction pos1[-zone1] relative to pos0[-zone0] using relative corrmap either given as the 3rd argument or specified in --c argument  
+    > set correction pos1[-zone1] relative to pos0[-zone0] using relative correction-map either given as the 3rd argument or specified in --c argument  
 
   ---
   - f m pos max_tracks_per_view [ list_file_name +1/-1 ]

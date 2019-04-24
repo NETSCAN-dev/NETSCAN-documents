@@ -1,10 +1,10 @@
 ---
-#### cpic_rel - make plots of relative corrmap - 32bit only
+#### cpic_rel - make plots of relative correction-map - 32bit only
 ---
 
-+ usage : cpic_rel fname-corrmap fname-ps [ options ]
++ usage : cpic_rel fname-correction-map fname-ps [ options ]
   
-  > fname-corrmap : relative correction map to be plotted.  
+  > fname-correction-map : relative correction map to be plotted.  
   > fname-ps      : output ps file name.  
   
 + options

@@ -19,8 +19,8 @@
   - **--id-geom geom**
   > set geometry 0/1/...  
 
-  - **--c corrmap-file [w/a]**
-  > set [[corrmap-align(relative)|correction-map]]  
+  - **--c correction-map-file [w/a]**
+  > set [[correction-map-align(relative)|correction-map]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
 
   - **--view view-step view-overlap**  
@@ -28,11 +28,11 @@
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
   > see [[view-step and view-overlap definitions|mk_views]].  
 
-  - --search-mode 0/1 \[ fname-corrmap-i \]
-  > This option is to give fname-corrmap-i as a starting point for alignment search.  
+  - --search-mode 0/1 \[ fname-correction-map-i \]
+  > This option is to give fname-correction-map-i as a starting point for alignment search.  
   > There is  no difference between mode 0 and 1 and  
   > They are remained just for backward compatibility of this option.  
-  > Without fname-corrmap-i specified, search starts from unit affine transform.  
+  > Without fname-correction-map-i specified, search starts from unit affine transform.  
   > Mode = 2 was discarded.  
 
   - --filter-list filter-list +1/-1

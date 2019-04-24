@@ -31,8 +31,8 @@
   - **--rc runcard-file**
   > set runcard  
 
-  - **--c corrmap-file**
-  > set corrmap ( output of dc )  
+  - **--c correction-map-file**
+  > set correction-map ( output of dc )  
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**  

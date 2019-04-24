@@ -55,17 +55,17 @@
   # 補正マップの vxx ファイルを指定します。
   # 左辺は pl geometry level (0,1,2,3) です。
   # 右辺は file-name block-size です。通常は block-size = 1000000 として下さい。
-  # (*) この section は補正データの管理に corrmap-vxx を使う場合 ( scripts\2 ) でのみ指定して下さい。それ以外で指定すると動作が遅くなります。
+  # (*) この section は補正データの管理に correction-map-vxx を使う場合 ( scripts\2 ) でのみ指定して下さい。それ以外で指定すると動作が遅くなります。
   #
   [CorrectionMapBlock]
-    1 0 0 = ..\PL01\corrmap-0-0.vxx 1000000
-    1 0 1 = ..\PL01\corrmap-0-1.vxx 1000000
-    1 0 2 = ..\PL01\corrmap-0-2.vxx 1000000
-    1 0 3 = ..\PL01\corrmap-0-3.vxx 1000000
-    2 0 0 = ..\PL02\corrmap-0-0.vxx 1000000
-    2 0 1 = ..\PL02\corrmap-0-1.vxx 1000000
-    2 0 2 = ..\PL02\corrmap-0-2.vxx 1000000
-    2 0 3 = ..\PL02\corrmap-0-3.vxx 1000000
+    1 0 0 = ..\PL01\correction-map-0-0.vxx 1000000
+    1 0 1 = ..\PL01\correction-map-0-1.vxx 1000000
+    1 0 2 = ..\PL01\correction-map-0-2.vxx 1000000
+    1 0 3 = ..\PL01\correction-map-0-3.vxx 1000000
+    2 0 0 = ..\PL02\correction-map-0-0.vxx 1000000
+    2 0 1 = ..\PL02\correction-map-0-1.vxx 1000000
+    2 0 2 = ..\PL02\correction-map-0-2.vxx 1000000
+    2 0 3 = ..\PL02\correction-map-0-3.vxx 1000000
 
   [Parameters]
     FastIoMode = 1          # 通常はこのまま使用して下さい。

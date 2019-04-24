@@ -24,7 +24,7 @@
 + [[ali-l|ali-l]]
 + [[ali ( to be obsoleted )|ali]]
 + [[t2l|t2l]]
-+ [[mk_corrmap|mk_corrmap]]
++ [[mk_correction-map|mk_correction-map]]
 + [[dump_linklet|dump_linklet]]
 + [[l2c|l2c]]
 + [[mkmf_p3|mkmf_p3]]
@@ -43,7 +43,7 @@
 + [[f_filter|f_filter]]
 + [[b_filter|b_filter]]
 + [[mk_views|mk_views]]
-+ [[regulate_corrmap|regulate_corrmap]]
++ [[regulate_correction-map|regulate_correction-map]]
 
 ##### utility
 + [[db_shell|db_shell]]
