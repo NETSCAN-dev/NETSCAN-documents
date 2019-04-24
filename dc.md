@@ -5,7 +5,7 @@
 + description : search shrink and distortion. no correction tried for FulcrumDz in [runcard](#runcard)
 + usage : dc pl[-zone] [options]
 + options ( those are in **bold** must be given )
-  - **--descriptor [event-descriptor](event-descriptor)**
+  - **--descriptor [event-descriptor](event-descriptor.md)**
   > set [event-descriptor](event-descriptor)  
 
   - --io fname-io
@@ -14,30 +14,30 @@
   - **--rc fname-[runcard](#runcard)**
   > set [runcard](#runcard)  
 
-  - **--o [correction-map](correction-map)-file [w/a]**
-  > set [[[correction-map](correction-map)-dc(absolute)|[correction-map](correction-map)]]  
+  - **--o [correction-map](correction-map.md)-file [w/a]**
+  > set [[[correction-map](correction-map.md)-dc(absolute)|[correction-map](correction-map.md)]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
-  > see [[view-step and view-overlap definitions|[mk_views](mk_views)]].  
+  > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
 
-  - --c [correction-map](correction-map)-file
-  > set [correction-map](correction-map) file used as a starting point for each view  
+  - --c [correction-map](correction-map.md)-file
+  > set [correction-map](correction-map.md) file used as a starting point for each view  
 
   - --search-mode 0/1/2
   > set search mode ( default = 0 )  
   > 0 : independent search. use first values of ErrDist and ErrShur  
-  > 1 : begin search in each view using [correction-map](correction-map) given in --c option  
+  > 1 : begin search in each view using [correction-map](correction-map.md) given in --c option  
   > 2 : begin search in each view using closest view's result. use second values of ErrDist and ErrShur if they exists  
 
   - --filter-angle +1/-1 axmin axmax aymin aymax
   > use angle regions (+1) or exclude angle regions(-1) in parameter search  
   > multiple entries are accepted and includes(+1) are first evaluated and then excludes(-1)  
 
-  - --[filter-list](filter-list) [filter-list](filter-list) +1/-1
-  > include (+1) or exclude (-1) [filter-list](filter-list)  
+  - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
+  > include (+1) or exclude (-1) [filter-list](filter-list.md)  
 
   - --filter-phmin phmin
   > phmin filter  

@@ -31,16 +31,16 @@
   - **--rc [runcard](#runcard)-file**
   > set [runcard](#runcard)  
 
-  - **--c [correction-map](correction-map)-file**
-  > set [correction-map](correction-map) ( output of dc )  
+  - **--c [correction-map](correction-map.md)-file**
+  > set [correction-map](correction-map.md) ( output of dc )  
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**  
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
-  > see [[view-step and view-overlap definitions|[mk_views](mk_views)]].  
+  > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
 
-  - --[filter-list](filter-list) [filter-list](filter-list) +1/-1
-  > include (+1) or exclude (-1) [[[filter-list](filter-list)|[filter-list](filter-list)]]  
+  - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
+  > include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
 
   - --filter-phmin phmin
   > phmin filter  

@@ -66,12 +66,12 @@
   - **--view view-step view-overlap**  
     **--view view-list-file-name**  
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
-  > see [[view-step and view-overlap definitions|[mk_views](mk_views)]].  
+  > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
 
   - --window xmin xmax ymin ymax
   > limit position of tracks to be connected  
 
-  - --[filter-list](filter-list) file-name mode-0 mode-1 mode-x
+  - --[filter-list](filter-list.md) file-name mode-0 mode-1 mode-x
   > mode-0 : include(+1) / exclude(-1) for pos0  
   > mode-1 : include(+1) / exclude(-1) for pos1  
   > mode-x : at-least-one-track(1) / both-tracks(2) must be 'accepted'.  

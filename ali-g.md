@@ -28,7 +28,7 @@
   - **--view view-step view-overlap [view-select-mode]**  
     **--view view-list-file-name [view-select-mode]**
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
-  > see [[view-step and view-overlap definitions|[mk_views](mk_views)]].  
+  > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
   > view-select-mode ( optional ) can be specified to limit views used for process as  
   > 1 = one view in center / 2 = one view in center and 4 views in corners.  
 
@@ -44,8 +44,8 @@
   > when offset_i = 1 &rArr; xmin-offset_x, xmax-offset_x, ymin-offset_y, ymax-offset_y  
   > when offset_i = 2 &rArr; xmin+offset_x, xmax+offset_x, ymin+offset_y, ymax+offset_y  
 
-  - --[filter-list](filter-list) [filter-list](filter-list) +1/-1
-  > include (+1) or exclude (-1) [[[filter-list](filter-list)|[filter-list](filter-list)]]  
+  - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
+  > include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
 
   - --filter-max-track-per-view value
   > avoid process in views having max-track-per-view track or more

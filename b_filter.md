@@ -17,8 +17,8 @@
   - --xy xmin xmax ymin ymax
   > select on xy  
 
-  - --[filter-list](filter-list) filter-file-name +1/-1
-  > specify [[filter-file-name|[filter-list](filter-list)]] to include (+1) or to exclude (-1)  
+  - --[filter-list](filter-list.md) filter-file-name +1/-1
+  > specify [[filter-file-name|[filter-list](filter-list.md)]] to include (+1) or to exclude (-1)  
 
   - --filter-max-track-per-view val
   > reject view which has a given number of tracks or more  
