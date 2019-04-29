@@ -17,6 +17,7 @@
   - **--o [correction-map](correction-map.md)-file [w/a]**
   > set [[[correction-map](correction-map.md)-dc(absolute)|[correction-map](correction-map.md)]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
+  > 出力されるcorrection-mapのファイル名は指定した通りではなく、勝手に `.lst` という拡張子をつけられる。しかし、m2bのオプション `--c` はcorrection-mapを `.lst` 付きで指定する必要がある。
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
