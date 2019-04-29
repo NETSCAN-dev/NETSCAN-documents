@@ -59,6 +59,18 @@
   - --debug 1 
   > set verbose console output  
 
+#### FAQ
+* Q. 探索に使用する区画ごとの１面トラック数の上限はMaxTracksで与えられるが、実際に使われたトラック数はどうやって得られるのか?<br>
+  A. 現状得る方法はない<br>
+* Q. 角度の小さい飛跡を除外して計算させたいが、どうすればよいか?<br>
+  A. MinAngleという機能はないが、PHCUTを使えば可能。詳細は[cut](cut.md)を参照せよ。 
+* Q. FACE1、FACE2のdx dy dz dax dayは何か?<br>
+  A. マイクロトラックの位置ずれ、角度ずれ(ディストーション)の初期値だが、実際に使えるかは不明。
+* Q. ある領域だけdcを通したい場合はどうすればよいか?<br>
+  A. `filter-list` を用いるが、ドキュメントを読んだだけでは理解できないだろう。
+* Q. `view-overlap` とは何か?<br>
+  A. 探索する区画の大きさは正方形で定義され、その中心から次の区画までの距離が `view-step` 、区画の一辺の長さを `view-size` とすると、 `view-overlap = (view-size - view-step) * 0.5` で与えられる値。オーバーラップは必ずしも必要ではないが、飛跡の本数密度によっては、 最小の view-sizeは存在するだろう。
+
 #### runcard
 runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )
 ```
