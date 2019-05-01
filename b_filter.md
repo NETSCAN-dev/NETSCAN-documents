@@ -46,10 +46,11 @@
 
   - --ghost dr dt
   > ghost filter in position (dr micron) and angle (dt rad).  
+  > `--ghost 5 0.05` で5μm 50mradでのゴースト消しになる
 
   - --edit fname-edit
   > edit limited properties of each base track ( x,y,col,row are not accepted ).  
-  > 'fname-edit' format is that of dump_bvxx output with --format 0/3.  
+  > 'fname-edit' format is that of [dump_bvxx](dump_bvxx.md) output with --format 0/3.  
 
   - --cut-rl face1-rad-0 face1-rad-1 face1-lat-0 face2-rad-0 face2-rad-1 face2-lat-0
   > radial-lateral cut  
@@ -60,3 +61,7 @@
   > apply projective transformation  
   > X = ( a0*x+b0*y+c0 )/( a1*x+b1*y+c1 )  
   > Y = ( a2*x+b2*y+c2 )/( a3*x+b3*y+c3 )  
+
+#### FAQ
+* Q. VXXの座標(base_track_tクラス内におけるx y)のZ面はどこ? <br>
+  A. 

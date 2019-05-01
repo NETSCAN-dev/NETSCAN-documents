@@ -1,6 +1,7 @@
 ---
 #### dc
 ---
+Micro Track のデータから、乳剤層の歪み(distotion)と伸縮(shrink)を求める。
 
 + description : search shrink and distortion. no correction tried for FulcrumDz in [runcard](#runcard)
 + usage : dc pl[-zone] [options]
@@ -18,9 +19,11 @@
   > set [[[correction-map](correction-map.md)-dc(absolute)|[correction-map](correction-map.md)]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
   > 出力されるcorrection-mapのファイル名は指定した通りではなく、勝手に `.lst` という拡張子をつけられる。しかし、m2bのオプション `--c` はcorrection-mapを `.lst` 付きで指定する必要がある。
+  > w:上書きモード, a:つけたしモード
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
+  > distortion correction を行う区画サイズの指定(指定の仕方は 2 通り) ステップとオーバーラップを指定するか、区画サイズをファイルに書く方法。
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
   > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
 
@@ -67,9 +70,13 @@
 * Q. FACE1、FACE2のdx dy dz dax dayは何か?<br>
   A. マイクロトラックの位置ずれ、角度ずれ(ディストーション)の初期値だが、実際に使えるかは不明。
 * Q. ある領域だけdcを通したい場合はどうすればよいか?<br>
-  A. `filter-list` を用いるが、ドキュメントを読んだだけでは理解できないだろう。
+  A. 現状dcだけではできない。[f_filter](f_filter.md)を用いて領域を指定して新しいfvxxを作成し、そのファイル用の[event-descriptor](event-descriptor.md)を作成し、dcを走らせる。
 * Q. `view-overlap` とは何か?<br>
   A. 探索する区画の大きさは正方形で定義され、その中心から次の区画までの距離が `view-step` 、区画の一辺の長さを `view-size` とすると、 `view-overlap = (view-size - view-step) * 0.5` で与えられる値。オーバーラップは必ずしも必要ではないが、飛跡の本数密度によっては、 最小の view-sizeは存在するだろう。
+* Q. 使うfvxxのファイル名を指定することはできないか?
+  A. 現状できない。[event-descriptor](event-descriptor.md)を書き換えるか、新しく作成するしかない。流石に柔軟性がなさすぎるので、近いうちに引数で指定できるようになるだろう。
+* Q. 計算に失敗した領域(Significance)の場所を得るにはどうすればよいか。
+  A. [mk_views](mk_views.md)を用いて、補正前の[correction-map](correction-map.md)を得ることが出来る。これとの差分を計算すれば、計算に失敗した領域を得ることができる。だが、具体的な方法は誰も知らないし、[mk_views](mk_views.md)を読んだだけでは理解できないだろう。
 
 #### runcard
 runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )

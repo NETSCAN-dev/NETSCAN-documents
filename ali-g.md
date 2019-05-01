@@ -2,6 +2,8 @@
 #### ali-g
 ---
 
+プレート間の位置関係を求める。[ali-l](ali-l.md)もある。
+
 + description : search alignment in large scan area ( global ) in given process-views  
   > For MaxPeaks=1, MinimumTracks are auto-incremented  
   > while scanning alignment parameter to suppress junk peaks.  

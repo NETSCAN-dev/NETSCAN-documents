@@ -2,6 +2,8 @@
 #### m2b
 ---
 
+distortion と shrink の補正がされた Micro Track のデータから Base Track を作る
+
 + description : build base track  
 >   
 > In currect connection algorhtm, only distortion and shrink correction to micro-track-angle in correction-map-file are used.  
@@ -38,6 +40,7 @@
     **--view view-list-file-name**  
   > set view step and overlap by value or by [[process-view-list-file|view-list]]  
   > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
+  > distortion correction を行う区画サイズの指定(指定の仕方は 2 通り) ステップとオーバーラップを指定するか、区画サイズをファイルに書く方法。
 
   - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
   > include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
@@ -53,6 +56,16 @@
   > &theta; += ang-shr-base for &theta; > +ang-shr-base  
   > &theta; -= ang-shr-base for &theta; < -ang-shr-base  
   > (*) implemented by Komatani probably fot HTS specific needs.  
+
+#### FAQ
+* Q. runcardの、ErrAng と ErrDist の違いは?<br>
+  A. 現状違いはないので、ErrDistは常に0でよい<br>
+* Q. runcardの、ErrShurは何か?<br>
+  A. dcでいうところの、ErrorAngleの1つめのパラメータがErrAng、2つめのパラメータがErrShur。この名前は非常に分かりにくいので、今後パラメータ名は整理されるだろう。 
+* Q. Radial-Lateral空間でカットできないのか?<br>
+  A. m2bではできない。
+* Q. どの[correction-map](correction-map.md)が使われたか、どこを見れば良い?
+  A. 分からない。[new_basetrack_format](new_basetrack_format.md)で挙げられている通り今後取得できるようになるだろう。
 
 #### runcard
 runcard ( m:/prg/netscan/ver-2011-03-01/rc/m2b.rc )

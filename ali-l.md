@@ -2,6 +2,8 @@
 #### ali-l
 ---
 
+プレート間の位置関係を求める。[ali-g](ali-g.md)もある。
+
 + description : search alignment in smaller scan area ( local ) in given process views  
   > Rotation correction in position obtained for global alignment is also applied to angle correction.  
 + usage : ali-l pl0[-zone0 pl1[-zone1] [options]  
