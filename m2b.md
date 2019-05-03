@@ -38,7 +38,7 @@ distortion と shrink の補正がされた Micro Track のデータから Base 
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**  
-  > set view step and overlap by value or by [[process-view-list-file|view-list]]  
+  > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list) 
   > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
   > distortion correction を行う区画サイズの指定(指定の仕方は 2 通り) ステップとオーバーラップを指定するか、区画サイズをファイルに書く方法。
 
@@ -64,8 +64,10 @@ distortion と shrink の補正がされた Micro Track のデータから Base 
   A. dcでいうところの、ErrorAngleの1つめのパラメータがErrAng、2つめのパラメータがErrShur。この名前は非常に分かりにくいので、今後パラメータ名は整理されるだろう。 
 * Q. Radial-Lateral空間でカットできないのか?<br>
   A. m2bではできない。
-* Q. どの[correction-map](correction-map.md)が使われたか、どこを見れば良い?
+* Q. どの[correction-map](correction-map.md)が使われたか、どこを見れば良い?<br>
   A. 分からない。[new_basetrack_format](new_basetrack_format.md)で挙げられている通り今後取得できるようになるだろう。
+* Q. Z座標はどのように計算される?<br>
+  A. 
 
 #### runcard
 runcard ( m:/prg/netscan/ver-2011-03-01/rc/m2b.rc )

@@ -27,7 +27,7 @@
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
-  > set view step and overlap by value or by [[process-view-list-file|view-list]]  
+  > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list)
   > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
 
   - --search-mode 0/1 \[ fname-correction-map-i \]

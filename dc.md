@@ -24,7 +24,7 @@ Micro Track のデータから、乳剤層の歪み(distotion)と伸縮(shrink)�
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
   > distortion correction を行う区画サイズの指定(指定の仕方は 2 通り) ステップとオーバーラップを指定するか、区画サイズをファイルに書く方法。
-  > set view step and overlap by value or by [[process-view-list-file|view-list]]  
+  > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list)
   > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
 
   - --c [correction-map](correction-map.md)-file
@@ -77,6 +77,8 @@ Micro Track のデータから、乳剤層の歪み(distotion)と伸縮(shrink)�
   A. 現状できない。[event-descriptor](event-descriptor.md)を書き換えるか、新しく作成するしかない。流石に柔軟性がなさすぎるので、近いうちに引数で指定できるようになるだろう。
 * Q. 計算に失敗した領域(Significance)の場所を得るにはどうすればよいか。
   A. [mk_views](mk_views.md)を用いて、補正前の[correction-map](correction-map.md)を得ることが出来る。これとの差分を計算すれば、計算に失敗した領域を得ることができる。だが、具体的な方法は誰も知らないし、[mk_views](mk_views.md)を読んだだけでは理解できないだろう。
+* Q. DZはどうやって求めている?<br>
+  A. 分からない
 
 #### runcard
 runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )
