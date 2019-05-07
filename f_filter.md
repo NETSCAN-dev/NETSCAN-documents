@@ -53,3 +53,12 @@
   - --ghost dr dt
   > ghost filter in position (dr micron) and angle (dt rad).  
   > For each pair of micro-tracks, choose high ph, if position-diff < dr and angle-dif < dt.  
+
+#### FAQ
+* Q. --ghost で使われるxy 座標の基準Z面はどこ?<br>
+  A. fvxxに書いてあるXY座標で、HTSではマイクロトラックの中央のZ面のXY座標である。
+* Q. --ghost でRadial-Lateral空間でクラスタリングはできないの?<br>
+  A. 現状できない。
+* Q. --ghost でマルチスレッド処理はできないの?<br>
+  A. 現状できないが、近い内に実装されるだろう。
+  

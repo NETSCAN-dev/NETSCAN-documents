@@ -64,21 +64,21 @@ Micro Track のデータから、乳剤層の歪み(distotion)と伸縮(shrink)�
 
 #### FAQ
 * Q. 探索に使用する区画ごとの１面トラック数の上限はMaxTracksで与えられるが、実際に使われたトラック数はどうやって得られるのか?<br>
-  A. 現状得る方法はない<br>
+  A. 標準出力はされているが、ファイル出力されていないため、現状得る方法はない
 * Q. 角度の小さい飛跡を除外して計算させたいが、どうすればよいか?<br>
   A. MinAngleという機能はないが、PHCUTを使えば可能。詳細は[cut](cut.md)を参照せよ。 
 * Q. FACE1、FACE2のdx dy dz dax dayは何か?<br>
-  A. マイクロトラックの位置ずれ、角度ずれ(ディストーション)の初期値だが、実際に使えるかは不明。
+  A. マイクロトラックの位置ずれ、角度ずれ(ディストーション)の初期値だが、今後、使わないことを推奨する。
 * Q. ある領域だけdcを通したい場合はどうすればよいか?<br>
-  A. 現状dcだけではできない。[f_filter](f_filter.md)を用いて領域を指定して新しいfvxxを作成し、そのファイル用の[event-descriptor](event-descriptor.md)を作成し、dcを走らせる。
+  A. 現状dcだけではできない。[view-list-file](mk_views.md/#view-list)を使う。
 * Q. `view-overlap` とは何か?<br>
-  A. 探索する区画の大きさは正方形で定義され、その中心から次の区画までの距離が `view-step` 、区画の一辺の長さを `view-size` とすると、 `view-overlap = (view-size - view-step) * 0.5` で与えられる値。オーバーラップは必ずしも必要ではないが、飛跡の本数密度によっては、 最小の view-sizeは存在するだろう。
+  A. 探索する区画の大きさは長方形で定義され、その中心から次の区画までの距離が `view-step` 、区画の一辺の長さを `view-size` とすると、 `view-overlap = (view-size - view-step) * 0.5` で与えられる値。詳細は[mk_views](mk_views.md)参照。
 * Q. 使うfvxxのファイル名を指定することはできないか?
-  A. 現状できない。[event-descriptor](event-descriptor.md)を書き換えるか、新しく作成するしかない。流石に柔軟性がなさすぎるので、近いうちに引数で指定できるようになるだろう。
+  A. 現状できない。[event-descriptor](event-descriptor.md)を書き換えるか、 `--io` で一部を上書きするか、新しく作成するしかない。流石に柔軟性がなさすぎるので、近いうちに引数で指定できるようになるだろう。
 * Q. 計算に失敗した領域(Significance)の場所を得るにはどうすればよいか。
   A. [mk_views](mk_views.md)を用いて、補正前の[correction-map](correction-map.md)を得ることが出来る。これとの差分を計算すれば、計算に失敗した領域を得ることができる。だが、具体的な方法は誰も知らないし、[mk_views](mk_views.md)を読んだだけでは理解できないだろう。
 * Q. DZはどうやって求めている?<br>
-  A. 分からない
+  A. parts.kar で設定した値との差分である。m2bでは使っていない。
 
 #### runcard
 runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )

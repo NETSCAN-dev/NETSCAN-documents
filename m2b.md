@@ -59,15 +59,17 @@ distortion と shrink の補正がされた Micro Track のデータから Base 
 
 #### FAQ
 * Q. runcardの、ErrAng と ErrDist の違いは?<br>
-  A. 現状違いはないので、ErrDistは常に0でよい<br>
+  A. 現状違いはないので、ErrDistは常に0でよい。
 * Q. runcardの、ErrShurは何か?<br>
   A. dcでいうところの、ErrorAngleの1つめのパラメータがErrAng、2つめのパラメータがErrShur。この名前は非常に分かりにくいので、今後パラメータ名は整理されるだろう。 
-* Q. Radial-Lateral空間でカットできないのか?<br>
-  A. m2bではできない。
-* Q. どの[correction-map](correction-map.md)が使われたか、どこを見れば良い?<br>
-  A. 分からない。[new_basetrack_format](new_basetrack_format.md)で挙げられている通り今後取得できるようになるだろう。
-* Q. Z座標はどのように計算される?<br>
-  A. 
+* Q. Radial-Lateral空間で接続できないのか?<br>
+  A. 現状のm2bではできない。大きめの角度空間で接続した後、自分で計算する必要がある。
+* Q. どの[correction-map](correction-map.md)が使われたか、分かるのか?<br>
+  A. 現状分からない。[new_basetrack_format](new_basetrack_format.md)で挙げられている通り今後取得できるようにしたい。
+* Q. あるSignificance以上の[correction-map](correction-map.md)のみを使う方法はあるか?
+  A. 現状できないが、近い内に実装される。
+* Q. ベーストラック=bvxxのz1とz2が、マイクロトラック=fvxxのz座標と異なるのはなぜ?
+  A. 確認中。同じであるべき。
 
 #### runcard
 runcard ( m:/prg/netscan/ver-2011-03-01/rc/m2b.rc )

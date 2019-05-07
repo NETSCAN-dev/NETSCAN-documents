@@ -38,6 +38,6 @@
 * Q. VXXの座標(base_track_tクラス内におけるx y)のZ面はどこ? <br>
   A. FACE1のマイクロトラックの中央の座標。なおbase_track_tクラス内におけるzもやはりFACE1のzと同じ
 * Q. ベーストラックの中央の座標(cx, cy)はどうやって求めれば良い?<br>
-  A. 正確に求める方法はないが、近似的には `cx = x + ax * (m[1].z-m[0].z)*0.5` が正しい。
+  A. `cx = x + ax * (m[1].z-m[0].z)*0.5`
 * Q. マイクロトラックの角度は、correction-mapによる補正後? 補正前?<br>
-  A. 補正後
+  A. distortionとshrink両方補正した値。
