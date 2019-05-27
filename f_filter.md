@@ -4,6 +4,8 @@
 
 + description : filter micro track vxx file  
 + usage : f_filter *pos* *vxx-file* [*options*]
+  <br>例: f_filter.exe 11 f0011.vxx --o filtered_f0011.vxx --ghost 5 0.05
+  <br>(PL01のFACE1のマイクロトラックを5μm、50mradでゴーストフィルターをかける)
 + options ( those are in **bold** must be given )
   - **--o output-vxx-file**
   > set output vxx-file
@@ -65,4 +67,5 @@
   A. 現状できないが、近い内に実装されるだろう。
 * Q. --ghost のアルゴリズムは? dr dtの値はどういう意味?<br>
   A. ph volを高い順でソートして、その飛跡を中心±drミクロン、±dt radを探索して、見つかった飛跡を重複飛跡(ゴースト飛跡)とみなして削除する。
-  
+* Q. フィルター後、トラックはどうソートされるのか?<br>
+  A. 分からない

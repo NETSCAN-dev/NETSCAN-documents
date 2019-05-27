@@ -4,6 +4,8 @@
 
 + description : filter base track vxx file  
 + usage : b_filter *pl* *vxx-file* [*options*]
+  <br>例: b_filter.exe 1 b001.vxx --o filtered_b001.vxx --ghost 5 0.03 
+  <br>(PL01のベーストラックを5μm、30mradでゴーストフィルターをかける)
 + options ( those are in **bold** must be given )
   - **--o output-vxx-file**
   > set output vxx-file  
