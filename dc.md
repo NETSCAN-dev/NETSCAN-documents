@@ -19,7 +19,7 @@ Micro Track のデータから、乳剤層の歪み(distotion)と伸縮(shrink)�
   > set [[[correction-map](correction-map.md)-dc(absolute)|[correction-map](correction-map.md)]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
   > 出力されるcorrection-mapのファイル名は指定した通りではなく、勝手に `.lst` という拡張子をつけられる。しかし、m2bのオプション `--c` はcorrection-mapを `.lst` 付きで指定する必要がある。
-  > w:上書きモード, a:つけたしモード
+  > w:上書きモード, a:追記モード
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**

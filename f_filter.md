@@ -53,6 +53,8 @@
   - --ghost dr dt
   > ghost filter in position (dr micron) and angle (dt rad).  
   > For each pair of micro-tracks, choose high ph, if position-diff < dr and angle-dif < dt.  
+  > ゴーストフィルターは、位置(dr micron)、と角度(dt rad)
+  > 詳細はFAQ参照
 
 #### FAQ
 * Q. --ghost で使われるxy 座標の基準Z面はどこ?<br>
@@ -61,4 +63,6 @@
   A. 現状できない。
 * Q. --ghost でマルチスレッド処理はできないの?<br>
   A. 現状できないが、近い内に実装されるだろう。
+* Q. --ghost のアルゴリズムは? dr dtの値はどういう意味?<br>
+  A. ph volを高い順でソートして、その飛跡を中心±drミクロン、±dt radを探索して、見つかった飛跡を重複飛跡(ゴースト飛跡)とみなして削除する。
   

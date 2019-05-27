@@ -64,12 +64,22 @@ distortion と shrink の補正がされた Micro Track のデータから Base 
   A. dcでいうところの、ErrorAngleの1つめのパラメータがErrAng、2つめのパラメータがErrShur。この名前は非常に分かりにくいので、今後パラメータ名は整理されるだろう。 
 * Q. Radial-Lateral空間で接続できないのか?<br>
   A. 現状のm2bではできない。大きめの角度空間で接続した後、自分で計算する必要がある。
-* Q. どの[correction-map](correction-map.md)が使われたか、分かるのか?<br>
-  A. 現状分からない。[new_basetrack_format](new_basetrack_format.md)で挙げられている通り今後取得できるようにしたい。
 * Q. あるSignificance以上の[correction-map](correction-map.md)のみを使う方法はあるか?
   A. 現状できないが、近い内に実装される。
+
+##### ファイルフォーマット関連
+* Q. どの[correction-map](correction-map.md)が使われたか、分かるのか?<br>
+  A. 現状分からない。[new_basetrack_format](new_basetrack_format.md)で挙げられている通り今後取得できるようにしたい。
 * Q. ベーストラック=bvxxのz1とz2が、マイクロトラック=fvxxのz座標と異なるのはなぜ?
   A. 確認中。同じであるべき。
+* Q. VXXの座標(base_track_tクラス内におけるx y)のZ面はどこ? <br>
+  A. FACE1のマイクロトラックの中央の座標。なおbase_track_tクラス内におけるzもやはりFACE1のzと同じ
+* Q. ベーストラックの中央の座標(cx, cy)はどうやって求めれば良い?<br>
+  A. `cx = x + ax * (m[1].z-m[0].z)*0.5` `cx = x + ax * (m[1].z-m[0].z)*0.5`
+* Q. マイクロトラックの中央の座標 (cx1, cy1), (cx2, cy2)はどうやって求めれば良い?<br>
+  A. その方法はない。理由1 Distortion補正済みなので、理由2 マイクロトラックのdz情報はbvxxには保存されていないので。
+* Q. マイクロトラックの角度は、correction-mapによる補正後? 補正前?<br>
+  A. distortionとshrink両方補正した値。
 
 #### runcard
 runcard ( m:/prg/netscan/ver-2011-03-01/rc/m2b.rc )

@@ -35,9 +35,4 @@
   > apply affine transformation ( after correction-map-absolute if specified )  
 
 #### FAQ
-* Q. VXXの座標(base_track_tクラス内におけるx y)のZ面はどこ? <br>
-  A. FACE1のマイクロトラックの中央の座標。なおbase_track_tクラス内におけるzもやはりFACE1のzと同じ
-* Q. ベーストラックの中央の座標(cx, cy)はどうやって求めれば良い?<br>
-  A. `cx = x + ax * (m[1].z-m[0].z)*0.5`
-* Q. マイクロトラックの角度は、correction-mapによる補正後? 補正前?<br>
-  A. distortionとshrink両方補正した値。
+ベーストラックに関するFAQは[m2bのFAQ](m2b.md#FAQ)を見よ。
