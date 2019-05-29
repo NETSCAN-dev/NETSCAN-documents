@@ -21,20 +21,21 @@
   - **--id-geom geom**
   > set geometry 0/1/...  
 
-  - **--c correction-map-file [w/a]**
-  > set [[correction-map-align(relative)|correction-map]]  
+  - **--c [correction-map](correction-map.md)-file [w/a]**
+  > set [[[correction-map](correction-map.md)-align(relative)|[correction-map](correction-map.md)]]  
   > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
+  > w:上書きモード, a:追記モード
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
   > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list)
   > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
 
-  - --search-mode 0/1 \[ fname-correction-map-i \]
-  > This option is to give fname-correction-map-i as a starting point for alignment search.  
+  - --search-mode 0/1 \[ fname-[correction-map](correction-map.md)-i \]
+  > This option is to give fname-[correction-map](correction-map.md)-i as a starting point for alignment search.  
   > There is  no difference between mode 0 and 1 and  
   > They are remained just for backward compatibility of this option.  
-  > Without fname-correction-map-i specified, search starts from unit affine transform.  
+  > Without fname-[correction-map](correction-map.md)-i specified, search starts from unit affine transform.  
   > Mode = 2 was discarded.  
 
   - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
@@ -43,11 +44,19 @@
   - --filter-max-track-per-view value
   > avoid process in views having max-track-per-view track or more
 
+
+#### FAQ
+[ali-gのFAQ](ali-g.md#FAQ) も参照
+
+
+### runcard
+共通のパラメータについては、[ali-gのruncard](ali-g.md#runcard)も参照。
+
 + runcard template( m:/prg/netscan/ver-2011-03-01/rc/align-0.rc )
 
 ```
 [LocalAlign]
-AngleCut        = 0 -0.40 0.40 -0.40 0.40   # First column controls how this region is parsed ... 0(disabled)/1(included)/-1(excluded)
+AngleCut        = 0 -0.40 0.40 -0.40 0.40   # ali-g.md を参照
 Enable_Affine   = 1
 Enable_GapTune  = 1
 SearchArea      = 50.0              # +/-SearchAreaの範囲内のピークを探す。
