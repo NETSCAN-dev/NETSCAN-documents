@@ -12,6 +12,7 @@
 
 ##### notes
 + <a href="netscan-manual-v3.pdf" target=_blank>tutorial for beginners</a>
++ [[ali-g settings|ali-g-inside]]
 + <a href="ali-l-inside.pdf" target=_blank>ali-l inside</a>
 + [[inter-zone alignment|inter-zone-alignment]]
 + [[option --cache|note-cache]]
