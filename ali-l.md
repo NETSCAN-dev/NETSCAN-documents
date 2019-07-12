@@ -69,6 +69,7 @@ GhostFilter     = 1.0 0.007
 BinWidth        = 6.0 0.015
 PeakSizeMin     = 1.0 0.000         # minimum peak size ( $1+$2*gap ) to be searched 
 PeakSizeMax     = 50.0              # maximum peak size to be serarched 
+									# 期待される位置ズレよりも大きくするのがお勧め。
 Gap             = 0.01 50.0 1.0     # 探索範囲 +/- ( 50.0 + 0.01xnominal-dz ) を 1.0micron ステップ
 IsVerbose       = 0
 AffineFitMode   = 1                 # 0 = full affine fit / 1 = shrink+rot+shift / 2 = rot+shift
