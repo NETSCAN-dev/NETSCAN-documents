@@ -74,7 +74,7 @@
   > limit # of views in write queue. use this option when you faced memory usage problem.  
 
 + runcard ( m:/prg/netscan/ver-2011-03-01/rc/t2l.rc )
-  ```
+```
 [Linklet]
 Mode        = 1         # connection widow is set by errors (0) / by minimum momentun and sigma (1)
 MemoryLimit = 100000    # max number of linklets created in each view
@@ -96,6 +96,6 @@ ConnectionWindow-1 = xmin xmax ymin ymax axmin axmax aymin aymax #
 ConnectionWindow-X = xmin xmax ymin ymax axmin axmax aymin aymax # This is a replacement of WindowMin and WindowMax, and they will be obsoleted.
 WindowMin   = wxmin wymin waxmin waymin # asymmetric fixed connection window. default values are 0.  
 WindowMax   = wxmax wymax waxmax waymax # this parameter assumes Mode = 0 and CircleCut = 0
-  ```
+```
   > To set connection window, do not use ErrPos and ErrAng anymore and use Errors1 and Errors2 instead.  
   > Please refer to **[[inside description|t2l-inside]]** below for their usage. 
