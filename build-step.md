@@ -17,6 +17,9 @@
 #### **Build steps for NETSCAN software**
 ---
 
++ 駒谷君による詳細情報は [こちら](./build-system.md)  
+> media-wiki を pandoc で md に変換したので、レイアウトが少々おかしいですが。  
+
 + Prepare youre-repository and your-working-copy from the master-repository.
   - mkdir your-repository
   - cd your-repository
