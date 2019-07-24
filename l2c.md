@@ -4,26 +4,38 @@
 
 + usage : l2c [ options ] ( *linklet-dump-file-1* *linklet-dump-file-2* ... | *@linklet-dump-file-list* )
 
-  > This code is an updated copy of connect.cpp written by K.Hamada and by Shiraishi.  
-  > Algorithm to build chain is not modified from the original.  
+  > This code is an updated copy of connect.cpp written by K.Hamada and by Shiraishi.  <br>
+  > このコードは、濱田要氏と白石卓也氏によって書かれたconnect.cppの更新版です。<br>
+  > Algorithm to build chain is not modified from the original.  <br>
+  > チェーンを構築するためのアルゴリズムは、オリジナルから変更されていません。<br>
   > Be careful that the original version does not work with input file larger than 4Gbytes.  
+  > 4Gバイトを超える入力ファイルではオリジナルバージョンが機能しないことに注意してください。
   >  
   > Input linklet-dump-files can be specified in ...  
-  > 1. Multiple file-names in sequence like linklet-dump-file-1 linklet-dump-file-2 ...  
-  > 1. A list-file like @list-file  
-  > .
+  > 入力linklet-dump-filesは次のように指定できます
+  > * Multiple file-names in sequence like linklet-dump-file-1 linklet-dump-file-2 ...  <br>
+  > 複数のファイル名 例: linklet-dump-file-1 linklet-dump-file-2のような連続名
+  > * A list-file like @list-file  <br>
+  > リストファイル 例: @list-file
   >  
   > l2c-x ( Komatani's version of l2c ) has restrictions below.  
-  > 2. --binary-input is not available.
-  > 3. EndPos and UnUsePos can not be used in runcard. One should use UsePos and plates should be sequential.
-  > 4. specify --debug to enable out_gr.txt output.  
-  > .
+  > l2c-x（Komataniのバージョンのl2c）には以下の制限があります。
+  > * --binary-input is not available.<br>
+  > --binary-inputは利用できません。
+  > * EndPos and UnUsePos can not be used in runcard. One should use UsePos and plates should be sequential.<br>
+  > EndPosとUnUsePosはruncardでは使用できません。 UsePosを使うべきであり、プレートは連続しているべきです。
+  > * specify --debug to enable out_gr.txt output.  <br>
+  > out_gr.txtの出力を有効にするには、--debugを指定します。
   >  
-  > Group means a set of chains, which have at least one track-segments in common.  
-  > Be careful that this does not mean that any two chains in a group have track-segments in common.  
-  > For example, chain A and chain B have a common segment S1 and chain B and chain C have a common segment S2.  
+  > Group means a set of chains, which have at least one track-segments in common.  <br>
+  > グループとは、少なくとも1つのトラックセグメントを共通に持つ一連のチェーンを意味します。<br>
+  > Be careful that this does not mean that any two chains in a group have track-segments in common.  <br>
+  > これは、グループ内の2つのチェーンがトラックセグメントを共有しているという意味ではないことに注意してください。<br>
+  > For example, chain A and chain B have a common segment S1 and chain B and chain C have a common segment S2.  <br>
   > In this case, all chains A,B,C are in a group but chain A and C have no segments in common.  
-  >  
+  > 例えば、チェーンAとチェーンBは共通のセグメントS1を有し、チェーンBとチェーンCは共通のセグメントS2を有する、<br>
+  > 場合、すべてのチェーンA、B、Cはグループ内にありますが、チェーンAとCには共通のセグメントはありません。
+  >
 
 + options
   - --rc chain.rc
@@ -71,7 +83,7 @@ Format = 0
 
 + output file format
 
-  ```
+```
 start_plate と end_plate の番号は、ヘッダー2行目の pos の順につけた通し番号 (1～) になっています。
 chain 番号、group 番号はすべて通し番号で順に並んでいるので、
 chain 数や group 数を知りたければ chain ファイルの一番下の chain を見ればわかります。 
