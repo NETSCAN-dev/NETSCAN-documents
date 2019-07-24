@@ -49,7 +49,7 @@
   > default is "over_upperlim.dat".  
 
 + runcard ( m:/prg/netscan/ver-2016-09-01/rc/chain.rc )
-  ```
+```
 [Chain]
 #UsePos = 10	10 20 30 40 50 60 70 80 90 100
 	# 使う pos を指定したいときに。１つ目の数字は使う pos の数で、それより後ろは使う pos の羅列
@@ -85,9 +85,9 @@ header の例（old format、new format）
 ・plate ID
 ・許すpeke数
 （headerの行の先頭には#が付いています。行数は10です。）
-  ```
+```
 
-  ```
+```
 DATAの例（old format） 
      1015       1010        941        893   1   5   3   0   1     286035     325435         -1         -1     280943
      1016       1011        942        894   1   5   3   0   1     286094         -1         -1     313508     281671
@@ -102,9 +102,9 @@ $7=nseg
 $8=1ペケの数　　　　この辺は、許すペケの数で変わる。
 $9=2ペケの数
 $10～ segment ID 
-  ```
+```
 
-  ```
+```
 DATAの例（new format)  
 893	1	1	5	3	1	1	1.000000	0.000000
 	1015	1010	941	1	5	3	0	1
@@ -115,8 +115,8 @@ DATAの例（new format)
   	1017	1012	943	3	5	3	0	0
 		316423	313508	281671
 Groupのheader、chainのheader、chainに対して段をつけています。
-  ```
-  ```
+```
+```
 Groupのheader（段が下がってない行）
 $1=Group ID
 $2=Groupに属するchain数
@@ -127,9 +127,9 @@ $6=rootの数（先端のseg数）
 $7=leafの数（終端のseg数）
 $8=1plate内のsegment数の平均値（ペケもsegmentとしてカウント）
 $9=$8のσ
-  ```
+```
 
-  ```
+```
 chainのheader（段が1段下がっている行）
 $1=chain ID
 $2=root と leaf が同じ chain に対して同じ値になる ID
@@ -139,17 +139,17 @@ $5=end plate（leafのplate）
 $6=nseg
 $7=1ペケの数　　　　この辺は、許すペケの数で変わる。
 $8=2ペケの数
-  ```
+```
 
-  ```
+```
 chain（段が2段下がっている行）
 $1～ segment ID
 ・old formatでは"-------"や"-2"となっていたものをなくしました。
 　（なのでstart plateをみて対応させなければなりません）
 ・ペケの書式はint型
-  ```
+```
 
-  ```
+```
 footerの例（new format） 
 #	N_linklet = 2597
 #	N_folded-linklet = 434
@@ -164,4 +164,4 @@ footerの例（new format）
 ・Group数
 ・「rootが同じ」グループ数
 ・「rootとleafが同じ」グループ数
-  ```
+```
