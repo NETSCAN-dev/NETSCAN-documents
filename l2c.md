@@ -12,11 +12,11 @@
   > 4Gバイトを超える入力ファイルではオリジナルバージョンが機能しないことに注意してください。
   >  
   > Input linklet-dump-files can be specified in ...  
-  > 入力linklet-dump-filesは次のように指定できます
+  > 入力linklet-dump-filesは次のいずれかの方法で指定できます
   > * Multiple file-names in sequence like linklet-dump-file-1 linklet-dump-file-2 ...  <br>
-  > 複数のファイル名 例: linklet-dump-file-1 linklet-dump-file-2のような連続名
+  > 複数のファイル名 例: linklet-dump-file-1.txt linklet-dump-file-2.txt のように引数を並べて書く
   > * A list-file like @list-file  <br>
-  > リストファイル 例: @list-file
+  > リストファイルを@付きで 例: @list-file.txt リストファイルにはファイル名を1行ずつ書く
   >  
   > l2c-x ( Komatani's version of l2c ) has restrictions below.  
   > l2c-x（Komataniのバージョンのl2c）には以下の制限があります。
