@@ -149,8 +149,8 @@ $3=root が同じ chain に対して同じ値になる ID
 $4=start plate (rootのplate)
 $5=end plate（leafのplate）
 $6=nseg
-$7=1ペケの数　　　　この辺は、許すペケの数で変わる。
-$8=2ペケの数
+$7=1ペケの数　　　　許すペケの数 PmPeke = 1 以上の指定で出力される
+$8=2ペケの数        許すペケの数 PmPeke = 2 以上の指定で出力される
 ```
 
 ```
