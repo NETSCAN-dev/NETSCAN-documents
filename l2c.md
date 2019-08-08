@@ -117,7 +117,7 @@ $10～ segment ID
 ```
 
 ```
-DATAの例（new format)  
+DATAの例（new format=format 0)  
 893	1	1	5	3	1	1	1.000000	0.000000
 	1015	1010	941	1	5	3	0	1
 		286035	325435	-1	-1	280943
@@ -132,8 +132,8 @@ Groupのheader、chainのheader、chainに対して段をつけています。
 Groupのheader（段が下がってない行）
 $1=Group ID
 $2=Groupに属するchain数
-$3=Groupのstart plate（最先端segのplate番号）
-$4=Groupのend plate（最終端segのplate番号）
+$3=Groupのstart plate（最先端segの、UsePosで設定した最初のplate番号を1としたplate番号）
+$4=Groupのend plate（最終端segの、UsePosで設定した最初のplate番号を1としたplate番号）
 $5=Groupが持つsegment数
 $6=rootの数（先端のseg数）
 $7=leafの数（終端のseg数）
