@@ -132,8 +132,8 @@ Groupのheader、chainのheader、chainに対して段をつけています。
 Groupのheader（段が下がってない行）
 $1=Group ID
 $2=Groupに属するchain数
-$3=Groupのstart plate（最先端segの、UsePosで設定した最初のplate番号を1としたplate番号）
-$4=Groupのend plate（最終端segの、UsePosで設定した最初のplate番号を1としたplate番号）
+$3=Groupのstart plate（最先端segの、UsePosで設定した最初のplate番号を1としたplate番号。Pos/10 ではない）
+$4=Groupのend plate（最終端segの、UsePosで設定した最初のplate番号を1としたplate番号。Pos/10 ではない）
 $5=Groupが持つsegment数
 $6=rootの数（先端のseg数）
 $7=leafの数（終端のseg数）
