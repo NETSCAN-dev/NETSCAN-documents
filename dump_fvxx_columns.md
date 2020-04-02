@@ -60,8 +60,11 @@ HTS info embedded in `col` and in `row` at Alpha files
   ```
 HTS info embedded in `col` and in `row` at Beta files (仕様変更の可能性あり)
   ``` c
-  ImagerID = CameraID * 12 + SensorID;
-  ShotID = ViewID * NumberOfImager + ImagerID;
+  uint32_t ImagerID = CameraID * 12 + SensorID;
+  uint32_t ShotID = ViewID * NumberOfImager + ImagerID;
   col = (int16_t)("ShotID"&0x0000ffff);
   row = (int16_t)(("ShotID"&0xffff0000)>>16);
+
+  //もとに戻す時は
+  uint32_t ShotID = ((uint32_t)(uint16_t)row << 16) | ((uint32_t)(uint16_t)col);
   ```
