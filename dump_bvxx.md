@@ -3,6 +3,8 @@
 ---
 
 + description : dump base track vxx file
+> 出力する情報の詳細は [こちらを参照](dump_bvxx_columns.md) の事。
+
 + usage : dump_bvxx *vxx-file* *pl* *zone* [*options*]
 + options
   - --index i0 i1

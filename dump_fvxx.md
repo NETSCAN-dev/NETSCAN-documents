@@ -3,7 +3,7 @@
 ---
 
 + description : dump micro-track vxx file  
-> micro-track data members in vxx-file are described in [dump_fvxx_columns.md](dump_fvxx_columns.md).  
+> 出力する情報の詳細は [こちらを参照](dump_fvxx_columns.md) の事。
 
 + usage : dump_fvxx *vxx-file* *pos* *zone* [*options*]
 + options
