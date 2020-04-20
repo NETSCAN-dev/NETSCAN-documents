@@ -13,8 +13,9 @@
   - --page-size val
   > set vxx page-size ( default is that of input vxx file )  
 
-  - --view-width val
-  > set view witdh for fiter-processing  
+  - --view view-width view-overlap
+  > 処理区画の指定。ghost-filter を使う際には、区画境界に十分な重なり ( view-overlap ) を指定する事。  
+  > これまでの --view-width オプションは、ghost-filter との整合性が難しくなったので廃止した。  
 
   - --xy xmin xmax ymin ymax
   > select on xy  
@@ -55,21 +56,19 @@
   > 既存ファイルがあり、このオプションを使わなかったとき、元ファイルは削除して新規作成される
 
   - --ghost dr dt
-  > ghost filter in position (dr micron) and angle (dt rad).  
-  > For each pair of micro-tracks, choose high ph, if position-diff < dr and angle-dif < dt.  
-  > ゴーストフィルターは、位置(dr micron)、と角度(dt rad)
-  > 詳細はFAQ参照
+  > x-y でのゴーストフィルタ   
+  > 各飛跡 a に対して、位置差 sqrt(dx<sup>2</sup>+dy<sup>2</sup>) &lt; dr かつ、角度差 sqrt(d&theta;x<sup>2</sup>+d&theta;y<sup>2</sup>) &lt; dt の領域に飛跡 b が存在し、  
+  > それらが ph-vol のより小さな、あるいは ph-vol が等しく rawid がより小さな、飛跡である場合、b をゴーストとして排除する。  
 
-#### FAQ
-* Q. --ghost で使われるxy 座標の基準Z面はどこ?<br>
-  A. fvxxに書いてあるXY座標で、HTSではマイクロトラックの中央のZ面のXY座標である。
-* Q. --ghost でRadial-Lateral空間でクラスタリングはできないの?<br>
-  A. 現状できない。
-* Q. --ghost でマルチスレッド処理はできないの?<br>
-  A. 現状できないが、近い内に実装されるだろう。
-* Q. --ghost のアルゴリズムは? dr dtの値はどういう意味?<br>
-  A. 区画ごとにph volを高い順でソートして、そのトラックを中心に位置差sqrt(dx^2+dy^2)がdrミクロン以内 かつ 角度差sqrt(dax^2+day^2)がdt tanθ以内にあるトラックを重複トラック(ゴーストトラック)とみなして削除する。この計算はfloatで行っているため、dumpした結果でdouble精度で計算したものと若干ずれることがある。
-* Q. フィルター後、出力されるトラックはどうソートされるのか?<br>
-  A. 元のrawIDでソートされる
-* Q. --ghost は、phvolが同じとき、どちらが優先される?<br>
-  A. rawIDが大きい方を優先する。
+  - --ghost-rl dr_lat dr_rad dt_lat dt_rad cr_rad ct_rad
+  > radal-lateral でのゴーストフィルタ   
+  > 各飛跡 a に対して、`自身の角度`で radial-lateral 方向を決め、下記の領域に飛跡 b が存在し、  
+  > それらが ph-vol のより小さな、あるいは ph-vol が等しく rawid がより小さな、飛跡である場合、b をゴーストとして排除する。  
+  > + lateral 方向での位置差 &lt; dr_lat かつ、角度差 &lt; dt_lat  
+  > + radial 方向での位置差 &lt; dr_rad + cr_rad &times; th かつ、角度差 &lt; dt_rad + ct_rad &times; th ( th は自身の space-angle )  
+  
+    ##### 上記 2 つのゴーストフィルタに関する注意書き
+  > + 位置は micron、角度は rad 単位での標記です。これは NETSCAN コードでのデフォルトです。  
+  > + micro-track ( vxx-file ) の位置 xy は各乳剤層の中央の z 面での値です。  
+  > + 内部での計算に、位置は double、角度は float を用いているため、dump 出力を用いた double での計算とは若干のズレはあり得ます。  
+  > + フィルター後に出力される飛跡は`元の rawid ではソートされません`。出力順序を前提としないで下さい。  
