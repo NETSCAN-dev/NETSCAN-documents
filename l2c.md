@@ -177,3 +177,9 @@ footerの例（new format）
 ・「rootが同じ」グループ数
 ・「rootとleafが同じ」グループ数
 ```
+
+## l2c-xの処理工程
+早川氏のメモより
+1. Linkletの読み込み (読み込みと解釈でマルチスレッド)
+2. Groupの生成(BaseTrackとLinkletのグループ化のみ、Chainはつくらない)
+3. Chainを生成しつつテキスト出力
