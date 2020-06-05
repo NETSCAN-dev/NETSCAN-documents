@@ -32,19 +32,18 @@
 
   - **--view view-step view-overlap [view-select-mode]**  
     **--view view-list-file-name [view-select-mode]**
-  > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list)
-  > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
-  > view-select-mode ( optional ) can be specified to limit views used for process as  
-  > 1 = one view in center / 2 = one view in center and 4 views in corners.  
-  > オプション view-select-mode は、プロセスを行うのに使う視野を制限するために与えることができる。
-  > 1 = 中央の1視野 / 2 = 中央の1視野とコーナーの4視野を自動的に計算する
+  > 処理区画 (view) を view-step と view-overlap の値を指定して自動生成するか、ファイル [view-list-file](view_list.md) で指定する。  
+  > view-step と view-overlap の定義は [mk_views](mk_views.md) のオプション --views の記述を参照の事。  
+  > view-select-mode は、処理対象を、指定した view リストの一部だけに制限したい場合に使う。  
+  > view-select-mode = 1 は中央の 1 view だけを、view-select-mode = 2 は中央と四隅の計 5 view だけを処理する。  
 
-  - **--search-mode 0/1 \[ fname-[correction-map](correction-map.md)-i \]**
-  > This option is to give fname-[correction-map](correction-map.md)-i as a starting point for alignment search.  
-  > There is  no difference between mode 0 and 1 and  
-  > They are remained just for backward compatibility of this option.  
-  > Without fname-[correction-map](correction-map.md)-i specified, search starts from unit affine transform.  
-  > Mode = 2 was discarded.  
+  - --search-mode 1/2 \[ [correction-map](correction-map.md)-i \]
+  > このオプションで探索基点の決定法 (search-mode) と、基点の決定に使う [correction-map](correction-map.md)-i を指定する。  
+  > search-mode = 1 では、常に [correction-map](correction-map.md)-i 中の最近接 view を基点とする。  
+  > search-mode = 2 では、探索に成功した view リスト中の最近接 view を基点とするが、  
+  > 探索に成功した view が得られる迄は [correction-map](correction-map.md)-i から基点を選ぶ。  
+  > [correction-map](correction-map.md)-i が未指定の場合は無変換パラメータを基点とする。  
+  > search-mode = 0 は search-mode = 1 と同じ動作をする ( to be obsoleted )。  
 
   - --offset-xy offset-i offset-x offset-y
   > modify GlobalAlign::PositionWindow as  

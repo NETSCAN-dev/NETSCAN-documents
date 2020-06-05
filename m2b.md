@@ -85,7 +85,10 @@ distortion と shrink の補正がされた Micro Track のデータから Base 
 runcard ( m:/prg/netscan/ver-2011-03-01/rc/m2b.rc )
 ```
 [MT2BT]
-Algorithm   = 0 # 0 => ConnectBase2 / 1 => ConnectLinklet
+Algorithm   = 0
+  # 0 : ConnectBase2
+  # 1 : ConnectLinklet
+  # 2 : ConnectBase2 に radial-lateral での角度差カット機能を追加
 FACE1       = 0.0 0.0 0.0 0.000 0.000 1.00
 FACE2       = 0.0 0.0 0.0 0.000 0.000 1.00
 ErrAng      = 0.060
@@ -94,7 +97,7 @@ ErrShur     = 0.010
 PHCUT       = 0 0.1 0
 PHSUMCUT    = 0 0.1 0
 VolCut      = 0 0.1 0
-GhostFilter = 0 5 10 <- enable dr dt <- obsoleted
+ErrorsAngleRL = face1-radial face2-radial face1-lateral face2-lateral
 (*) 角度ズレ許容範囲 = ErrAng + ErrDist + ErrShur x ベース角
 (*) ConnectLinklet を使う際の runcard は t2l 用の Mode = 0 を参照のこと
 ```

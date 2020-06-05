@@ -31,12 +31,13 @@
   > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list)
   > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
 
-  - --search-mode 0/1 \[ fname-[correction-map](correction-map.md)-i \]
-  > This option is to give fname-[correction-map](correction-map.md)-i as a starting point for alignment search.  
-  > There is  no difference between mode 0 and 1 and  
-  > They are remained just for backward compatibility of this option.  
-  > Without fname-[correction-map](correction-map.md)-i specified, search starts from unit affine transform.  
-  > Mode = 2 was discarded.  
+  - --search-mode 1/2 \[ [correction-map](correction-map.md)-i \]
+  > このオプションで探索基点の決定法 (search-mode) と、基点の決定に使う [correction-map](correction-map.md)-i を指定する。  
+  > search-mode = 1 では、常に [correction-map](correction-map.md)-i 中の最近接 view を基点とする。  
+  > search-mode = 2 では、探索に成功した view リスト中の最近接 view を基点とするが、  
+  > 探索に成功した view が得られる迄は [correction-map](correction-map.md)-i から基点を選ぶ。  
+  > [correction-map](correction-map.md)-i が未指定の場合は無変換パラメータを基点とする。  
+  > search-mode = 0 は search-mode = 1 と同じ動作をする ( to be obsoleted )。  
 
   - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
   > include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
