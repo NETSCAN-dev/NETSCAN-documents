@@ -32,11 +32,7 @@
 
   - --c correction-map-file-absolute
   - --ph phmin
-
-<!--
-  - --affine a b c d p q
-  > apply affine transformation ( after correction-map-absolute if specified )  
--->
+  - --z z-corrdinate ( 未指定の場合は z=0 になる )
 
 #### FAQ
 ベーストラックに関するFAQは[m2bのFAQ](m2b.md#FAQ)を見よ。
