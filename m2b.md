@@ -18,13 +18,15 @@
 > これは、通常の xy 空間での角度差による接続判定との論理積として実装しており、  
 > lateral 方向の角度差カットによるノイズ除去を想定したもの。  
 >
-> #### track 位置の z 面  
+> #### track 位置の z面  
 >
 > **base-track の xy は face=1 乳剤層ベース表面での値。**  
 > z は [eventdescriptor](event-descriptor.md) を使って読み出す場合は chamber 構造内での z に設定しており、  
 > それ以外の場合 ( dump_bvxx 等 ) は z=0 としている。  
 > dump_bvxx の場合は option --z で明示的に指定もできる。  
 > なお base-track メンバの micro-track の角度は、distortion と shrink 補正を適用した後の値である。  
+> **dump_bvxx --format 0 --micro でテキストダンプした場合の micro-track の位置は各ベース表面での値になっている。**  
+> これは、base-track vxx に記録記録されている base-track の xy ( face=1 乳剤層ベース表面 ) から計算しているため。  
 >
 > **micro-track の xy は、基本的に読み出し系依存だが、概ね乳剤層中央での値。**  
 > z は base-track 同様に、[eventdescriptor](event-descriptor.md) を使って読み出す場合は chamber 構造内での z に設定しており、  
@@ -103,14 +105,13 @@
   **A** 現状では残らない。[new_basetrack_format](new_basetrack_format.md) で挙げられている通り今後取得できるようにすべき。
 - **Q** base-track のベース中央での座標 (cx, cy) はどうやって求めれば良い ?  
   **A** `cx=x+ax*(m[1].z-m[0].z)*0.5; cy=y+ay*(m[1].z-m[0].z)*0.5;`  
-
-#### 以下は間違っていると思います。上の description に追記しましたが確認願います。
-- Q. ベーストラック=bvxxのz1とz2が、マイクロトラック=fvxxのz座標と異なるのはなぜ?  
-  A. 確認中。同じであるべき。  
-- Q. VXXの座標(base_track_tクラス内におけるx y)のZ面はどこ?  
-  A. FACE1のマイクロトラックの中央の座標。なおbase_track_tクラス内におけるzもやはりFACE1のzと同じ  
-- Q. マイクロトラックの中央の座標 (cx1, cy1), (cx2, cy2)はどうやって求めれば良い?  
-  A. その方法はない。理由1 Distortion補正済みなので、理由2 マイクロトラックのdz情報はbvxxには保存されていないので。  
+- **Q** base_track_t の m[i].z が、micro_track_t.z と異なるのはなぜ ?  
+  **A** 上記 [track 位置の z面](#track-位置の-z面) 参照の事。  
+- **Q** base-track の z面はどこ ?  
+  **A** 上記 [track 位置の z面](#track-位置の-z面) 参照の事。  
+  **以下は間違い** ~~FACE1のマイクロトラックの中央の座標。なおbase_track_tクラス内におけるzもやはりFACE1のzと同じ~~  
+- **Q** micro-track の乳剤層中央での xy はどうやって求めれば良い ?  
+  **A** base-track vxx からは不可能。直接 micro-track vxx を読み出して下さい。  
 
 #### runcard example
 ```
