@@ -6,6 +6,10 @@
 > #### 両面乳剤層の micro-track を使い、乳剤層の distortion と shrink を求める。
 > <br>
 > 各乳剤層の厚みとベース厚の nominal 値 ( [parts.kar](geometry-descriptor.md) 記載 ) との差も求めている。  
+>  
+> dc 内部での使用スレッド数のデフォルトは、処理区画のループでは `std::min<int>(ceil(0.61*GetProcessorInfo().nCore),6);` と、  
+> 内部アルゴリズム ( DistorionShrinkEvaluator2 ) では `std:ceil(0.65*GetProcessorInfo().nCore)` としている。  
+> --num-threads オプションで変更可。  
 >
 
 #### usage
@@ -63,7 +67,7 @@
 
   - --num-threads num1 num2
   > num1 : # of threads used to process views  
-  > num2 : # of threads used in scan parameter ( not valid for current open-mp )  
+  > num2 : # of threads used in scan parameter  
 
   - --debug 1 
   > set verbose console output  
