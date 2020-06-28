@@ -2,11 +2,11 @@
 #### geometry descriptor files
 ---
 
-+ face definition
+#### face definition
 > face ( 1,2 ... ) for HTS scanned data is defined a la SUTS as shown below.  
 > ![face-definition](./hts2fvxx.png)
 
-+ parts.kar ( m:/prg/netscan/ver-2011-03-01/rc/parts.kar )  
+#### parts.kar
 ```
   #
   # opera file                    <- コメント行
@@ -44,7 +44,7 @@
       index  : version = 1 では component 境界の index で face を指定する
 ```
 
-+ chamber.kar ( m:/prg/netscan/ver-2011-03-01/rc/chamber-0.kar )  
+#### chamber.kar
 ```
   CHAMBER OPERA_ECC_EXPOSE B999 -1 0.0        <- (*3)
   01   01 OPERAFilm -1 0.000000 0.000000 1.000000 0.000000 <- (*4)
@@ -69,7 +69,7 @@
 ```
   > ```[chamber-z-direction]x[$4-of-each-parts] == 1 is required, because of limited implementation in the code.```  
 
-+ coordinate systems
+#### coordinate systems
   - object : defined in parts.kar  
   - stack : chamber.kar の 1st object の z_object=0 が z_stack=0 であり、記載順に大きくなる。 xy は $5-$8 で規定されるが NETSCAN では未実装。
   - chamber :  z_chamber = z_stack x chamber-z-direction + chamber-z-offset / xy_chamber = xy_stack

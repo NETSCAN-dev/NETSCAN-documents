@@ -1,11 +1,17 @@
 ---
 #### dc
 ---
-Micro Track のデータから、乳剤層の歪み(distotion)と伸縮(shrink)を求める。
 
-+ description : search shrink and distortion. no correction tried for FulcrumDz in [runcard](#runcard)
-+ usage : dc pl[-zone] [options]
-+ options ( those are in **bold** must be given )
+#### description
+> #### 両面乳剤層の micro-track を使い、乳剤層の distortion と shrink を求める。
+> <br>
+> 各乳剤層の厚みとベース厚の nominal 値 ( [parts.kar](geometry-descriptor.md) 記載 ) との差も求めている。  
+>
+
+#### usage
+> dc pl[-zone] [options]
+
+#### options ( those are in **bold** must be given )
   - **--descriptor [event-descriptor](event-descriptor.md)**
   > set [event-descriptor](event-descriptor.md)  
 
@@ -16,16 +22,16 @@ Micro Track のデータから、乳剤層の歪み(distotion)と伸縮(shrink)�
   > set [runcard](#runcard)  
 
   - **--o [correction-map](correction-map.md)-file [w/a]**
-  > set [[[correction-map](correction-map.md)-dc(absolute)|[correction-map](correction-map.md)]]  
-  > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
-  > 出力されるcorrection-mapのファイル名は指定した通りではなく、勝手に `.lst` という拡張子をつけられる。しかし、m2bのオプション `--c` はcorrection-mapを `.lst` 付きで指定する必要がある。
-  > w:上書きモード, a:追記モード
+  > 出力 [correction-map](correction-map.md) 名を指定する。w は上書きで a は追記指定。デフォルトは上書き。  
+  > ここで指定するファイル名は、４文字以上かつ拡張子を .lst とする事を推奨。  
+  > ファイル名が４文字未満 or 拡張子が .lst でない場合に .lst を付加するという、旧版互換のための仕様を回避するため。  
+  > この仕様は削除予定。  
 
   - **--view view-step view-overlap**  
     **--view view-list-file-name**
-  > distortion correction を行う区画サイズの指定(指定の仕方は 2 通り) ステップとオーバーラップを指定するか、区画サイズをファイルに書く方法。
-  > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list)
-  > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
+  > [処理区画](view-list.md) を、view-step と view-overlap で指定するか、  
+  > [mk_views](mk_views.md) で作成した [区画リスト](view-list.md) のファイル名で指定する。  
+  > ファイル名での指定を推奨。  
 
   - --c [correction-map](correction-map.md)-file
   > set [correction-map](correction-map.md) file used as a starting point for each view  
@@ -63,25 +69,25 @@ Micro Track のデータから、乳剤層の歪み(distotion)と伸縮(shrink)�
   > set verbose console output  
 
 #### FAQ
-* Q. 探索に使用する区画ごとの１面トラック数の上限はMaxTracksで与えられるが、実際に使われたトラック数はどうやって得られるのか?<br>
-  A. 標準出力はされているが、ファイル出力されていないため、現状得る方法はない
-* Q. 角度の小さい飛跡を除外して計算させたいが、どうすればよいか?<br>
-  A. MinAngleという機能はないが、PHCUTを使えば可能。詳細は[cut](cut.md)を参照せよ。 
-* Q. FACE1、FACE2のdx dy dz dax dayは何か?<br>
-  A. マイクロトラックの位置ずれ、角度ずれ(ディストーション)の初期値だが、今後、使わないことを推奨する。
-* Q. ある領域だけdcを通したい場合はどうすればよいか?<br>
-  A. 現状dcだけではできない。[view-list-file](mk_views.md/#view-list)を使う。
-* Q. `view-overlap` とは何か?<br>
-  A. 探索する区画の大きさは長方形で定義され、その中心から次の区画までの距離が `view-step` 、区画の一辺の長さを `view-size` とすると、 `view-overlap = (view-size - view-step) * 0.5` で与えられる値。詳細は[mk_views](mk_views.md)参照。
-* Q. 使うfvxxのファイル名を指定することはできないか?
-  A. 現状できない。[event-descriptor](event-descriptor.md)を書き換えるか、 `--io` で一部を上書きするか、新しく作成するしかない。流石に柔軟性がなさすぎるので、近いうちに引数で指定できるようになるだろう。
-* Q. 計算に失敗した領域(Significance)の場所を得るにはどうすればよいか。
-  A. [mk_views](mk_views.md)を用いて、補正前の[correction-map](correction-map.md)を得ることが出来る。これとの差分を計算すれば、計算に失敗した領域を得ることができる。だが、具体的な方法は誰も知らないし、[mk_views](mk_views.md)を読んだだけでは理解できないだろう。
-* Q. DZはどうやって求めている?<br>
-  A. parts.kar で設定した値との差分である。m2bでは使っていない。
+- **Q** 探索に使用する区画ごとの片面トラック数の上限は MaxTracks で指定できるが、実際に使われたトラック数はどうやって得られるのか ?  
+  **A** 標準出力はされているが、ファイル出力されていないため現状得る方法はない。  
+- **Q** 角度の小さい飛跡を除外して計算させたいが、どうすればよいか ?  
+  **A** PHCUT を使えば space-angle での cut は可能。詳細は[cut](cut.md)を参照せよ。  
+- **Q** FACE1, FACE2 の dx, dy, dz, dax, day は何か ?  
+  **A** micro-track に与える位置・角度の offset だが、dc では全て 0 とする事を推奨。m2b ではこれを使って background の評価を行う事も可。  
+- **Q** ある領域だけ dc を通したい場合はどうすればよいか ?  
+  **A** [処理区画リストファイル](view-list.md) を使用し、--view に処理対象としたい領域内の区画だけを含むファイルを渡す。  
+- **Q** `view-overlap` とは何か ?  
+  **A** [mk_views](mk_views.md#description) 参照。  
+- **Q** micro-tracl vxx のファイル名を直接指定できないか ?  
+  **A** 現状ではできない。引数指定は要検討とする。  
+- **Q** significance が低いなどで失敗した領域の場所を得るにはどうすればよいか ?  
+  **A** [mk_views](mk_views.md) で作成した [処理区画リスト](view-list.md) を用いれば可能になる予定。  
+  &emsp; 処理区画リストの各エントリ id (第1カラム) と出力 [correction-map](correction-map.md) の id (第1カラム) を同じ値にしておくべき所を実装していないだけなので。  
+- **Q** dz はどうやって求めている ?  
+  **A** [parts.kar](geometry-descriptor.md#parts.kar) で設定した値との差分である。m2bでは使っていない。  
 
-#### runcard
-runcard template( m:/prg/netscan/ver-2011-03-01/rc/dc.rc )
+#### runcard example
 ```
 [DC]
 #
