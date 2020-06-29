@@ -2,58 +2,58 @@
 #### ali-l
 ---
 
-プレート間の位置関係を求める。[ali-g](ali-g.md)もある。
 
-+ description : search alignment in smaller scan area ( local ) in given process views  
-  > Rotation correction in position obtained for global alignment is also applied to angle correction.  
-+ usage : ali-l pl0[-zone0 pl1[-zone1] [options]  
-  > default value for zone0/1 are 0  
-+ options ( those are in **bold** must be given )
-  - **--descriptor [event-descriptor](event-descriptor.md)**
-  > set [event-descriptor](event-descriptor.md)  
+#### description
+> プレート間の位置関係を求める。[ali-g](ali-g.md) と違って探索パラメータ範囲を総当たりしてはいないが、その分高速動作する。  
 
-  - --io fname-io  
-  > override [event-descriptor](event-descriptor.md) entries  
+#### usage
+> #### ali-l pl0[-zone0 pl1[-zone1] [options]  
+> <br>
+> default value for zone0/1 are 0  
+>
 
-  - **--rc runcard-file**
-  > set runcard  
+#### options ( those are in **bold** must be given )
+- **--descriptor [event-descriptor](event-descriptor.md)**
+> set [event-descriptor](event-descriptor.md)  
 
-  - **--id-geom geom**
-  > set geometry 0/1/...  
+- --io fname-io  
+> override [event-descriptor](event-descriptor.md) entries  
 
-  - **--c [correction-map](correction-map.md)-file [w/a]**
-  > set [[[correction-map](correction-map.md)-align(relative)|[correction-map](correction-map.md)]]  
-  > result is over-written (w) or appended (a) to this file ( default is to over-write ).  
-  > w:上書きモード, a:追記モード
+- **--rc runcard-file**
+> set runcard  
 
-  - **--view view-step view-overlap**  
-    **--view view-list-file-name**
-  > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list)
-  > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
+- **--id-geom geom**
+> set geometry 0/1/...  
 
-  - --search-mode 1/2 \[ [correction-map](correction-map.md)-i \]
-  > このオプションで探索基点の決定法 (search-mode) と、基点の決定に使う [correction-map](correction-map.md)-i を指定する。  
-  > search-mode = 1 では、常に [correction-map](correction-map.md)-i 中の最近接 view を基点とする。  
-  > search-mode = 2 では、探索に成功した view リスト中の最近接 view を基点とするが、  
-  > 探索に成功した view が得られる迄は [correction-map](correction-map.md)-i から基点を選ぶ。  
-  > [correction-map](correction-map.md)-i が未指定の場合は無変換パラメータを基点とする。  
-  > search-mode = 0 は search-mode = 1 と同じ動作をする ( to be obsoleted )。  
+- **--c [correction-map-file](correction-map.md) [w/a]**
+> 探索結果である [相対補正マップ](correction-map.md) のファイル名を指定する。  
+> 上書き(w) か追記(a) を指定可。デフォルトは上書き。  
 
-  - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
-  > include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
+- **--view view-step view-overlap**  
+  **--view view-list-file-name**
+> [処理区画](view-list.md) を、view-step と view-overlap で指定して自動生成するか、  
+> [mk_views](mk_views.md) で作成した [区画リスト](view-list.md) のファイル名で指定する。  
+> ファイル名での指定を推奨。  
 
-  - --filter-max-track-per-view value
-  > avoid process in views having max-track-per-view track or more
+- --search-mode 1/2 \[ [correction-map-i](correction-map.md) \]
+> このオプションで探索基点の決定法 (search-mode) と、基点の決定に使う [correction-map-i](correction-map.md) を指定する。  
+> search-mode = 1 では、常に [correction-map-i](correction-map.md) 中の最近接区画を基点とする。  
+> search-mode = 2 では、探索に成功した区画リスト中の最近接区画を基点とするが、  
+> 探索に成功した区画が得られる迄は [correction-map-i](correction-map.md) から基点を選ぶ。  
+> [correction-map-i](correction-map.md) が未指定の場合は無変換パラメータを基点とする。  
+> search-mode = 0 は search-mode = 1 と同じ動作をする ( 削除予定 )。  
 
+- --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
+> include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
+
+- --filter-max-track-per-view value
+> avoid process in views having max-track-per-view track or more
 
 #### FAQ
 [ali-gのFAQ](ali-g.md#FAQ) も参照
 
-
-### runcard
+### runcard example
 共通のパラメータについては、[ali-gのruncard](ali-g.md#runcard)も参照。
-
-+ runcard template( m:/prg/netscan/ver-2011-03-01/rc/align-0.rc )
 
 ```
 [LocalAlign]
@@ -77,7 +77,8 @@ AffineFitMode   = 1                 # 0 = full affine fit / 1 = shrink+rot+shift
 Zproj           = 0.5               # 最近接ベース面間距離を Zproj : 1-Zproj に内分する z で alignment 探索を行う。default = 0.5
 ```
 
-  > 上記パラメータでのビン設定法  
-  > w = sqrt( BinWidth::$1^2 + (BinWidth::$2x(0.5xnominal-gap))^2 );  
-  > Nbin = (int)( (SearchArea+PeakSizeMax)*2.0 / w )+1;  
-  > Nbin x Nbin のヒストグラムに詰めている。  
+> #### 上記パラメータと、内部で使われるヒストグラムのビン幅等の関係メモ  
+> c0 = BinWidth::$1、c1 = BinWidth::$2、dz = nominal-gap として  
+> w = sqrt( c0<sup>2</sup> + ( c1 &times; dz &times; 0.5 )<sup>2</sup> );  
+> Nbin = (int)( SearchArea+PeakSizeMax &times; 2 / w )+1;  
+> Nbin &times; Nbin のヒストグラムに詰めている。  

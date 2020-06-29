@@ -16,61 +16,61 @@
 > dc pl[-zone] [options]
 
 #### options ( those are in **bold** must be given )
-  - **--descriptor [event-descriptor](event-descriptor.md)**
-  > set [event-descriptor](event-descriptor.md)  
+- **--descriptor [event-descriptor](event-descriptor.md)**
+> set [event-descriptor](event-descriptor.md)  
 
-  - --io fname-io
-  > override [event-descriptor](event-descriptor.md) entries  
+- --io fname-io
+> override [event-descriptor](event-descriptor.md) entries  
 
-  - **--rc fname-[runcard](#runcard)**
-  > set [runcard](#runcard)  
+- **--rc fname-[runcard](#runcard)**
+> set [runcard](#runcard)  
 
-  - **--o [correction-map](correction-map.md)-file [w/a]**
-  > 出力 [correction-map](correction-map.md) 名を指定する。w は上書きで a は追記指定。デフォルトは上書き。  
-  > ここで指定するファイル名は、４文字以上かつ拡張子を .lst とする事を推奨。  
-  > ファイル名が４文字未満 or 拡張子が .lst でない場合に .lst を付加するという、旧版互換のための仕様を回避するため。  
-  > この仕様は削除予定。  
+- **--o [correction-map](correction-map.md)-file [w/a]**
+> 出力 [correction-map](correction-map.md) 名を指定する。w は上書きで a は追記指定。デフォルトは上書き。  
+> ここで指定するファイル名は、４文字以上かつ拡張子を .lst とする事を推奨。  
+> ファイル名が４文字未満 or 拡張子が .lst でない場合に .lst を付加するという、旧版互換のための仕様を回避するため。  
+> この仕様は削除予定。  
 
-  - **--view view-step view-overlap**  
-    **--view view-list-file-name**
-  > [処理区画](view-list.md) を、view-step と view-overlap で指定するか、  
-  > [mk_views](mk_views.md) で作成した [区画リスト](view-list.md) のファイル名で指定する。  
-  > ファイル名での指定を推奨。  
+- **--view view-step view-overlap**  
+  **--view view-list-file-name**
+> [処理区画](view-list.md) を、view-step と view-overlap で指定するか、  
+> [mk_views](mk_views.md) で作成した [区画リスト](view-list.md) のファイル名で指定する。  
+> ファイル名での指定を推奨。  
 
-  - --c [correction-map](correction-map.md)-file
-  > set [correction-map](correction-map.md) file used as a starting point for each view  
+- --c [correction-map](correction-map.md)-file
+> set [correction-map](correction-map.md) file used as a starting point for each view  
 
-  - --search-mode 0/1/2
-  > set search mode ( default = 0 )  
-  > 0 : independent search. use first values of ErrDist and ErrShur  
-  > 1 : begin search in each view using [correction-map](correction-map.md) given in --c option  
-  > 2 : begin search in each view using closest view's result. use second values of ErrDist and ErrShur if they exists  
+- --search-mode 0/1/2
+> set search mode ( default = 0 )  
+> 0 : independent search. use first values of ErrDist and ErrShur  
+> 1 : begin search in each view using [correction-map](correction-map.md) given in --c option  
+> 2 : begin search in each view using closest view's result. use second values of ErrDist and ErrShur if they exists  
 
-  - --filter-angle +1/-1 axmin axmax aymin aymax
-  > use angle regions (+1) or exclude angle regions(-1) in parameter search  
-  > multiple entries are accepted and includes(+1) are first evaluated and then excludes(-1)  
+- --filter-angle +1/-1 axmin axmax aymin aymax
+> use angle regions (+1) or exclude angle regions(-1) in parameter search  
+> multiple entries are accepted and includes(+1) are first evaluated and then excludes(-1)  
 
-  - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
-  > include (+1) or exclude (-1) [filter-list](filter-list.md)  
+- --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
+> include (+1) or exclude (-1) [filter-list](filter-list.md)  
 
-  - --filter-phmin phmin
-  > phmin filter  
+- --filter-phmin phmin
+> phmin filter  
 
-  - --filter-max-track-per-view value
-  > avoid process in views having max-track-per-view track or more  
+- --filter-max-track-per-view value
+> avoid process in views having max-track-per-view track or more  
 
-  - --ang-shr ang-shr-base ang-shr-shift  
-  > abs(&theta;) &le; ang-shr-base &rArr; &theta; += &theta; &times; (ang-shr-shift/ang-shr-base)  
-  > &theta; > +ang-shr-base &rArr; &theta; += ang-shr-base  
-  > &theta; < -ang-shr-base &rArr; &theta; -= ang-shr-base  
-  > (*) implemented by Komatani probably fot HTS specific needs.  
+- --ang-shr ang-shr-base ang-shr-shift  
+> abs(&theta;) &le; ang-shr-base &rArr; &theta; += &theta; &times; (ang-shr-shift/ang-shr-base)  
+> &theta; > +ang-shr-base &rArr; &theta; += ang-shr-base  
+> &theta; < -ang-shr-base &rArr; &theta; -= ang-shr-base  
+> (*) implemented by Komatani probably fot HTS specific needs.  
 
-  - --num-threads num1 num2
-  > num1 : # of threads used to process views  
-  > num2 : # of threads used in scan parameter  
+- --num-threads num1 num2
+> num1 : # of threads used to process views  
+> num2 : # of threads used in scan parameter  
 
-  - --debug 1 
-  > set verbose console output  
+- --debug 1 
+> set verbose console output  
 
 #### FAQ
 - **Q** 探索に使用する区画ごとの片面トラック数の上限は MaxTracks で指定できるが、実際に使われたトラック数はどうやって得られるのか ?  

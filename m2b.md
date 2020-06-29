@@ -59,38 +59,38 @@
 >
 
 #### options ( those are in **bold** must be given )
-  - **--descriptor [event-descriptor](event-descriptor.md)**
-  > set [event-descriptor](event-descriptor.md)  
+- **--descriptor [event-descriptor](event-descriptor.md)**
+> set [event-descriptor](event-descriptor.md)  
 
-  - --io fname-io
-  > override [event-descriptor](event-descriptor.md) entries  
+- --io fname-io
+> override [event-descriptor](event-descriptor.md) entries  
 
-  - **--rc [runcard](#runcard-example)-file**
-  > runcard を指定する。下記の [runcard example](#runcard-example) を参照。  
+- **--rc [runcard](#runcard-example)-file**
+> runcard を指定する。下記の [runcard example](#runcard-example) を参照。  
 
-  - **--c [correction-map](correction-map.md)-file**
-  > set [correction-map](correction-map.md) ( output of dc )  
+- **--c [correction-map](correction-map.md)-file**
+> set [correction-map](correction-map.md) ( output of dc )  
 
-  - **--view view-step view-overlap**  
-    **--view view-list-file-name**  
-  > [処理区画](view-list.md) を、view-step と view-overlap で指定するか、  
-  > [mk_views](mk_views.md) で作成した [区画リスト](view-list.md) のファイル名で指定する。  
-  > ファイル名での指定を推奨。  
+- **--view view-step view-overlap**  
+  **--view view-list-file-name**  
+> [処理区画](view-list.md) を、view-step と view-overlap で指定するか、  
+> [mk_views](mk_views.md) で作成した [区画リスト](view-list.md) のファイル名で指定する。  
+> ファイル名での指定を推奨。  
 
-  - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
-  > include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
+- --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
+> include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
 
-  - --filter-phmin phmin
-  > phmin filter  
+- --filter-phmin phmin
+> phmin filter  
 
-  - --filter-max-track-per-view value
-  > avoid process in views having max-track-per-view track or more  
+- --filter-max-track-per-view value
+> avoid process in views having max-track-per-view track or more  
 
-  - --ang-shr ang-shr-base ang-shr-shift
-  > &theta; += &theta; &times; (ang-shr-shift/ang-shr-base) for abs(&theta;)≤ang-shr-base  
-  > &theta; += ang-shr-base for &theta; > +ang-shr-base  
-  > &theta; -= ang-shr-base for &theta; < -ang-shr-base  
-  > (*) implemented by Komatani probably fot HTS specific needs.  
+- --ang-shr ang-shr-base ang-shr-shift
+> &theta; += &theta; &times; (ang-shr-shift/ang-shr-base) for abs(&theta;)≤ang-shr-base  
+> &theta; += ang-shr-base for &theta; > +ang-shr-base  
+> &theta; -= ang-shr-base for &theta; < -ang-shr-base  
+> (*) implemented by Komatani probably fot HTS specific needs.  
 
 #### FAQ
 - **Q** runcard の、ErrAng と ErrDist の違いは ?  

@@ -2,65 +2,54 @@
 #### l2c ( l2c-x )
 ---
 
-+ usage : l2c [ options ] ( *linklet-dump-file-1* *linklet-dump-file-2* ... | *@linklet-dump-file-list* )
+#### description
+> このコードは、濱田要氏と白石卓也氏によって書かれたconnect.cppの更新版です。<br>
+> チェーンを構築するためのアルゴリズムは、オリジナルから変更されていません。<br>
+> 4Gバイトを超える入力ファイルではオリジナルバージョンが機能しないことに注意してください。
+>  
+> 入力linklet-dump-filesは次のいずれかの方法で指定できます
+> - 複数のファイル名 例: linklet-dump-file-1.txt linklet-dump-file-2.txt のように引数を並べて書く
+> - リストファイルを @ 付きで 例: @list-file.txt リストファイルにはファイル名を1行ずつ書く
+>  
+> l2c-x（Komataniのバージョンのl2c）には以下の制限があります。
+> - --binary-inputは利用できません。
+> - EndPosとUnUsePosはruncardでは使用できません。 UsePosを使うべきであり、プレートは連続しているべきです。
+> - out_gr.txtの出力を有効にするには、--debugを指定します。
+>  
+> グループとは、少なくとも1つのトラックセグメントを共通に持つチェーンの集合です。<br>
+> これは、グループ内の2つのチェーンがトラックセグメントを共有しているという意味ではないことに注意してください。<br>
+> 例えば、チェーンAとチェーンBは共通のセグメントS1を有し、チェーンBとチェーンCは共通のセグメントS2を有する、<br>
+> 場合、すべてのチェーンA、B、Cはグループ内にありますが、チェーンAとCには共通のセグメントはありません。
+>
 
-  > This code is an updated copy of connect.cpp written by K.Hamada and by Shiraishi.  <br>
-  > このコードは、濱田要氏と白石卓也氏によって書かれたconnect.cppの更新版です。<br>
-  > Algorithm to build chain is not modified from the original.  <br>
-  > チェーンを構築するためのアルゴリズムは、オリジナルから変更されていません。<br>
-  > Be careful that the original version does not work with input file larger than 4Gbytes.  
-  > 4Gバイトを超える入力ファイルではオリジナルバージョンが機能しないことに注意してください。
-  >  
-  > Input linklet-dump-files can be specified in ...  
-  > 入力linklet-dump-filesは次のいずれかの方法で指定できます
-  > * Multiple file-names in sequence like linklet-dump-file-1 linklet-dump-file-2 ...  <br>
-  > 複数のファイル名 例: linklet-dump-file-1.txt linklet-dump-file-2.txt のように引数を並べて書く
-  > * A list-file like @list-file  <br>
-  > リストファイルを@付きで 例: @list-file.txt リストファイルにはファイル名を1行ずつ書く
-  >  
-  > l2c-x ( Komatani's version of l2c ) has restrictions below.  
-  > l2c-x（Komataniのバージョンのl2c）には以下の制限があります。
-  > * --binary-input is not available.<br>
-  > --binary-inputは利用できません。
-  > * EndPos and UnUsePos can not be used in runcard. One should use UsePos and plates should be sequential.<br>
-  > EndPosとUnUsePosはruncardでは使用できません。 UsePosを使うべきであり、プレートは連続しているべきです。
-  > * specify --debug to enable out_gr.txt output.  <br>
-  > out_gr.txtの出力を有効にするには、--debugを指定します。
-  >  
-  > Group means a set of chains, which have at least one track-segments in common.  <br>
-  > グループとは、少なくとも1つのトラックセグメントを共通に持つ一連のチェーンを意味します。<br>
-  > Be careful that this does not mean that any two chains in a group have track-segments in common.  <br>
-  > これは、グループ内の2つのチェーンがトラックセグメントを共有しているという意味ではないことに注意してください。<br>
-  > For example, chain A and chain B have a common segment S1 and chain B and chain C have a common segment S2.  <br>
-  > In this case, all chains A,B,C are in a group but chain A and C have no segments in common.  
-  > 例えば、チェーンAとチェーンBは共通のセグメントS1を有し、チェーンBとチェーンCは共通のセグメントS2を有する、<br>
-  > 場合、すべてのチェーンA、B、Cはグループ内にありますが、チェーンAとCには共通のセグメントはありません。
-  >
+#### usage
+> #### l2c [ options ] ( *linklet-dump-file-1* *linklet-dump-file-2* ... | *@linklet-dump-file-list* )
+> <br>
 
-+ options
-  - --rc chain.rc
-  > set runcard file  
+#### options
+- --rc chain.rc
+> set runcard file  
 
-  - --binary-input [ record-size ]
-  > tell l2c that input linklet-dump-files are in binary format ( i.e. created with option '--format 0' )  
-  > you need to give record-size in byte as a 2nd argument,  
-  > if your binary file is a subset or superset of linklet_t and has different record-size.  
+- --binary-input [ record-size ]
+> tell l2c that input linklet-dump-files are in binary format ( i.e. created with option '--format 0' )  
+> you need to give record-size in byte as a 2nd argument,  
+> if your binary file is a subset or superset of linklet_t and has different record-size.  
 
-  - --output-isolated-linklet
-  > *This option is for t2l-x only.*  
-  > output isolated linklets as chains ( i.e. output 2 segment chains ). 
+- --output-isolated-linklet
+> *This option is for t2l-x only.*  
+> output isolated linklets as chains ( i.e. output 2 segment chains ). 
 
-  - --o fname-out
-  > *This option is for l2c-x only.*  
-  > specify output file. default output is to fname-out = "chain_dat.txt".  
-  > fname-out = "-" is to stdout.  
+- --o fname-out
+> *This option is for l2c-x only.*  
+> specify output file. default output is to fname-out = "chain_dat.txt".  
+> fname-out = "-" is to stdout.  
  
-  - --over fname-over
-  > *This option is for l2c only.*  
-  > specify output file for groups having more than Chain::UpperLim chains.  
-  > default is "over_upperlim.dat".  
+- --over fname-over
+> *This option is for l2c only.*  
+> specify output file for groups having more than Chain::UpperLim chains.  
+> default is "over_upperlim.dat".  
 
-+ runcard ( m:/prg/netscan/ver-2016-09-01/rc/chain.rc )
+#### runcard example
 ```
 [Chain]
 #UsePos = 10	10 20 30 40 50 60 70 80 90 100
@@ -76,13 +65,12 @@ UpperLim = 1000000
 	# そのかわり、over_upperlim.dat というファイルにその group に属する linklet を出力。
 Format = 0
 	# 0 なら new format、1 なら int 型 ("-1"と"-2")、2 ならchar型("*******"と"-------")で出力
-  ```
-  > これらを指定しなければ、全ての pos、linklet の許容ペケ、UpperLim なし、new format で chain をつくります。  
-  > UsePos, UnUsePos, EndsPos はどれか１つしか指定できません。  
-  > コメントアウトは前に # をつけてください。  
+```
+> これらを指定しなければ、全ての pos、linklet の許容ペケ、UpperLim なし、new format で chain をつくります。  
+> UsePos, UnUsePos, EndsPos はどれか１つしか指定できません。  
+> コメントアウトは前に # をつけてください。  
 
-+ output file format
-
+#### output file format
 ```
 start_plate と end_plate の番号は、ヘッダー2行目の pos の順につけた通し番号 (1～) になっています。
 chain 番号、group 番号はすべて通し番号で順に並んでいるので、
@@ -178,8 +166,8 @@ footerの例（new format）
 ・「rootとleafが同じ」グループ数
 ```
 
-## l2c-xの処理工程
-早川氏のメモより
-1. Linkletの読み込み (読み込みと解釈でマルチスレッド)
-2. Groupの生成(BaseTrackとLinkletのグループ化のみ、Chainはつくらない)
-3. Chainを生成しつつテキスト出力
+#### l2c-x の処理工程
+> 早川氏のメモより
+> 1. Linkletの読み込み (読み込みと解釈でマルチスレッド)
+> 2. Groupの生成(BaseTrackとLinkletのグループ化のみ、Chainはつくらない)
+> 3. Chainを生成しつつテキスト出力

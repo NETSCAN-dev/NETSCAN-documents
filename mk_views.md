@@ -30,21 +30,21 @@
 > ```
 
 #### options ( those are in **bold** must be given )
-  - **--descriptor [event-descriptor](event-descriptor.md)**
-  > set [event-descriptor](event-descriptor.md)  
+- **--descriptor [event-descriptor](event-descriptor.md)**
+> set [event-descriptor](event-descriptor.md)  
 
-  - --io fname-io
-  > override [event-descriptor](event-descriptor.md) entries  
+- --io fname-io
+> override [event-descriptor](event-descriptor.md) entries  
 
-  - **--view view-step view-overlap**
-  > 処理区画リストを作成する際の view-step と view-overlap を指定する。  
-  > パラメータの意味は description を参照の事。  
+- **--view view-step view-overlap**
+> 処理区画リストを作成する際の view-step と view-overlap を指定する。  
+> パラメータの意味は description を参照の事。  
 
-  - --o fname-view
-  > set output [view-list](view-list.md) filename  
+- --o fname-view
+> set output [view-list](view-list.md) filename  
 
-  - --rc fname-rc
-  > set runcard filename in [view-list](view-list.md) file  
+- --rc fname-rc
+> set runcard filename in [view-list](view-list.md) file  
 
-  - --sort 0/1
-  > sort views by line(0) or by spiral-around-center(1). default = 0  
+- --sort 0/1
+> sort views by line(0) or by spiral-around-center(1). default = 0  

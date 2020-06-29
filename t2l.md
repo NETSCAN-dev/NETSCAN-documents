@@ -2,78 +2,79 @@
 #### t2l
 ---
 
-プレート間で track をつないで linklet をつくる
+#### description
+> プレート間で micro/base-track をつないで linklet をつくる。  
 
-+ description :  connect micro/base tracks among plates using ConnectLinklet / IConnectLinklet
-+ usage : t2l [options]
-+ options ( those are in **bold** must be given )
+#### usage
+> #### t2l [options]
 
-  - **--pos pos0[-zone0] pos1[-zone1]**
-  > set pos ( plate + face ) pair to connect. default for zone = 0.  
+#### options ( those are in **bold** must be given )
+- **--pos pos0[-zone0] pos1[-zone1]**
+> set pos ( plate + face ) pair to connect. default for zone = 0.  
 
-  - **--descriptor [event-descriptor](event-descriptor.md)**
-  > set [event-descriptor](event-descriptor.md)  
+- **--descriptor [event-descriptor](event-descriptor.md)**
+> set [event-descriptor](event-descriptor.md)  
 
-  - --io fname-io
-  > override [event-descriptor](event-descriptor.md) entries  
+- --io fname-io
+> override [event-descriptor](event-descriptor.md) entries  
 
-  - **--rc runcard-file**
-  > set runcard  
+- **--rc runcard-file**
+> set runcard  
 
-  - **--geom geom**
-  > set geometry 0/1/...  
+- **--geom geom**
+> chamber 構造を番号 ( 0,1,... ) で指定する。  
 
-  - **--c correction-map-file [ correction-map-dist ]**  
-    **--c - correction-map-dist**
-  > set correction-map-align ( relative correction-map ) and correction-map-dist ( required to connect micro tracks )  
+- **--c correction-map-file [ correction-map-dist ]**  
+  **--c - correction-map-dist**
+> set correction-map-align ( relative correction-map ) and correction-map-dist ( required to connect micro tracks )  
 
-  - **--view view-step view-overlap**  
-    **--view view-list-file-name**
-  > set view step and overlap by value or by [view-list-file](mk_views.md/#view-list)
-  > see [[view-step and view-overlap definitions|[mk_views](mk_views.md)]].  
-  > distortion correction を行う区画サイズの指定(指定の仕方は 2 通り) ステップとオーバーラップを指定するか、区画サイズをファイルに書く方法。
+- **--view view-step view-overlap**  
+  **--view view-list-file-name**
+> [処理区画リスト](view-list.md) を、view-step と view-overlap で指定して自動生成するか、  
+> [mk_views](mk_views.md) で作成した [処理区画リスト](view-list.md) のファイル名で指定する。  
+> ファイル名での指定を推奨。  
   
-  - --append
-  > add built linklets to vxx, otherwise vxx is overwritten  
+- --append
+> add built linklets to vxx, otherwise vxx is overwritten  
 
-  - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
-  > include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
+- --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
+> include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  
 
-  - --filter-max-track-per-view value
-  > avoid process in views having max-track-per-view track or more  
+- --filter-max-track-per-view value
+> avoid process in views having max-track-per-view track or more  
 
-  - --window xmin xmax ymin ymax
-  > limit position of tracks to be connected  
+- --window xmin xmax ymin ymax
+> limit position of tracks to be connected  
 
-  - --offset-xy offset-i offset-x offset-y
-  > ex. --offset-xy 1 100 0 means &rArr; 1st plate is shifted by (100,0) when connecting tracks, after applying correction-maps.  
+- --offset-xy offset-i offset-x offset-y
+> ex. --offset-xy 1 100 0 means &rArr; 1st plate is shifted by (100,0) when connecting tracks, after applying correction-maps.  
 
-  - --cache $1 $2 $3 $4 $5 $6
-  > set cache size ( values set to 0 are remain unchanged ).  
-  > $1 : high cache pages for micro-vxx  
-  > $2 : high cache pages for base-vxx  
-  > $3 : high cache pages for linklet-vxx  
-  > $4 : high cache blocks for micro-vxx  
-  > $5 : high cache blocks for base-vxx  
-  > $6 : high cache blocks for linklet-vxx  
+- --cache $1 $2 $3 $4 $5 $6
+> set cache size ( values set to 0 are remain unchanged ).  
+> $1 : high cache pages for micro-vxx  
+> $2 : high cache pages for base-vxx  
+> $3 : high cache pages for linklet-vxx  
+> $4 : high cache blocks for micro-vxx  
+> $5 : high cache blocks for base-vxx  
+> $6 : high cache blocks for linklet-vxx  
 
-  - --dump-linklet output-file-name 0/1/2
-  > output dump_linklet equivalent format to  output-file-name  
-  > 0/1/2 is values given in --format 0/1/2 option to dump_linklet  
+- --dump-linklet output-file-name 0/1/2
+> output dump_linklet equivalent format to  output-file-name  
+> 0/1/2 is values given in --format 0/1/2 option to dump_linklet  
 
-  - --hts-a
-  > parse (col,row) according to HTS alpha format and print (view-id,imager-id) in text-mode output.  
+- --hts-a
+> parse (col,row) according to HTS alpha format and print (view-id,imager-id) in text-mode output.  
 
-  - --hts-b
-  > parse (col,row) according to HTS beta format and print (shot-id,0) in text-mode output.  
+- --hts-b
+> parse (col,row) according to HTS beta format and print (shot-id,0) in text-mode output.  
 
-  - --log ( obsoleted )
-  >  
+- --log ( obsoleted )
+>  
 
-  - --max-write-views max-views-in-write-queue
-  > limit # of views in write queue. use this option when you faced memory usage problem.  
+- --max-write-views max-views-in-write-queue
+> limit # of views in write queue. use this option when you faced memory usage problem.  
 
-+ runcard ( m:/prg/netscan/ver-2011-03-01/rc/t2l.rc )
+#### runcard example
 ```
 [Linklet]
 Mode        = 1         # connection widow is set by errors (0) / by minimum momentun and sigma (1)
@@ -97,5 +98,5 @@ ConnectionWindow-X = xmin xmax ymin ymax axmin axmax aymin aymax # This is a rep
 WindowMin   = wxmin wymin waxmin waymin # asymmetric fixed connection window. default values are 0.  
 WindowMax   = wxmax wymax waxmax waymax # this parameter assumes Mode = 0 and CircleCut = 0
 ```
-  > To set connection window, do not use ErrPos and ErrAng anymore and use Errors1 and Errors2 instead.  
-  > Please refer to **[[inside description|t2l-inside]]** below for their usage. 
+> To set connection window, do not use ErrPos and ErrAng anymore and use Errors1 and Errors2 instead.  
+> Please refer to **[[inside description|t2l-inside]]** below for their usage. 
