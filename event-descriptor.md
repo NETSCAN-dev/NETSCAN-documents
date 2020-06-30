@@ -4,7 +4,7 @@
 
 各pathは、event descriptorを置いたdirectoryからの相対path または 絶対pathで指定して下さい。プログラムを実行しているcurrent directoryからの相対pathではありません。
 
-+ eventdescriptor ( m:/prg/netscan/ver-2011-03-01/scripts/eventdescriptor.ini )  
+#### eventdescriptor example
   ```
   #
   # RunCard の雛型です。このままでは使えません。
