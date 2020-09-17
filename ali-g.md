@@ -107,9 +107,10 @@ InternalMode    = 2                 # InteranlMode=1/2 を推奨。0 は廃止�
 > 探索パラメータの中、角度ズレに関しては ShiftAx,ShiftAy に、ギャップに関しては Dz に、回転に関しては RotationWindow に、それぞれ指定された範囲とステップでループを回す。  
 > そしてこのループ毎に、角度差 ErrorAngle 以内の track 対をに対して、位置ズレ histogram (dx,dy) を作成し、ヒストラム中のピークを探索している。  
 > 位置ズレ histogram のビン幅は InternalMode により下記にしている。  
-> - 0 : PositionError + AngleError &times; std::min(fabs(z0-zproj),fabs(z1-zproj)) (従来動作)  
+> - 0 : PositionError + AngleError &times; min(|z0-zproj|,|z1-zproj|) &lArr; z0,z1,zproj は使うトラックの平均値から計算するため、処理区画毎に微妙に異なる。(従来動作)  
 > - 1 : PositionError  
-> - 2 : PositonError += nominal-dz &times; AngleError
+> - 2 : sqrt( PositionError<sup>2</sup> + ( AngleError &times; min(|z0-zproj|,|z1-zproj|) )<sup>2</sup> ) &lArr; z0,z1,zproj は nominal な値から計算するため、全区画で等しい。  
+>
 > InternalMode のデフォルトは互換性のために 0 としているが、今後の使用では 1 または 2 を推奨。  
 >
 
