@@ -52,8 +52,11 @@
 > append base tracks to output vxx file  
 
 - --ghost dr dt
-> ghost filter in position (dr micron) and angle (dt rad).  
-> `--ghost 5 0.05` で 5&mu;m 50mradでのゴースト消しになる。  
+> x-y でのゴーストフィルタ   
+> 各飛跡 a に対して、位置差 sqrt(dx<sup>2</sup>+dy<sup>2</sup>) &lt; dr かつ、角度差 sqrt(d&theta;x<sup>2</sup>+d&theta;y<sup>2</sup>) &lt; dt の領域に飛跡 b が存在し、  
+> それらが ph-vol のより小さな、あるいは ph-vol が等しく rawid がより小さな、飛跡である場合、b をゴーストとして排除する。  
+> アルゴリズムは f_filter の --ghost と同じ。  
+> `--ghost 5 0.05` で dr=5&mu;m dt=50mradでのゴースト消しになる。  
 
 - --edit fname-edit
 > edit limited properties of each base track ( x,y,col,row are not accepted ).  
