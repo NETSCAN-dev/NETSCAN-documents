@@ -11,6 +11,7 @@
 + [[windows10-settings|windows10-settings]]
 
 ##### notes
++ <a href="note.2020-10-28.pdf" target=_blank>algorithm change in dc,ali-l</a>
 + <a href="netscan-manual-v3.pdf" target=_blank>tutorial for beginners</a>
 + [[ali-g settings|ali-g-inside]]
 + <a href="ali-l-inside.pdf" target=_blank>ali-l inside</a>

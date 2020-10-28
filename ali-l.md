@@ -2,7 +2,6 @@
 #### ali-l
 ---
 
-
 #### description
 > プレート間の位置関係を求める。[ali-g](ali-g.md) と違って探索パラメータ範囲を総当たりしてはいないが、その分高速動作する。  
 
@@ -75,6 +74,7 @@ Gap             = 0.01 50.0 1.0     # 探索範囲 +/- ( 50.0 + 0.01xnominal-dz 
 IsVerbose       = 0
 AffineFitMode   = 1                 # 0 = full affine fit / 1 = shrink+rot+shift / 2 = rot+shift
 Zproj           = 0.5               # 最近接ベース面間距離を Zproj : 1-Zproj に内分する z で alignment 探索を行う。default = 0.5
+PatchMe         = 1                 # 0 = 従来動作(デフォルト) / 1 = 新規(こちらに統合したい。詳細は notes の algorithm change in dc,ali-i を参照の事。)
 ```
 
 > #### 上記パラメータと、内部で使われるヒストグラムのビン幅等の関係メモ  
