@@ -96,7 +96,7 @@ MaxPeaks        = 1                 # number of peaks to be searched. use 1 for 
 Dz              = -10.0 10.0 10.0   # 探索範囲の下限値、上限値、ステップ
 ShiftAx         = -0.000 0.000 0.020 # 探索範囲の下限値、上限値、ステップ この設定では探索しない
 ShiftAy         = -0.000 0.000 0.020 # 探索範囲の下限値、上限値、ステップ この設定では探索しない
-FitMode         = 1                 # 1:offset＋rotation / 2:offset＋shrink / 3:offset＋rotation＋shrink ( default=1 )
+FitMode         = 1                 # 0:offset / 1:offset＋rotation / 2:offset＋shrink / 3:offset＋rotation＋shrink ( default=1 )
 HistogramFileTemplate   =           # 後述
 Zproj           = 0.5               # 最近接ベース面間距離を Zproj : 1-Zproj に内分する z で alignment 探索を行う。default = 0.5
 GhostFilter     = 1.0 0.007         # [b_filter](b_filter.md)の *--ghost* と同じ機能。
