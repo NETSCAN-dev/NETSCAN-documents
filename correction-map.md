@@ -65,12 +65,13 @@
   ```
 
 + 補正値の適用法
+  > micro-track のベース面での位置が保存する様に補正を適用する。  
   > 変換対象の track に最も近い中心座標を持つ区画を選び、補正値を順方向に適用する。  
   > 各 face の micro-track への適用ルールは下記の通り。  
   >> ax<sub>corrected</sub> = shr &times; ax<sub>raw</sub> + dax  
   >> ay<sub>corrected</sub> = shr &times; ay<sub>raw</sub> + day  
-  >> x<sub>corrected</sub> = x<sub>raw</sub> - ( dz<sub>fulcrum</sub> + ddz ) &times; dax  
-  >> y<sub>corrected</sub> = y<sub>raw</sub> - ( dz<sub>fulcrum</sub> + ddz ) &times; day  
+  >> x<sub>corrected</sub> = x<sub>raw</sub> - ( dz<sub>fulcrum</sub> + ddz ) &times; [ (shr-1) &times; ax<sub>raw</sub> + dax ]  
+  >> y<sub>corrected</sub> = y<sub>raw</sub> - ( dz<sub>fulcrum</sub> + ddz ) &times; [ (shr-1) &times; ay<sub>raw</sub> + day ]   
   >> z<sub>corrected</sub> = z<sub>raw</sub> + dz  
   >>  
   >>> dz<sub>fulcrum</sub> は下図矢印の nominal 値 ( 終点―始点 )  
