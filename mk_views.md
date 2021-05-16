@@ -22,11 +22,11 @@
 > 使用例  
 > pl01 の face=1 ( pos=11 ) と face=2 ( pos=12 ) の micro-track を使う場合  
 > ```
-> mk_views 11 12 –descriptor ./eventdescriptor.ini --view 2000 1000 --o ./pl001/dc-views.lst
+> mk_views 11 12 --descriptor ./eventdescriptor.ini --view 2000 1000 --o ./pl001/dc-views.lst
 > ```
 > pl01 の base-track ( pos=10 ) と pl02 の base-track ( pos=20 ) を使う場合  
 > ```
-> mk_views 10 20 –descriptor ./eventdescriptor.ini --view 2000 0 --o ./pl001/ali-002-views.lst
+> mk_views 10 20 --descriptor ./eventdescriptor.ini --view 2000 0 --o ./pl001/ali-002-views.lst
 > ```
 
 #### options ( those are in **bold** must be given )
