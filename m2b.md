@@ -145,6 +145,13 @@ public:
 	uint64_t id;
 };
 
+class BaseTrackClass {
+public:
+	double tx, ty;	// vx/vz, vy/vz
+	uint64_t id1;
+	uint64_t id2;
+};
+
 TEST(TestScrap, TestMakeBvxx) {
 
 	std::vector<MicroTrackClass> vmt1, vmt2;
@@ -168,6 +175,8 @@ TEST(TestScrap, TestMakeBvxx) {
 	double ErrShrink = 0.063;
 	//ErrDist should be always zero.
 
+	std::vector<BaseTrackClass> vbt;
+
 	for (const auto& mt1 : vmt1) {
 		for (const auto& mt2 : vmt2) {
 			double tx_base = (mt2.x - mt1.x) / (mt2.z - mt1.z);
@@ -177,6 +186,14 @@ TEST(TestScrap, TestMakeBvxx) {
 			if (std::abs(mt1.ty - ty_base) > ErrAngle + ErrShrink * ty_base)continue;
 			if (std::abs(mt2.tx - tx_base) > ErrAngle + ErrShrink * tx_base)continue;
 			if (std::abs(mt2.ty - ty_base) > ErrAngle + ErrShrink * ty_base)continue;
+
+			BaseTrackClass bt;
+			bt.tx = tx_base;
+			bt.ty = ty_base;
+			bt.id1 = mt1.id;
+			bt.id2 = mt2.id;
+
+			vbt.push_back(bt);
 		}
 	}
 }
