@@ -11,7 +11,7 @@
 > #### 接続判定  
 >
 > micro-track の接続判定は abs( &theta;xy<sub>micro</sub> - &theta;xy<sub>base</sub> ) < ErrAng + ErrDist + ErrShur &times; &theta;xy<sub>base</sub> で行う。  
-> サンプルコードは[m2b sample code](#m2b-sample-code)参照。  
+> サンプルコードは[m2b sample code](https://gitlab.com/-/snippets/2121150)参照。  
 > runcard での接続条件の設定には、固定項には ErrAng を、角度依存項には ErrShur を使い、ErrDist は常に 0 とする事を推奨。  
 > runcard のパラメータ名などは要整理ではあるが、今後の課題とする。  
 > 
@@ -132,69 +132,4 @@ VolCut      = 0 0.1 0
 ErrorsAngleRL = face1-radial face2-radial face1-lateral face2-lateral
 (*) 角度ズレ許容範囲 = ErrAng + ErrDist + ErrShur x ベース角
 (*) ConnectLinklet を使う際の runcard は t2l 用の Mode = 0 を参照のこと
-```
-
-#### m2b sample code
-
-```cpp
-class MicroTrackClass {
-public:
-	double tx, ty;	// vx/vz, vy/vz
-	double x, y;	// base-side [um]
-	double z;		// base-side [um]
-	uint64_t id;
-};
-
-class BaseTrackClass {
-public:
-	double tx, ty;	// vx/vz, vy/vz
-	uint64_t id1;
-	uint64_t id2;
-};
-
-TEST(TestScrap, TestMakeBvxx) {
-
-	std::vector<MicroTrackClass> vmt1, vmt2;
-
-	std::ifstream ifs;
-	MicroTrackClass mt;
-
-	ifs.open("mt1.txt");
-	while (ifs >> mt.tx >> mt.ty >> mt.x >> mt.y >> mt.z >> mt.id) {
-		vmt1.push_back(mt);
-	}
-	ifs.close();
-
-	ifs.open("mt2.txt");
-	while (ifs >> mt.tx >> mt.ty >> mt.x >> mt.y >> mt.z >> mt.id) {
-		vmt2.push_back(mt);
-	}
-	ifs.close();
-
-	double ErrAngle = 0.055;
-	double ErrShrink = 0.063;
-	//ErrDist should be always zero.
-
-	std::vector<BaseTrackClass> vbt;
-
-	for (const auto& mt1 : vmt1) {
-		for (const auto& mt2 : vmt2) {
-			double tx_base = (mt2.x - mt1.x) / (mt2.z - mt1.z);
-			double ty_base = (mt2.y - mt1.y) / (mt2.z - mt1.z);
-
-			if (std::abs(mt1.tx - tx_base) > ErrAngle + ErrShrink * tx_base)continue;
-			if (std::abs(mt1.ty - ty_base) > ErrAngle + ErrShrink * ty_base)continue;
-			if (std::abs(mt2.tx - tx_base) > ErrAngle + ErrShrink * tx_base)continue;
-			if (std::abs(mt2.ty - ty_base) > ErrAngle + ErrShrink * ty_base)continue;
-
-			BaseTrackClass bt;
-			bt.tx = tx_base;
-			bt.ty = ty_base;
-			bt.id1 = mt1.id;
-			bt.id2 = mt2.id;
-
-			vbt.push_back(bt);
-		}
-	}
-}
 ```
