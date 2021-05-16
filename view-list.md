@@ -87,4 +87,4 @@ mk_views.exe で `--view 5000 1000` の引数でview listを作ると、以下�
 
 `--view 5001 1000` の引数でview listを作ると、割り切れないので、一番端の区画サイズを広げる。
 
-<img src="./mk_views2.png" width=300>
+<img src="./mk_view2.png" width=300>
