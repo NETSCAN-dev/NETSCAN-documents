@@ -10,7 +10,8 @@
 >  
 > #### 接続判定  
 >
-> micro-track の接続判定は abs( &theta;xy<sub>micro</sub> - &theta;xy<sub>base</sub> ) < ErrAng + ErrDist + ErrShur &times; &theta;xy<sub>base</sub> で行う。サンプルコードは[m2b sample code](#m2b-sample-code)参照。
+> micro-track の接続判定は abs( &theta;xy<sub>micro</sub> - &theta;xy<sub>base</sub> ) < ErrAng + ErrDist + ErrShur &times; &theta;xy<sub>base</sub> で行う。  
+> サンプルコードは[m2b sample code](#m2b-sample-code)参照。  
 > runcard での接続条件の設定には、固定項には ErrAng を、角度依存項には ErrShur を使い、ErrDist は常に 0 とする事を推奨。  
 > runcard のパラメータ名などは要整理ではあるが、今後の課題とする。  
 > 
