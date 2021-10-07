@@ -14,8 +14,9 @@
 > l2c-x（Komataniのバージョンのl2c）には以下の制限があります。
 > - --binary-inputは利用できません。
 > - UsePos のみを使い、プレートの物理的な並び順に合わせて記述する事。EndPos と UnUsePos は使用できません。  
-> - out_gr.txtの出力を有効にするには、--debugを指定します。
+> - 全 group リスト ( out_gr.txt ) を出力するには、--debugを指定します。
 > - PmPeke は利用できません。渡した linklet は全て接続するので、例えば PmPeke=1 としたい場合は隣接 linklet のみを渡して下さい。  
+> - 3-skip 以上 ( i.e. PmPeke &ge; 4 ) の linklet に対する畳み込みは不完全です。コード内並列処理の順序に依存して畳み込まれない linklet が残り得ます。  
 >  
 > グループとは、少なくとも1つのトラックセグメントを共通に持つチェーンの集合です。  
 > これは、グループ内の2つのチェーンがトラックセグメントを共有しているという意味ではないことに注意してください。  
@@ -165,6 +166,19 @@ footerの例（new format）
 ・Group数
 ・「rootが同じ」グループ数
 ・「rootとleafが同じ」グループ数
+```
+
+```
+l2c の group-file ( UpperLim を越える group の linklet リスト )
+# no_group n_chains pl-start pl-end n_seg n_root n_leaf mean_n_seg sigma_n_seg
+	pos0 id0 pos1 id1 <-- n_chain 繰返し
+```
+
+```
+l2c-x の group-file ( --debug で出力。全 group のリスト )
+G #-of-tracks #-of-linklets
+	T pos id <-- #-of-tracks 繰返し
+	L pos0 id0 pos1 id1 <-- #-of-linklets 繰返し
 ```
 
 #### l2c-x の処理工程
