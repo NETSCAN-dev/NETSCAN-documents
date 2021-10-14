@@ -84,4 +84,6 @@ HTS info embedded in `col` and in `row` at Beta files (仕様変更の可能性�
 
   //もとに戻す時は
   uint32_t ShotID = ((uint32_t)(uint16_t)row << 16) | ((uint32_t)(uint16_t)col);
+  uint32_t NumberOfImager = 72;
+  uint32_t ImagerID = ShotID % NumberOfImager;
   ```
