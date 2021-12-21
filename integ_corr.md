@@ -5,10 +5,13 @@
 #### description
 > #### Integrate relative correction map and output absolute correction map.  
 >  
+> 積分した *correction-map-abs* の *xmin,xmax,ymin,ymax* は、各プレートの飛跡の存在領域の端点に *afp* を適用した外接矩形領域になっている。  
+>
 > **BE CAREFUL that ...**  
 > When a given relative correction map file has multiple areas,  
 > this code calculates SIGNLE affine parameter for each plate by fitting all affine parameters in one plate first,  
 > and then integrates these SINGLE affine parameters to obtain absolute correction map.  
+>
 
 #### usage
 > #### integ_corr *correction-map-rel(in)* *correction-map-abs(out)* [*options*]  
