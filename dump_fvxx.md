@@ -34,4 +34,4 @@
 - --ph phmin  
 
 - --affine a b c d p q  
-> apply affine transformation ( after correction-map-absolute if specified )  
+> apply affine transformation ( before correction-map-absolute if specified )  
