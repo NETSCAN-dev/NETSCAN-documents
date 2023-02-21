@@ -78,7 +78,7 @@
 			smartypants: false
 		});
 
-		load_and_parse_md("_Sidebar.md",$("div#sidebar"),$("div#book"));
+		load_and_parse_md("_sidebar.md",$("div#sidebar"),$("div#book"));
 
 		$(document).on('click',"a[href$='\\.md']",function(){
 			load_and_parse_md($(this).attr("href"),$("div#book"),$("div#book"));
