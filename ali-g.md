@@ -48,6 +48,7 @@
 > modify GlobalAlign::PositionWindow as  
 > when offset_i = 1 &rArr; xmin-offset_x, xmax-offset_x, ymin-offset_y, ymax-offset_y  
 > when offset_i = 2 &rArr; xmin+offset_x, xmax+offset_x, ymin+offset_y, ymax+offset_y  
+> **search-mode = 2 と併用してはダメ。**  
 
 - --[filter-list](filter-list.md) [filter-list](filter-list.md) +1/-1
 > include (+1) or exclude (-1) [[[filter-list](filter-list.md)|[filter-list](filter-list.md)]]  

@@ -7,7 +7,13 @@
 >
 > #### プレート両面の micro-track に distortion と shrink 補正を適用し base-track を作成する  
 > <br>  
->  
+>
+> #### runcard での puhse-height 関連の cut について
+> micro-track や base-track の持つ pulse-height は (ph*10000+vol) と 2 つの情報の複合体です。  
+> m2b の runcard の項目で、PHCUT は base-track を構成する各々 micro-track の ph に対する cut であり、  
+> PHSUMCUT は 2 本の micro-track の ph の和に対する cut です。  
+> VolCut は各々の micro-track の vol に対する cut です。micro-track の vol の和に対する cut を指定する項目は未実装です。  
+>
 > #### 接続判定  
 >
 > micro-track の接続判定は abs( &theta;xy<sub>micro</sub> - &theta;xy<sub>base</sub> ) < ErrAng + ErrDist + ErrShur &times; &theta;xy<sub>base</sub> で行う。  
