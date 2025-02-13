@@ -1,5 +1,5 @@
 #### NETSCAN document
-+ maintained <a href="https://gitlab.com/kkodama/NETSCAN-documents.git">here</a>
++ maintained <a href="https://github.com/NETSCAN-dev/NETSCAN-documents">here</a>
 + <a href="https://emulsion-labo.physics.aichi-edu.ac.jp/netscan/downloads/">binary relases</a>
 + <a href="https://emulsion-labo.physics.aichi-edu.ac.jp/netscan/downloads/">tools</a>
 
