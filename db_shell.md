@@ -1,5 +1,5 @@
 ---
-#### db-shell
+#### db-shell ( deprecated in 2024-09-01 )
 ---
 
 #### description
