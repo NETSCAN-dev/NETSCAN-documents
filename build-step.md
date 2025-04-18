@@ -1,5 +1,5 @@
 ---
-#### **NETSCAN ソフト作成に必要なツール**
+#### **NETSCAN 作成に必要なツール**
 ---
 
 + visual c/c++ 2017 ( 以降のバージョンも対応あり )
@@ -14,7 +14,7 @@
   > Minimum set of 64bit cygwin package is avaliable [here](cygwin.zip).  
 
 ---
-#### **NETSCAN ソフトのビルド**
+#### **NETSCAN のビルド**
 ---
 
 + リポジトリからの複製 ( M:\prg\netscan 以下に ver-2024-09-01 を複製する場合 )
