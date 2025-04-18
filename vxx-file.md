@@ -18,7 +18,9 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >  |----|----|
 >  | vxx-2 | 従来の vxx |
 >  | vxx-3 | 従来の vxx + ファイル圧縮（内部ハッシュ単位） |
->  | vxx-4 | HTS beta-file |
+>  | vxx-4 | HTS beta-file (*) |  
+>
+> (*) beta_raw.dat を beta_raw.vxx-4 と拡張子を変更する必要あり。同一フォルダに hash-1.vxx と hash-2.vxx を作成する。
 
 
 ##### BaseTrack
