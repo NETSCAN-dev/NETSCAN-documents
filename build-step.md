@@ -8,6 +8,8 @@
 - git ( MSYS2版は非推奨, Git for Windowsを推奨 )
 - GNU make ( MSYS2版 )
 - perl ( MSYS2版 )
+- autoconf ( MSYS2版 )
+- patch ( MSYS2版を推奨 )
 - Visual C++ 2017 またはそれ以降
 - Windows SDK ( Visual Studio 付属のものを推奨 )
 
@@ -26,6 +28,9 @@
 - git ( Cygwin版は非推奨, Git for Windowsを推奨 )
 - GNU make ( Cygwin版 )
 - perl ( Cygwin版 )
+- autoconf ( Cygwin版 )
+- autogen ( Cygwin版 )
+- patch ( Cygwin版を推奨 )
 - Visual C++ 2017 またはそれ以降
 - Windows SDK ( Visual Studio 付属のものを推奨 )
 
@@ -41,9 +46,35 @@
 - jemalloc ( 5.2.1以降を推奨 )
 - zstd
 
+## jemalloc のビルド手順
+
+ビルド済みのライブラリを使用する場合は、この手順は不要です。  
+DLLのビルドには、Visual Studio 2015 または MSVC v140 ビルドツールをインストールする必要があります。  
+static link library のビルドで使用するコンパイラは、netscan のビルドで使用するコンパイラとバージョンを一致させる必要があります。コンパイラのマイナーバージョンを更新すると再ビルドが必要になります。
+
+1. jemalloc のリポジトリを NETSCAN-dev からダウンロード。本家のリポジトリでは正しくビルドできないので注意。  
+  ex. git clone https://github.com/NETSCAN-dev/NETSCAN2.0/jemalloc jemalloc  
+2. ヘッダファイルをビルド
+   1. Visual Studio 2015 以降のコマンドプロンプトを起動(x86/x64どちらでも可)
+   2. Cygwin/MSYS2 へのパスを通す
+   3. リポジトリの msvc\\build\_bat\\make-header.bat を実行
+3. リポジトリの msvc\\build\_bat\\install-header.bat を実行して、ヘッダファイルをインストール
+4. DLLをビルド
+   1. msbuild へのパスを通すか、Visual Studio のコマンドプロンプトを起動(x86/x64どちらでも可)
+   2. リポジトリの msvc\\build\_bat\\build-dll-vc14.bat を実行
+5. static link library をビルド
+   1. msbuild へのパスを通すか、インストールされている最新の Visual Studio のコマンドプロンプトを起動(x86/x64どちらでも可)
+   2. Visual C++ 2015 用のライブラリを、リポジトリの msvc\\build\_bat\\build-2015-static.bat を実行して生成
+   3. Visual C++ 2017 用のライブラリを、リポジトリの msvc\\build\_bat\\build-2017-static.bat を実行して生成
+   4. Visual C++ 2019 用のライブラリを、リポジトリの msvc\\build\_bat\\build-2019-static.bat を実行して生成
+   5. Visual C++ 2022 用のライブラリを、リポジトリの msvc\\build\_bat\\build-2022-static.bat を実行して生成
+6. リポジトリの msvc\\out 以下にビルド済みのライブラリが生成されている
+
 ---
+## netscan のビルド
+---
+
 ## リポジトリのダウンロード
----
 
 ver-2016-09-01 を M:\prg\netscan\ver-2016-09-01 にダウンロードする場合  
 - cd M:¥prg¥netscan  
@@ -53,9 +84,7 @@ ver-2024-09-01 を M:\prg\netscan\ver-2024-09-01 にダウンロードする場�
 - cd M:¥prg¥netscan  
 - git clone --branch ver-2024-09-01 https://github.com/NETSCAN-dev/NETSCAN2.0 ver-2024-09-01  
 
----
 ## ビルド手順
----
 
 Windows で Visual C++ 2017 を用いて64bitでビルドする場合
 
@@ -120,5 +149,3 @@ Windows で Visual C++ 2017 を用いて64bitでビルドする場合
 - /\-local\\d\*$/ \- ローカルでのビルド用ターゲット名
 - /\-user\-\[\\w\_\]\+$/ \- ユーザー毎のビルド用ターゲット名( \-user\- の直後にユーザー名)
 - /\-exp\-\[\\w\_\]\+$/ \- 実験毎のビルド用ターゲット名( \-exp\- の直後に実験名)
-
-
