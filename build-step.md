@@ -53,7 +53,7 @@ DLLのビルドには、Visual Studio 2015 または MSVC v140 ビルドツー�
 static link library のビルドで使用するコンパイラは、netscan のビルドで使用するコンパイラとバージョンを一致させる必要があります。コンパイラのマイナーバージョンを更新すると再ビルドが必要になります。
 
 1. jemalloc のリポジトリを NETSCAN-dev からダウンロード。本家のリポジトリでは正しくビルドできないので注意。  
-  ex. git clone https://github.com/NETSCAN-dev/NETSCAN2.0/jemalloc jemalloc  
+  ex. git clone https://github.com/NETSCAN-dev/jemalloc jemalloc  
 2. ヘッダファイルをビルド
    1. Visual Studio 2015 以降のコマンドプロンプトを起動(x86/x64どちらでも可)
    2. Cygwin/MSYS2 へのパスを通す
