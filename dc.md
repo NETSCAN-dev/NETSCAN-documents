@@ -27,9 +27,9 @@
 
 - **--o [correction-map](correction-map.md)-file [w/a]**
 > 出力 [correction-map](correction-map.md) 名を指定する。w は上書きで a は追記指定。デフォルトは上書き。  
-> ここで指定するファイル名は、４文字以上かつ拡張子を .lst とする事を推奨。  
-> ファイル名が４文字未満 or 拡張子が .lst でない場合に .lst を付加するという、旧版互換のための仕様を回避するため。  
-> この仕様は削除予定。  
+> ~~ここで指定するファイル名は、４文字以上かつ拡張子を .lst とする事を推奨。~~  
+> ~~ファイル名が４文字未満 or 拡張子が .lst でない場合に .lst を付加するという、旧版互換のための仕様を回避するため。~~  
+> この仕様は ver-2024-09-01 より削除。  
 
 - **--view view-step view-overlap**  
   **--view view-list-file-name**
