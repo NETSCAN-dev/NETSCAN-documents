@@ -20,8 +20,14 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >  | vxx-3 | 従来の vxx + ファイル圧縮（内部ハッシュ単位） |
 >  | vxx-4 | HTS beta-file (*) |  
 >
-> (*) beta_raw.dat を beta_raw.vxx-4 と拡張子を変更する必要あり。同一フォルダに hash-1.vxx と hash-2.vxx を作成する。
-
+> ```
+> (*) f####.vxx-4 は json 形式のテキストファイルで、beta_raw.dat と各面のハッシュパスを記述する。
+> {
+>         "beta-file-path": "./hts/beta_raw.dat",
+>         "hash-file-path-1": "./hts/hash-1.vxx-4",
+>         "hash-file-path-2": "./hts/hash-2.vxx-4"
+> }
+> ```
 
 ##### BaseTrack
 >
