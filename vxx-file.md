@@ -21,13 +21,18 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >  | vxx-4 | HTS beta-file (*) |  
 >
 > ```
-> (*) f####.vxx-4 は json 形式のテキストファイルで、beta_raw.dat と各面のハッシュパスを記述する。
+> (*) f###.vxx-4 は、下記の様な json ファイルで、beta_raw.dat と各面のハッシュパスを記述する。
+>     event-descriptor の [MicroTrack] には pos=1,2 とも同じ f###.vxx-4 を指定すれば良い。
 > {
 >         "beta-file-path": "./hts/beta_raw.dat",
+>         "eachshotparam-path": "./hts/Beta_EachShotParam.json", <- 未指定でデフォルト値を使う事も可
+>         "eachviewparam-path": "./hts/Beta_EachViewParam.json", <- 未指定でデフォルト値を使う事も可
+>         "eachimagerparam-path": "./hts/Beta_EachImagerParam.json", <- 未指定でデフォルト値を使う事も可
 >         "hash-file-path-1": "./hts/hash-1.vxx-4",
 >         "hash-file-path-2": "./hts/hash-2.vxx-4"
 > }
 > ```
+> MEMO : HTS 関連コードは NetScanData/hts_wrapper.hpp に集約。TrackFilter.h BetaStruct.hpp htstools.hpp の部分コピー借用。  
 
 ##### BaseTrack
 >
