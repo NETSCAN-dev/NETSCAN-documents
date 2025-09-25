@@ -50,7 +50,6 @@
 
 ビルド済みのライブラリを使用する場合は、この手順は不要です。  
 DLLのビルドには、Visual Studio 2015 または MSVC v140 ビルドツールをインストールする必要があります。  
-static link library のビルドで使用するコンパイラは、netscan のビルドで使用するコンパイラとバージョンを一致させる必要があります。コンパイラのマイナーバージョンを更新すると再ビルドが必要になります。
 
 1. jemalloc のリポジトリを NETSCAN-dev からダウンロード。本家のリポジトリでは正しくビルドできないので注意。  
   ex. git clone https://github.com/NETSCAN-dev/jemalloc jemalloc  
@@ -70,6 +69,23 @@ static link library のビルドで使用するコンパイラは、netscan の�
    5. Visual C++ 2022 用のライブラリを、リポジトリの msvc\\build\_bat\\build-2022-static.bat を実行して生成
 6. リポジトリの msvc\\out 以下にビルド済みのライブラリが生成されている
 
+## zstd のビルド手順
+
+ビルド済みのライブラリを使用する場合は、この手順は不要です。  
+DLLのビルドには、Visual Studio 2015 または MSVC v140 ビルドツールをインストールする必要があります。  
+static link library のビルドで使用するコンパイラは、netscan のビルドで使用するコンパイラとバージョンを一致させる必要があります。コンパイラのマイナーバージョンを更新すると再ビルドが必要になります。
+
+1. zstd のリポジトリを NETSCAN-dev からダウンロード。本家のリポジトリでは正しくビルドできないので注意。  
+  ex. git clone https://github.com/NETSCAN-dev/zstd zstd  
+2. リポジトリの build\\VS\_scripts\\install.header.cmd を実行して、ヘッダファイルをインストール
+3. ライブラリをビルド
+   1. msbuild へのパスを通すか、インストールされている最新の Visual Studio のコマンドプロンプトを起動(x86/x64どちらでも可)
+   2. DLLと、Visual C++ 2015 用のライブラリを、リポジトリの build\\VS\_scripts\\build.VS2015.cmd を実行して生成
+   3. Visual C++ 2017 用のライブラリを、リポジトリの build\\VS\_scripts\\build.VS2017.cmd を実行して生成
+   4. Visual C++ 2019 用のライブラリを、リポジトリの build\\VS\_scripts\\build.VS2019.cmd を実行して生成
+   5. Visual C++ 2022 用のライブラリを、リポジトリの build\\VS\_scripts\\build.VS2022.cmd を実行して生成
+4. リポジトリの build\\VS2010\\bin\\out 以下にビルド済みのライブラリが生成されている
+
 ---
 ## netscan のビルド
 ---
@@ -77,11 +93,11 @@ static link library のビルドで使用するコンパイラは、netscan の�
 ## リポジトリのダウンロード
 
 ver-2016-09-01 を M:\prg\netscan\ver-2016-09-01 にダウンロードする場合  
-- cd M:¥prg¥netscan  
+- cd M:\prg\netscan  
 - git clone --branch ver-2016-09-01 https://github.com/NETSCAN-dev/NETSCAN2.0 ver-2016-09-01  
 
 ver-2024-09-01 を M:\prg\netscan\ver-2024-09-01 にダウンロードする場合  
-- cd M:¥prg¥netscan  
+- cd M:\prg\netscan  
 - git clone --branch ver-2024-09-01 https://github.com/NETSCAN-dev/NETSCAN2.0 ver-2024-09-01  
 
 ## ビルド手順
