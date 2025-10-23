@@ -121,7 +121,6 @@ ShrinkStep      = 0.020 0.010 0.002 # shrink 探索 step
                                     # For second and subsequent AngleStep(ShrinkStep),  
                                     # a search area is defined as 
                                     # +/- previous value of AngleStep(ShrinkStep).  
-MaxTracks       = 1000          # 探索に使用する１面トラック数の上限。これを超える場合、間引きを行う。
 Significance    = 3.0           # significance がこの値以上の区画を探索成功と判断。失敗区画は出力しない。
 MaxAng          = 0.8           # 探索に使用するトラックの最大角度
 DumpDebugInfoFileName = xxx.xxx # Enable debug-info output to a file "xxx.xxx",  
@@ -133,4 +132,5 @@ DumpDebugInfoFileName = xxx.xxx # Enable debug-info output to a file "xxx.xxx",
                                 # $7,$8  : face 1 micro-track ax,ay raw  
                                 # $9,$10 : face 2 micro-track ax,ay raw  
 PatchMe         = 1             # 0 = 従来動作(デフォルト) / 1 = 新規(こちらに統合したい。詳細は notes の algorithm change in dc,ali-i を参照の事。)
+MaxTracks       = 1000          # 探索に使用する１面トラック数の上限。これを超える場合、間引きを行う <- ver-2024-09-01 で削除
 ```

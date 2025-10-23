@@ -14,14 +14,15 @@ th,td { border: 1px solid #fff; padding: 5px; }
 
 ##### MicroTrack
 >
->  | 拡張子 | 説明 |
->  |----|----|
->  | vxx-2 | 従来の vxx |
->  | vxx-3 | 従来の vxx + ファイル圧縮（内部ハッシュ単位） |
->  | vxx-4 | HTS beta-file (*) |  
+>  | 拡張子 | 説明 | isg |  
+>  |----|----|----|  
+>  | vxx-2 | 従来の vxx (1) | hts_beta_fvxx で設定した値を保持 |  
+>  | vxx-3 | 従来の vxx (1) に加えて内部ハッシュ単位での zstd 圧縮 | hts_beta_fvxx で設定した値を保持 |  
+>  | vxx-4 | HTS beta-file を直接読込む (2) col,row,px,py は未設定 | ShotID 埋込 (3) |  
 >
 > ```
-> (*) f###.vxx-4 は、下記の様な json ファイルで、beta_raw.dat と各面のハッシュパスを記述する。
+> (1) 位置は 0.01micron 単位で、角度は 0.01mrad 単位で整数化し保存している。
+> (2) f###.vxx-4 は、下記の様な json ファイルで、beta_raw.dat と各面のハッシュパスを記述する。
 >     event-descriptor の [MicroTrack] には pos=1,2 とも同じ f###.vxx-4 を指定すれば良い。
 > {
 >         "beta-file-path": "./hts/beta_raw.dat",
@@ -31,6 +32,20 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >         "hash-file-path-1": "./hts/hash-1.vxx-4",
 >         "hash-file-path-2": "./hts/hash-2.vxx-4"
 > }
+> (3) 64bit isg の使い方 ( vxx-4 にはコード埋込済だが、他は hts_beta_fvxx 依存 )
+>   0-byte : shot 内での通番(0~)
+>   1-byte : shot 内での通番(0~)
+>   2-byte : shot 内での通番(0~)
+>   3-byte : ShotID[0] = col[0]
+>   4-byte : ShotID[1] = col[1]
+>   5-byte : ShotID[2] = row[0]
+>   6-byte : ShotID[3] = row[1]
+>   7-byte : join 時に zone を埋め込み uniqueness を担保するために予約
+> (4) HTS1 の ShotID, ImagerID, ViewID の定義メモ for beta-file ( HTS2 は未確認 )
+>   uint32_t NumberOfImager = 72;
+>   uint32_t ViewID = ;
+>   uint32_t ImagerID = CameraID * 12 + SensorID; -> ImagerID(0-71), CameraID(0-5), SensorID(0-11)
+>   uint32_t ShotID = ViewID * NumberOfImager + ImagerID;
 > ```
 > MEMO : HTS 関連コードは NetScanData/hts_wrapper.hpp に集約。TrackFilter.h BetaStruct.hpp htstools.hpp の部分コピー借用。  
 

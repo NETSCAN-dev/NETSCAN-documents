@@ -22,7 +22,7 @@
 > 0 : rawid isg ph ax ay z1 z2 ( NF=7, so-called f-file format with 4 header lines )  
 > 1 : pos zone rawid isg ph ax ay x y z z1 z2 px py col row f ( NF=17, f is obsoleted )  
 > 2 : pos rawid 0 ( NF=3, to create aux-file for this micro-track-block )  
-> 3 : same as --format 2 but with one more digits for positions and angles.  
+> 3 : same as --format 1 but with one more digits for positions and angles.  
 > 4 : binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ ).  
 >  
 > - xy position of micro-track is at z-center of an emulsion layer  

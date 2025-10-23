@@ -48,7 +48,6 @@
 + [[regulate_corrmap|regulate_corrmap]]
 
 ##### utility
-+ [[db_shell|db_shell]]
 + [[conv2st|conv2st]]
 + [[f2mt|f2mt]]
 + [[f2bt|f2bt]]
@@ -56,3 +55,6 @@
 + [[linklet_window|linklet_window]]
 + [[f_join|f_join]]
 + [[b_join|b_join]]
+
+##### obsoleted
++ [[db_shell|db_shell]]
