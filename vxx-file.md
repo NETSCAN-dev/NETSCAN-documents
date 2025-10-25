@@ -30,7 +30,8 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >         "eachviewparam-path": "./hts/Beta_EachViewParam.json", <- 未指定でデフォルト値を使う事も可
 >         "eachimagerparam-path": "./hts/Beta_EachImagerParam.json", <- 未指定でデフォルト値を使う事も可
 >         "hash-file-path-1": "./hts/hash-1.vxx-4",
->         "hash-file-path-2": "./hts/hash-2.vxx-4"
+>         "hash-file-path-2": "./hts/hash-2.vxx-4",
+>         "apply-round-calc": false <- ture で位置・角度に対し vxx-2/3 と同じ桁丸め処理を行う。デフォルトは false
 > }
 > (3) 64bit isg の使い方 ( vxx-4 にはコード埋込済だが、他は hts_beta_fvxx 依存 )
 >   0-byte : shot 内での通番(0~)
