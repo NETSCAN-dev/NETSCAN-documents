@@ -127,10 +127,10 @@ DumpDebugInfoFileName = xxx.xxx # Enable debug-info output to a file "xxx.xxx",
                                 # when non-null value for this entry is specified.  
                                 # Format of this file is ...  
                                 # $1,$2  : base-track ax,ay  
-                                # $3,$4  : face 1 micro-track ax,ay corrected  
-                                # $5,$6  : face 2 micro-track ax,ay corrected  
-                                # $7,$8  : face 1 micro-track ax,ay raw  
-                                # $9,$10 : face 2 micro-track ax,ay raw  
+                                # $3,$4  : face-1 micro-track ax,ay corrected  
+                                # $5,$6  : face-2 micro-track ax,ay corrected  
+                                # $7,$8  : face-1 micro-track ax,ay raw  
+                                # $9,$10 : face-2 micro-track ax,ay raw  
 PatchMe         = 1             # 0 = 従来動作(デフォルト) / 1 = 新規(こちらに統合したい。詳細は notes の algorithm change in dc,ali-i を参照の事。)
-MaxTracks       = 1000          # 探索に使用する１面トラック数の上限。これを超える場合、間引きを行う <- ver-2024-09-01 で削除
+MaxTracks       = 1000          # 探索に使用する face-1 トラック数の上限。これを超える場合、floor(face-1トラック数/MaxTracks) の剰余で間引きを行う
 ```
