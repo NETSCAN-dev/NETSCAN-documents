@@ -19,7 +19,10 @@
 > set vxx page-size ( default is that of input vxx file )  
 
 - --view view-width view-overlap
-> 処理区画の指定。ghost-filter を使う際には、区画境界に十分な重なり ( view-overlap ) を指定する事。  
+> 処理区画の指定。ghost-filter を使う場合にのみ有効なオプション。  
+> その場合、区画境界に十分な重なり ( view-overlap ) を指定する事。  
+> また出力の際に view-width 単位でハッシュしなおすので、  
+> view-width を後段処理での処理区画程度に留めないと読込に無駄な時間を要する。  
 > これまでの --view-width オプションは、ghost-filter との整合性が難しくなったので廃止。  
 
 - --xy xmin xmax ymin ymax
