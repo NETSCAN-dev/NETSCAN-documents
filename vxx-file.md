@@ -19,7 +19,7 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >  | vxx-2 | 従来の vxx (1) | hts_beta_fvxx で設定した値を保持 |  
 >  | vxx-3 | 従来の vxx (1) に加えて内部ハッシュ単位での zstd 圧縮 | hts_beta_fvxx で設定した値を保持 |  
 >  | vxx-4 | HTS beta-file を直接読込む (2) col,row,px,py は未設定 | ShotID 埋込 (3) |  
->
+
 > ```
 > (1) 位置は 0.01micron 単位で、角度は 0.01mrad 単位で整数化し保存している。
 > (2) f###.vxx-4 は、下記の様な json ファイルで、beta_raw.dat と関連の json を記述する。
@@ -31,15 +31,15 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >         "eachimagerparam-path": "./hts/Beta_EachImagerParam.json", <- 未指定でデフォルト値を使う事も可
 >         "apply-round-calc": false <- ture で位置・角度に対し vxx-2/3 と同じ桁丸め処理を行う。デフォルトは false
 > }
-> (3) 64bit isg の使い方 ( vxx-4 にはコード埋込済だが、他は hts_beta_fvxx 依存 )
->   0-byte : shot 内での通番(0~)
+> (3) MicroTrack の 64bit isg への HTS 情報の埋込 ( vxx-4 にはコード埋込済だが、他は hts_beta_fvxx 依存 )
+>   0-byte : shot 内での通番(0~) <- LSB
 >   1-byte : shot 内での通番(0~)
 >   2-byte : shot 内での通番(0~)
 >   3-byte : ShotID[0] = col[0]
 >   4-byte : ShotID[1] = col[1]
 >   5-byte : ShotID[2] = row[0]
 >   6-byte : ShotID[3] = row[1]
->   7-byte : join 時に zone を埋め込み uniqueness を担保するために予約
+>   7-byte : join 時に zone を埋め込み uniqueness を担保するために予約 <- MSB
 > (4) HTS1 の ShotID, ImagerID, ViewID の定義メモ for beta-file ( HTS2 は未確認 )
 >   uint32_t NumberOfImager = 72;
 >   uint32_t ViewID = ;
@@ -54,6 +54,12 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >  |----|----|
 >  | vxx-2 | 従来の vxx |
 >  | vxx-3 | 従来の vxx + ファイル圧縮（内部ハッシュ単位） |
+
+> ```
+> (1) BaseTrack の 64bit isg は vxx-file 内での通番 ( 0,1, ... )
+> (2) BaseTrack vxx-3 では MicroTrack の isg,zone,pos を保持 ( rawid は不保持 )
+>
+>```
 
 ---
 
