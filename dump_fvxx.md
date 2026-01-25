@@ -5,6 +5,7 @@
 #### description
 > micro-track vxx ファイルをダンプする。  
 > 出力する情報の詳細は [こちらを参照](dump_fvxx_columns.md) の事。  
+> isg 等の 64bit 整数を 16 進数表記 ( ex. 0x00000001 ) にしました。  
 
 #### usage
 > #### dump_fvxx *vxx-file* *pos* *zone* [*options*]
