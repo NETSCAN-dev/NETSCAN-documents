@@ -61,6 +61,11 @@
 > This option will be useful for whole plate (pc) alignment.  
 > First 4 columns of each line in area-list-file should be xmin, xmax, ymin and ymax.  
 
+- --histo fname-histo
+> 位置ズレヒストグラムを fname-histo に出力する。  
+> このファイルの書式は [ここ](ali-histogram.md) を参照の事。  
+> ビン幅と位置ズレ範囲の指定は runcard の Histo で指定する。  
+
 #### FAQ
 - **Q** 最初ビームトラックを使って位置と角度ずれを補正、次に角度の大きな飛跡を使ってギャップを補正みたいなことはできる ?  
   **A** 原理的にできるはずだが、実用上難しい
@@ -101,8 +106,8 @@ FitMode         = 1                 # 0:offset / 1:offset＋rotation / 2:offset�
 Zproj           = 0.5               # 最近接ベース面間距離を Zproj : 1-Zproj に内分する z で alignment 探索を行う。default = 0.5
 GhostFilter     = 1.0 0.007         # [b_filter](b_filter.md)の *--ghost* と同じ機能。
 InternalMode    = 2                 # InteranlMode=1/2 を推奨。0 は廃止予定。
-HistogramFileTemplate   =           # 後述
-Histo           = 1 10 -100 +100 -100 +100 # ビン幅 10micron でアラインメント中心から -100<dx<+100 -100<dy<+100 の位置ズレヒストグラムを作る。
+Histo           = 1 10 -100 +100 -100 +100 # オプション --histo で出力する位置ズレヒストグラムのビン幅と位置ズレ範囲の指定。
+                                           # この例では、ビン幅 10micron でアラインメント中心から -100<dx<+100 -100<dy<+100 の位置ズレヒストグラムを作る。
 ```
 #### 接続判定で許容する範囲
 > ali-g での探索アルゴリズムは以下の通り。  
