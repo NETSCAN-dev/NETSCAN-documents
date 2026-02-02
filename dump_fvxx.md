@@ -12,7 +12,7 @@
 
 #### options
 - --index i0 i1
-> limit dump for i0 &le; rawid < i1  
+> limit dump for i0 &le; rawid &lt; i1  
 
 - --a xmin xmax ymin ymax  
   --a list-file
