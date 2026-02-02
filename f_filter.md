@@ -71,7 +71,14 @@
 > それらが ph-vol のより小さな、あるいは ph-vol が等しく rawid がより小さな、飛跡である場合、b をゴーストとして排除する。  
 > + lateral 方向での位置差 &lt; dr_lat かつ、角度差 &lt; dt_lat  
 > + radial 方向での位置差 &lt; dr_rad + cr_rad &times; th かつ、角度差 &lt; dt_rad + ct_rad &times; th ( th は自身の space-angle )  
-  
+
+- --isg-overwite  
+> isg を 0 始まりの通番に変更する。  
+
+- --isg-embed-col-row  
+> isg の上位バイトに col,row に埋め込まれた shotID を埋め込む。  
+> 詳細は[ここを参照](vxx-file.md)して下さい。  
+
 ##### 上記 2 つのゴーストフィルタに関する注意書き
 > + 位置は micron、角度は rad 単位での標記です。これは NETSCAN コードでのデフォルトです。  
 > + micro-track ( vxx-file ) の位置 xy は各乳剤層の中央の z 面での値です。  

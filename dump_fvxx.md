@@ -25,6 +25,7 @@
 > 2 : pos rawid 0 ( NF=3, to create aux-file for this micro-track-block )  
 > 3 : same as --format 1 but with one more digits for positions and angles.  
 > 4 : binary output ( see [[class description|netscan-data-types-ui]] or m:/prg/netscan/sample/2/binary-io/ ).  
+> 9 : ハッシュ表のみを出力 ( index1 index2 xmin xmax ymin ymax isg-min isg-max #-of-tracks ).  
 >  
 > - xy position of micro-track is at z-center of an emulsion layer  
 > - HTSから出力するときのxy座標は 0-15層中の7層目のxy座標で、micro-trackの真の中心座標ではない。  

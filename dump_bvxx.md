@@ -29,6 +29,7 @@
 > 1 : binary output  ( see [[class description|[netscan-data-types-ui](netscan-data-types-ui.md)] or m:/prg/netscan/sample/2/binary-io/ )  
 > 2 : pos( with face=0 ) rawid rawid0 rawid1 0 ( to create aux file for this base-track-block )  
 > 3 : same as --format 0 but with one more digits for positions and angles.  
+> 9 : ハッシュ表のみを出力 ( index1 index2 xmin xmax ymin ymax isg-min isg-max #-of-tracks ).  
 > 一般的に飛跡情報をバイナリ形式でdumpする時に使われているのは1なので他のは無視しても良い。
 
 - --micro 0/1

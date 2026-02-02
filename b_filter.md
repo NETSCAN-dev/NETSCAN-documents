@@ -74,6 +74,17 @@
 > `X = ( a0*x+b0*y+c0 )/( a1*x+b1*y+c1 )`  
 > `Y = ( a2*x+b2*y+c2 )/( a3*x+b3*y+c3 )`  
 
+- --isg-overwite  
+> BaseTrack::isg を 0 始まりの通番に変更する。  
+
+- --isg-embed-col-row  
+> MicroTrack::isg の上位バイトに col,row に埋め込まれた shotID を埋め込む。  
+> 詳細は[ここを参照](vxx-file.md)して下さい。  
+
+- --isg-embed-zone zone  
+> BaseTrack::isg の上位バイトに zone を埋め込む。  
+> 詳細は[ここを参照](vxx-file.md)して下さい。  
+
 #### FAQ
 - **Q** --ghost で使われる xy 座標の基準 z面はどこ ?  
   **A** base-track の xy 座標。現状で face=1 のベース表面。即ちベーストラックにおけるz=z1、(x, y)を使っている。ベーストラックの対称性からするとベーストラックの中央のXY座標でクラスタリングすべきだが、そうはなっていない。  
