@@ -13,7 +13,7 @@
 ##### notes
 + <a href="note.2020-10-28.pdf" target=_blank>algorithm change in dc,ali-l</a>
 + <a href="netscan-manual-v3.pdf" target=_blank>tutorial for beginners</a>
-+ [[ali-g settings|ali-g-inside]]
++ [[ali-g 解説|ali-g-note]]
 + <a href="ali-l-inside.pdf" target=_blank>ali-l inside</a>
 + [[inter-zone alignment|inter-zone-alignment]]
 + [[option --cache|note-cache]]
