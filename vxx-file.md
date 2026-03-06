@@ -56,8 +56,8 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >  | vxx-3 | 従来の vxx + ファイル圧縮（内部ハッシュ単位） |
 
 > ```
-> (1) BaseTrack の 64bit isg は m2b でのみ付与し、vxx-file 内での通番 ( 0,1, ... ) である。
-> (2) m2b 以外の処理では不変だが、b_join では zone を 7-byte に埋め込んで vxx-file 内での一意性を保証する。
+> (1) BaseTrack の 64bit isg は m2b でのみ vxx-file 内での通番 ( 0,1, ... ) を付与する。
+> (2) m2b 以外の処理では不変である。ただし b_join では zone を 7-byte に埋め込んで vxx-file 内での一意性を保証する。
 > (3) BaseTrack vxx-3 では MicroTrack の isg,zone,pos を保持 ( rawid は不保持 )
 >
 >```
