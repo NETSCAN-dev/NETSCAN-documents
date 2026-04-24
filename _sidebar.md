@@ -1,7 +1,6 @@
 #### NETSCAN document
 + maintained <a href="https://github.com/NETSCAN-dev/NETSCAN-documents">here</a>
-+ <a href="https://emulsion-labo.physics.aichi-edu.ac.jp/netscan/downloads/">binary relases</a>
-+ <a href="https://emulsion-labo.physics.aichi-edu.ac.jp/netscan/downloads/">tools</a>
++ <a href="netscan-license.pdf" target=_blank>ライセンス案</a>
 
 ##### README
 + [[binary release|binary-release]]
