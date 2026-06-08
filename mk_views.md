@@ -29,7 +29,7 @@
 > mk_views 10 20 --descriptor ./eventdescriptor.ini --view 2000 0 --o ./pl001/ali-002-views.lst
 > ```
 
-#### options ( those are in **bold** must be given )
+#### options ( **太字** は必須 )
 - **--descriptor [event-descriptor](event-descriptor.md)**
 > set [event-descriptor](event-descriptor.md)  
 
@@ -48,3 +48,7 @@
 
 - --sort 0/1
 > sort views by line(0) or by spiral-around-center(1). default = 0  
+
+- --overlap-by-angle angle-acceptance
+> view-overlap の値を角度アクセプタンスから決める。  
+> 計算は ceil( 0.01 x プレート間距離 x angle-acceptance)*100 で 100μm 単位に丸める。  
