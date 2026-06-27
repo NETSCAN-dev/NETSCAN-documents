@@ -29,11 +29,8 @@
 - --[filter-list](filter-list.md) filter-file-name +1/-1
 > specify [[filter-file-name|[filter-list](filter-list.md)]] to include (+1) or to exclude (-1)  
 
-- --filter-max-track-per-view val
-> reject view which has a given number of tracks or more  
-
-- --density val
-> reject views which has a track density > val tracks/cm2 ( to be replaced with --filter-max-track-per-view )  
+- --density max-density
+> ハッシュ単位で max-density/cm2 以上のハッシュを除去する。  
 
 - --pos new-pos
 > change pos  
