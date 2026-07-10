@@ -1,26 +1,22 @@
 ---
 #### filter list
 ---
-> One can not have additional columns in this filter list,  
-> since the number of columns is used to recognize different formats.  
+> f_filter と b_filter での --filter-list オプションで利用するファイルの書式  
+> 整数値の 16 進数表記 ( ex. 0x01 ) も可  
 
-#### filter-list-file format for base tracks
-- specify each base track case-1
+#### b_filter 用
+- ２項目
 > pl rawid  
 
-- specify each base track case-2
-> pos0 col0 row0 zone0 isg0 pos1 col1 row1 zone1 isg1  
-> ( i.e. micro-track-ids in face 0 and 1 )  
+- ３項目
+> pos zone isg  
 
-- specify all base tracsk in a view
-> pos col row zone  
-
-#### filter-list-file format for micro tracks
-- specify each micro track case-1
+#### f_filter 用
+- ２項目
 > pos rawid  
 
-- specify each micro track case-2
-> pos col row zone isg  
+- ３項目
+> pos zone isg  
 
-- specify all micro tracsk in a view
-> pos col row zone  
+- ６項目
+> pos1 zone1 isg1 pos2 zone2 isg2  
