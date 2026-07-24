@@ -30,8 +30,10 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >         "eachviewparam-path": "./hts/Beta_EachViewParam.json", <- 未指定でデフォルト値を使う事も可
 >         "eachimagerparam-path": "./hts/Beta_EachImagerParam.json", <- 未指定でデフォルト値を使う事も可
 >         "apply-round-calc": false <- ture で位置・角度に対し vxx-2/3 と同じ桁丸め処理を行う。デフォルトは false
+>         "embed-hts-info": 0 <- 未指定は 0 と同じ。詳細は下記 (4) を参照
 > }
-> (3) MicroTrack の 64bit isg への HTS 情報の埋込 ( vxx-4 にはコード埋込済だが、他は hts_beta_fvxx 依存 )
+> (3) MicroTrack の 64bit isg への HTS 情報の埋込
+>   下記は vxx-4 での仕様 ( embed-hts-info で変更可 ) であり、他は hts_beta_fvxx に依存する。
 >   0-byte : shot 内での通番(0~) <- LSB
 >   1-byte : shot 内での通番(0~)
 >   2-byte : shot 内での通番(0~)
@@ -40,7 +42,12 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >   5-byte : ShotID[2] = row[0]
 >   6-byte : ShotID[3] = row[1]
 >   7-byte : join 時に zone を埋め込み uniqueness を担保するために予約 <- MSB
-> (4) HTS1 の ShotID, ImagerID, ViewID の定義メモ for beta-file ( HTS2 は未確認 )
+> (4) embed-hts-info による HTS 情報の埋込み
+>	0 : shot を isg,col,row に埋込み、px,py に px,py を埋込み
+>	1 : shot を isg,col,row に埋込み、px,py に num,vola を埋込み
+>	2 : shot を col,row に埋込み、isg は shot 内の通番、px,py に px,py を埋込み
+>	3 : shot を col,row に埋込み、isg は shot 内の通番、px,py に num,vola を埋込み
+> (5) HTS1 の ShotID, ImagerID, ViewID の定義メモ for beta-file ( HTS2 は未確認 )
 >   uint32_t NumberOfImager = 72;
 >   uint32_t ViewID = ;
 >   uint32_t ImagerID = CameraID * 12 + SensorID; -> ImagerID(0-71), CameraID(0-5), SensorID(0-11)
