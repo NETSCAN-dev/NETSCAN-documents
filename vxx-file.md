@@ -43,10 +43,10 @@ th,td { border: 1px solid #fff; padding: 5px; }
 >   6-byte : ShotID[3] = row[1]
 >   7-byte : join 時に zone を埋め込み uniqueness を担保するために予約 <- MSB
 > (4) embed-hts-info による HTS 情報の埋込み
->	0 : shot を isg,col,row に埋込み、px,py に px,py を埋込み
->	1 : shot を isg,col,row に埋込み、px,py に num,vola を埋込み
->	2 : shot を col,row に埋込み、isg は shot 内の通番、px,py に px,py を埋込み
->	3 : shot を col,row に埋込み、isg は shot 内の通番、px,py に num,vola を埋込み
+>   0 : shot を isg,col,row に埋込み、px,py に px,py を埋込み
+>   1 : shot を isg,col,row に埋込み、px,py に num,vola を埋込み
+>   2 : shot を col,row に埋込み、isg は shot 内の通番、px,py に px,py を埋込み
+>   3 : shot を col,row に埋込み、isg は shot 内の通番、px,py に num,vola を埋込み
 > (5) HTS1 の ShotID, ImagerID, ViewID の定義メモ for beta-file ( HTS2 は未確認 )
 >   uint32_t NumberOfImager = 72;
 >   uint32_t ViewID = ;
